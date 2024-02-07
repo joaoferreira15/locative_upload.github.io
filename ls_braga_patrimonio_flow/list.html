@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Lista </title>
+  
+  <!-- Ficheiro css para a pÃ¡gina index -->
+  <link rel="stylesheet" type="text/css" href=css\index.css>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+
+</head>
+
+<body>
+    
+    <div name="Inner navigation division">
+        <div id="menu-titulo">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100 centrado2">
+            <h2 style="font-size: 20px; color: ghostwhite;"> Lista de Roteiros Locativos </h2>
+          </nav>
+        </div>
+        
+        <div class="sliding-section left" id="left-section" style="padding-top: 20px;">
+          
+          
+              <div class="section bottom-border gap2 centrado2" id="section-1">
+                  
+                      <button onclick="navigateToPage('component-0-1')" type="button" style="width: 70%;">
+                          <pages-component id='component-0-1' css='css\WCstyle.css' json='data\list.json' pointers='[{"path": "[\"items\"][0]"}]'> </pages-component>
+                      </button>
+                      
+                  
+                      <button onclick="navigateToPage('component-0-2')" type="button" style="width: 70%;">
+                          <pages-component id='component-0-2' css='css\WCstyle.css' json='data\list.json' pointers='[{"path": "[\"items\"][1]"}]'> </pages-component>
+                      </button>
+                      
+                  
+                      <button onclick="navigateToPage('component-0-3')" type="button" style="width: 70%;">
+                          <pages-component id='component-0-3' css='css\WCstyle.css' json='data\list.json' pointers='[{"path": "[\"items\"][2]"}]'> </pages-component>
+                      </button>
+                      
+                  
+                      <button onclick="navigateToPage('component-0-4')" type="button" style="width: 70%;">
+                          <pages-component id='component-0-4' css='css\WCstyle.css' json='data\list.json' pointers='[{"path": "[\"items\"][3]"}]'> </pages-component>
+                      </button>
+                      
+                  
+                      <button onclick="navigateToPage('component-0-5')" type="button" style="width: 70%;">
+                          <pages-component id='component-0-5' css='css\WCstyle.css' json='data\list.json' pointers='[{"path": "[\"items\"][4]"}]'> </pages-component>
+                      </button>
+                      
+                  
+                      <button onclick="navigateToPage('component-0-6')" type="button" style="width: 70%;">
+                          <pages-component id='component-0-6' css='css\WCstyle.css' json='data\list.json' pointers='[{"path": "[\"items\"][5]"}]'> </pages-component>
+                      </button>
+                      
+                  
+                      <button onclick="navigateToPage('component-0-7')" type="button" style="width: 70%;">
+                          <pages-component id='component-0-7' css='css\WCstyle.css' json='data\list.json' pointers='[{"path": "[\"items\"][6]"}]'> </pages-component>
+                      </button>
+                      
+                  
+                  
+              </div>
+          
+          </div>
+        </div>
+    </div>
+
+  
+  <!-- Bootstrap & Others -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- FunÃ§Ã£o de navegaÃ§Ã£o -->
+  <script type="text/javascript" src=js\Navigate.js></script>
+
+  <!-- FunÃ§Ãµes de geraÃ§Ã£o de web components -->
+  
+    
+      <script type="module" src=js\Pages.js></script>
+    
+      <script type="module" src=js\Pages.js></script>
+    
+      <script type="module" src=js\Pages.js></script>
+    
+      <script type="module" src=js\Pages.js></script>
+    
+      <script type="module" src=js\Pages.js></script>
+    
+      <script type="module" src=js\Pages.js></script>
+    
+      <script type="module" src=js\Pages.js></script>
+    
+  
+
+</body>
+</html>  

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Roteiro Locativo </title>
+  
+  <!-- Ficheiro css para a pÃ¡gina index -->
+  <link rel="stylesheet" type="text/css" href=css\index.css>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+
+</head>
+
+<body>
+
+  <!-- NavgaÃ§Ã£o no Roteiro -->
+  <div name="Inner navigation division">
+
+    <div id="menu-titulo">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+            <h2 style="font-size: 20px; padding-left: 20px; color: ghostwhite;"> Roteiro Locativo </h2>
+              <div class="btn-group ml-auto">
+                <button type="button" class="btn btn-dark navbar-toggler" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="navbar-toggler-icon custom-toggler-icon"></span>
+                </button>
+                <div id="dropdown" class="dropdown-menu dropdown-menu-right">
+                  <a id="dropdown-item" class="dropdown-item" onclick="navigateToPage2('list')">List Page</a>
+                  
+                    
+                      <a id="dropdown-item" class="dropdown-item" href="#Inicio">Inicio</a>
+                    
+                    
+                         
+                  
+                    
+                    
+                      <a id="dropdown-item" class="dropdown-item" href="#ContextoLocativo">Contexto Locativo</a>
+                    
+                         
+                  
+                    
+                    
+                    
+                      
+                        
+                          <a id="dropdown-item" class="dropdown-item" href="#Descrição">Descrição</a>
+                        
+                      
+                        
+                      
+                        
+                          <a id="dropdown-item" class="dropdown-item" href="#Fotos">Fotos</a>
+                        
+                       
+                         
+                  
+                </div>
+              </div>    
+          </nav>
+      </div>
+    </div>
+
+    <!-- ConteÃºdo do Roteiro -->
+    <div class="sliding-section left" id="left-section">
+      
+        
+          <div class="section bottom-border gap" id="Inicio">
+          
+            <caracterization-component css='css\WCstyle.css' json='data\struct30319.json' pointers='[{"path": ""}]'> </caracterization-component>
+          
+          </div>
+        
+
+           
+        
+        
+      
+        
+
+        
+          <div class="section bottom-border gap" id="ContextoLocativo">
+          
+            <postal-address-component css='css\WCstyle.css' json='data\struct30319.json' pointers='[{"path": "[\"locative_context\"]"}]'> </postal-address-component>
+          
+            <geo-coordinates-component css='css\WCstyle.css' json='data\struct30319.json' pointers='[{"path": "[\"locative_context\"][\"geo\"]"}]'> </geo-coordinates-component>
+           
+           
+        
+        
+      
+        
+
+           
+        
+        
+          
+            
+              </div>
+              <div class="section bottom-border gap" id="Descrição">
+            
+            <caracterization-component css='css\WCstyle.css' json='data\struct30319.json' pointers='[{"path": "[\"sections\"][0]"}]'> </caracterization-component>
+          
+            
+            <caracterization-component css='css\WCstyle.css' json='data\struct30319.json' pointers='[{"path": "[\"sections\"][0][\"creator\"]"}]'> </caracterization-component>
+          
+            
+              </div>
+              <div class="section bottom-border gap" id="Fotos">
+            
+            <images-component css='css\WCstyle.css' json='data\struct30319.json' pointers='[{"path": "[\"sections\"][1]"}]'> </images-component>
+          
+        
+      
+      </div>
+    </div>
+  </div>
+  
+
+  
+  <!-- Bootstrap & Others -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- FunÃ§Ã£o de navegaÃ§Ã£o -->
+  <script type="text/javascript" src=js\Navigate.js></script>
+
+  <!-- FunÃ§Ãµes de geraÃ§Ã£o de web components -->
+  
+    
+      <script type="module" src=js\Caracterization.js></script>
+    
+  
+    
+      <script type="module" src=js\PostalAddress.js></script>
+    
+      <script type="module" src=js\GeoCoordinates.js></script>
+    
+  
+    
+      <script type="module" src=js\Caracterization.js></script>
+    
+      <script type="module" src=js\Caracterization.js></script>
+    
+      <script type="module" src=js\Images.js></script>
+    
+  
+
+</body>
+</html>  

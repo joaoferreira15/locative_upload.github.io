@@ -1,0 +1,263 @@
+/* Styles for the background element */
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 0 auto;
+    position: relative;
+}
+
+#containerBorder {
+    border: 1px solid lightslategrey;
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.apresentacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding-bottom: 10px;
+    border: 1px solid black;
+}
+
+.apresentacaoT {
+    border-top: 1px solid lightslategrey;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.apresentacaoURL {
+    border-top: 1px solid lightslategrey;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+}
+
+.apresentacaoB {
+    border-bottom: 1px solid lightslategrey;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Styles for the presentation elements */
+.apresentacao2 {
+    border-radius: 10px;
+    border: 1px solid lightslategrey;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+}
+
+.apresentacao3 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.apresentacao4 {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    margin: 0;
+    padding-bottom: 10px;
+    border: 1px solid black;
+}
+
+.all_centred {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.all_centredR {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.titulo {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.padding {
+    padding-left: 20px;
+}
+
+/* Styles for the tables */
+.table1, .table2 {
+    width: 80%;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.table2 {
+    height: 100%;
+    overflow: auto;
+    border: 1px solid black;
+}
+
+th {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+td {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+/* Styles for the left image */
+.imagem {
+    width: 100%;
+    /*padding: 10px;*/
+    object-fit: contain;
+}
+
+.logo {
+    width: 40%;
+    padding: 10px;
+    object-fit: contain;
+    float: left;
+}
+
+/* Styles for text elements */
+.textoCentrado {
+    flex: 1;
+    padding: 10px;
+    max-width: 80%;
+    text-align: center;
+}
+
+/* Styles for headings */
+h2 {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.centrado {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.paddingL {
+    padding-left: 10px;
+}
+/* Styles for text */
+p {
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    color: #333;
+}
+
+h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 19px;
+    color: #333;
+}
+
+.map {
+    height: 300px; 
+    width: 100%; 
+    border: 1px solid lightslategrey;
+}
+
+.Mzero {
+    margin: 0;
+}
+
+.MBzero {
+    margin-bottom: 0px;   
+}
+
+.MTzero {
+    margin-top: 0px;   
+}
+
+.in-line-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  ion-icon {
+    color: #404040;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 24px;
+  }
+
+.branco {
+    color: white;
+  }
+
+.small {
+  font-size: 12px;
+} 
+
+.smallDescription {
+    font-size: 8px;
+}
+
+.smallOther {
+    font-size: 8px;
+}
+
+.smallTitle {
+    font-size: 10px;
+} 
+
+.DBorder {
+    border-top: 1px solid lightslategrey;
+    border-bottom: 1px solid lightslategrey;
+}
+
+.DBorderImage {
+    margin-bottom: 15px;
+}
+
+.image_list {
+    padding-bottom: 30px;
+}
+
+h2 {
+    font-size: 17px;
+}
+
+#imagem_div img {
+    width: 90%; /* Ensure the image takes 100% of the container width */
+    height: auto; /* Maintain the image's aspect ratio */
+    object-fit: cover;
+}
+
+#imagem_div {
+    width: 80%; /* Ensure the image takes 100% of the container width */
+    height: 80%; /* Maintain the image's aspect ratio */
+    border-right: 1px solid lightslategrey;
+}
+
+.navbar-expand-lg .navbar-nav {
+    max-height: 100vh; /* Set maximum height to the viewport height */
+    overflow-y: auto;  /* Enable vertical scrolling if the content exceeds the maximum height */
+}   
