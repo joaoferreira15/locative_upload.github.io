@@ -22,6 +22,10 @@
   }
 }
 
+.navbar-nav{
+  background-color: white !important;
+}
+
 .recurso-image {
   position: relative;
   height: 400px; /* Set the height according to your design */
