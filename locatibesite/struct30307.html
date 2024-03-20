@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Locatibe</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/index.css">
+
+    <!--Bootstrap ================================================== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Open+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="hompage bg-other-grey">
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5">
+        <a href="index.html" class="navbar-brand d-flex align-items-center">
+            <h1 class="m-0">Locatibe</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+
+                <!-- Botões de navegação entre Templates View -->
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Patrimonios Views</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/struct30319.html" class="dropdown-item">Patrimonio 2</a>
+                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/struct30327.html" class="dropdown-item">Patrimonio 3</a>
+                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/struct30349.html" class="dropdown-item">Patrimonio 4</a>
+                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/struct30350.html" class="dropdown-item">Patrimonio 5</a>
+                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/struct30351.html" class="dropdown-item">Patrimonio 6</a>
+                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/struct30352.html" class="dropdown-item">Patrimonio 7</a>
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">TUB Views</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/itinerary.html" class="dropdown-item">Itinerary</a>
+                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/route.html" class="dropdown-item">Route</a>
+                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/trip.html" class="dropdown-item">Trip</a>
+                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/stop.html" class="dropdown-item">Stop</a>
+                    </div>
+                </div>
+
+                <!-- Botões de navegação entre Templates Lists -->
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Templates Listing</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/listing-sites-locativos.html" class="dropdown-item">Listing 1</a>
+                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/listing-sites-locativos-2.html" class="dropdown-item">Listing 2</a>
+                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/listing-all-1-map-n-organized.html" class="dropdown-item">Listing 3</a>
+                    </div>
+                </div>
+
+                 <!-- Botão de navegação para o catálogo de componentes web -->
+                 <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/catalogue.html" class="nav-item nav-link">Catálogo</a>
+
+                <!-- Botões de navegação entre secções entre-roteiro -->
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Secções Internas</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="#Inicio" class="dropdown-item">Inicio</a>
+                        <a href="#ContextoLocativo" class="dropdown-item">Contexto Locativo</a>
+                        <a href="#Descrição" class="dropdown-item">Descrição</a>
+                        <a href="#Fotos" class="dropdown-item">Fotos</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão de motor de pesquisa -->
+            <div class="border-start ps-4 d-none d-lg-block">
+                <button type="button" class="btn btn-sm p-0">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+
+
+
+    <!-- Secção para a Identificação do Roteiro Locativo -->
+    <section id="page-identification-section">
+        <!-- Imagem + Titulo + Descrição -->
+        <div class="container-fluid page-header padding-medium wow fadeIn" data-wow-delay="0.1s">
+            <!-- Imagem -->
+            <div class="recurso-image padding-small no-padding-top">
+                <img src="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/20200805_174914.jpg" alt="Image 5">
+            </div>
+            <!-- Descrição -->
+            <div class="container text-center">
+                <h1 class="display-3 text-black mb-4 animated slideInDown">Patrimonio: ESTÁTUA - D. FREI BARTOLOMEU DOS MÁRTIRES</h1>
+                <p>Listing of all the information related to "ESTÁTUA - D. FREI BARTOLOMEU DOS MÁRTIRES" in the possession of the CMB institution</p>
+            </div>
+        </div>
+
+        <!-- Mapeamento dos roteiros locativos (Localização Absoluta) -->
+        <div class="container-fluid px-0">
+            <map-component id="map-1" css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/patrimonio/contexto-locativo.json'
+                pointers='[{"path": "[\"items\"][0][\"geo\"]"}]'> </map-component>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Secção Global com todos os componentes web utilizados para represetnar o conteúdo locativo -->
+    <section id="locative-content-section" class="resource-store padding-xsmall position-relative overflow-hidden">
+        <div class="container-fluid">
+
+            <!-- Secção em que são encorporados os componentes web por secção de do json (divisão dos componentes em secções) -->
+            <section id="web-components-section" class=" position-relative padding-small overflow-hidden">
+                <div class="container">
+
+                    <!-- Lista -->
+                    <div class="row">
+
+                        <!-- Secção 1 de componentes web -->
+                        <div class="section bottom-border gap" id="Inicio">
+                            <caracterization-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css'
+                                json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/patrimonio/struct30307.json' pointers='[{"path": "No Path"}]'>
+                            </caracterization-component>
+                        </div>
+
+                        <!-- Secção 2 de componentes web -->
+                        <div class="section bottom-border gap" id="ContextoLocativo">
+                            <postal-address-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css'
+                                json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/patrimonio/struct30307.json'
+                                pointers='[{"path": "[\"locative_context\"]"}]'> </postal-address-component>
+                            <geo-coordinates-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css'
+                                json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/patrimonio/struct30307.json'
+                                pointers='[{"path": "[\"locative_context\"][\"geo\"]"}]'> </geo-coordinates-component>
+                        </div>
+
+                        <!-- Secção 3 de componentes web -->
+                        <div class="section bottom-border gap" id="Descrição">
+                            <caracterization-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css'
+                                json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/patrimonio/struct30307.json'
+                                pointers='[{"path": "[\"sections\"][0]"}]'> </caracterization-component>
+                            <caracterization-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css'
+                                json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/patrimonio/struct30307.json'
+                                pointers='[{"path": "[\"sections\"][0][\"creator\"]"}]'> </caracterization-component>
+                        </div>
+
+                        <!-- Secção 4 de componentes web -->
+                        <div class="section bottom-border gap" id="Fotos">
+                            <images-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css'
+                                json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/patrimonio/struct30307.json'
+                                pointers='[{"path": "[\"sections\"][1]"}]'> </images-component>
+                        </div>
+
+                        <!-- See More (Navegação) Button -->
+                        <div id="expand-button" class="cart-concern">
+                            <div class="cart-button d-flex flex-wrap all all-centred no-padding-top">
+                                <div class="btn-left">
+                                    <a id="show-more-btn" class="btn btn-medium btn-black">Show More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Secção "More" -->
+            <!-- Secção Orientada à navegação entre recursos locativos -->
+            <!-- Links Internos (Links que apontam para outros recursos locativos e/ou secções dentro desses) -->
+            <section id="inner-navigation-content"
+                class="resource-store padding-small position-relative overflow-hidden" style="display: none;">
+                <div class="container">
+
+                    <div class="container text-center">
+                        <h1 class="display-3 text-black mb-4 animated slideInDown">Recursos Adicionais Internos</h1>
+                    </div>
+
+                    <!-- Lista -->
+                    <div class="row">
+
+                        <!-- Link do Recurso 1 -->
+                        <div class="col-md-6">
+                            <pages-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/patrimonio/list.json'
+                                pointers='[{"path": "[\"items\"][1]"}]'></pages-component>
+                        </div>
+
+                        <!-- Link do Recurso 2 -->
+                        <div class="col-md-6">
+                            <pages-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/patrimonio/list.json'
+                                pointers='[{"path": "[\"items\"][2]"}]'></pages-component>
+                        </div>
+
+                        <!-- Link do Recurso 3 -->
+                        <div class="col-md-6">
+                            <pages-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/patrimonio/list.json'
+                                pointers='[{"path": "[\"items\"][3]"}]'></pages-component>
+                        </div>
+
+                        <!-- Link do Recurso 4 -->
+                        <div class="col-md-6">
+                            <pages-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/patrimonio/list.json'
+                                pointers='[{"path": "[\"items\"][4]"}]'></pages-component>
+                        </div>
+
+                        <!-- Link do Recurso 5 -->
+                        <div class="col-md-6">
+                            <pages-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/patrimonio/list.json'
+                                pointers='[{"path": "[\"items\"][5]"}]'></pages-component>
+                        </div>
+
+                         <!-- Link do Recurso 6 -->
+                         <div class="col-md-6">
+                            <pages-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/patrimonio/list.json'
+                                pointers='[{"path": "[\"items\"][6]"}]'></pages-component>
+                        </div>
+
+                        <!-- See Also Button, para links externos à rede de recursos locativos -->
+                        <div id="expand-button" class="cart-concern">
+                            <div class="cart-button d-flex flex-wrap all all-centred no-padding-top">
+                                <div class="btn-left">
+                                    <a id="see-also-btn" class="btn btn-medium btn-black">See Also</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <!-- Secção de navegação direcionada a links externos (Conteúdo Extra não proporcionado pelos roteiros) -->
+            <section id="outer-navigation-content" class="resource-store padding-small position-relative overflow-hidden"
+                style="display: none;">
+                <div class="container">
+
+                    <div class="container text-center">
+                        <h1 class="display-3 text-black mb-4 animated slideInDown">Recursos Adicionais Externos</h1>
+                    </div>
+
+                    <!-- Lista -->
+                    <div class="row">
+
+                        <!-- Link do Recurso Externo 1 -->
+                        <div class="col-md-6">
+                            <pages-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/patrimonio/list.json'
+                                pointers='[{"path": "[\"items\"][7]"}]'></pages-component>
+                        </div>
+
+                        <!-- Link do Recurso Externo 2 -->
+                        <div class="col-md-6">
+                            <pages-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/patrimonio/list.json'
+                                pointers='[{"path": "[\"items\"][8]"}]'></pages-component>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Footer Start -->
+    <section id="footer-section">
+        <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Our Office</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <div class="d-flex pt-3">
+                            <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i
+                                    class="fab fa-youtube"></i></a>
+                            <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Quick Links</h5>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="">Our Services</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                        <a class="btn btn-link" href="">Support</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Business Hours</h5>
+                        <p class="mb-1">Monday - Friday</p>
+                        <h6 class="text-light">09:00 am - 07:00 pm</h6>
+                        <p class="mb-1">Saturday</p>
+                        <h6 class="text-light">09:00 am - 12:00 pm</h6>
+                        <p class="mb-1">Sunday</p>
+                        <h6 class="text-light">Closed</h6>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Newsletter</h5>
+                        <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                        <div class="position-relative w-100">
+                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
+                                placeholder="Your email">
+                            <button type="button"
+                                class="btn btn-secondary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Copyright Start -->
+        <div class="container-fluid bg-secondary text-body copyright py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="fw-semi-bold" href="#">Your Site Name</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="fw-semi-bold" href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </section>
+
+
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-secondary btn-lg-square rounded-circle back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Template Javascript -->
+    <script type="text/javascript" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/lib/Navigate.js></script>
+    <script type="text/javascript" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/lib/Expand.js></script>
+
+    <!-- Funções de geração de web components -->
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Caracterization.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/CreativeWork.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/GeoCoordinates.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Map.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Images.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Inventory.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Entity.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Pages.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/PostalAddress.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Specific.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Calendar.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Schedule.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Interaction.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Composition.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Ownership.js></script>
+
+    <!-- Bootstarp script ================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+</body>
+
+</html>

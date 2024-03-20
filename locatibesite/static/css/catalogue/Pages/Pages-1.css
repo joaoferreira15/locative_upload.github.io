@@ -1,0 +1,173 @@
+.custom-container {
+    text-align: center;
+}
+
+.no-mb {
+    margin-bottom: 0px !important;
+}
+
+.no-mt {
+    margin-top: 0px !important;
+}
+
+.m-4-tb {
+    margin-top: 4px;
+    margin-bottom: 5px;
+}
+
+.custom-type {
+    margin-bottom: 3px; /* mb-3 spacing */
+}
+
+.custom-id {
+    margin-bottom: 3px; /* mb-3 spacing */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.custom-description {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.recurso-square-col {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.recurso-square {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+}
+
+@media only screen and (max-width: 598px) {
+    img.resource-image {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+    }
+}
+
+.recurso-square img {
+    max-width: 100px;
+    margin-right: 20px;
+}
+
+.recurso-square h2 {
+    margin-top: 0;
+    font-size: 1.6em;
+    line-height: 1.4;
+}
+
+.recurso-square p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-family: var(--body-font);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.btn-center {
+    text-align: center;
+    display: block;
+}
+
+.btn.btn-black {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+a.btn,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"],
+button {
+  background-image: none;
+  background: var(--dark-color);
+  text-decoration: none !important;
+  display: inline-block;
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 0px;
+  padding: 0.75em 1.5em;
+  margin-top: 15px;
+  font-family: var(--body-font);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--light-color);
+  z-index: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn:hover,
+.btn:focus,
+input[type="button"]:focus,
+input[type="button"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:hover,
+input[type="reset"]:focus,
+input[type="reset"]:hover,
+input[type="file"]:focus,
+input[type="file"]:hover,
+button:focus,
+button:hover {
+  text-decoration: none;
+  outline: 0;
+  border-color: transparent;
+}
+
+.btn {
+  border-radius: 0px;
+}
+
+.btn.back-to-top .i {
+  background-color: whitesmoke
+}
+
+.btn-left {
+  text-align: left;
+  display: block;
+}
+
+.btn-center {
+  text-align: center;
+  display: block;
+}
+
+.btn-right {
+  text-align: right;
+  display: block;
+}
+
+#navigation-button {
+  display: flex;
+  justify-content: space-between;
+}

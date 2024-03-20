@@ -1,0 +1,11 @@
+{
+    "identifier": "001",
+    "genre": "Type 1",
+    "name": "Serviços TUB",
+    "description": "Roteiro Temático sobre os serviços prestados pela entidade TUB",
+    "publisher": {
+        "name": "João Ferreira"
+    },
+    "datePublished": "2023-12-20",
+    "fileFormat": "Csv"
+}

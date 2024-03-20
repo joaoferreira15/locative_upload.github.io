@@ -1,0 +1,882 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <title>Locatibe</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="author" content="">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <link rel="stylesheet" type="text/css" href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/index.css">
+    
+        <!--Bootstrap ================================================== -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Open+Sans:wght@400;500;600&display=swap"
+            rel="stylesheet">
+    
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap"
+            rel="stylesheet">
+    
+    </head>
+    
+    <body class="hompage bg-other-grey">
+    
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <h1 class="m-0">Locatibe</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+    
+                    <!-- Botões de navegação entre Templates View -->
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Patrimonios Views</a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/struct30307.html" class="dropdown-item">Patrimonio 1</a>
+                            <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/struct30319.html" class="dropdown-item">Patrimonio 2</a>
+                            <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/struct30327.html" class="dropdown-item">Patrimonio 3</a>
+                            <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/struct30349.html" class="dropdown-item">Patrimonio 4</a>
+                            <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/struct30350.html" class="dropdown-item">Patrimonio 5</a>
+                            <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/struct30351.html" class="dropdown-item">Patrimonio 6</a>
+                            <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/struct30352.html" class="dropdown-item">Patrimonio 7</a>
+                        </div>
+                    </div>
+    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">TUB Views</a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/itinerary.html" class="dropdown-item">Itinerary</a>
+                            <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/route.html" class="dropdown-item">Route</a>
+                            <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/trip.html" class="dropdown-item">Trip</a>
+                            <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/stop.html" class="dropdown-item">Stop</a>
+                        </div>
+                    </div>
+    
+                    <!-- Botões de navegação entre Templates Lists -->
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Templates Listing</a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/listing-sites-locativos.html" class="dropdown-item">Listing 1</a>
+                            <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/listing-sites-locativos-2.html" class="dropdown-item">Listing 2</a>
+                            <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/listing-all-1-map-n-organized.html" class="dropdown-item">Listing 3</a>
+                        </div>
+                    </div>
+    
+                    <!-- Botões de navegação entre secções entre-roteiro -->
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Secções Internas</a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="#caracterization" class="dropdown-item">Caracterization</a>
+                            <a href="#creative-work" class="dropdown-item">Creative Work</a>
+                            <a href="#geo-coordinates" class="dropdown-item">Geo Coordinates</a>
+                            <a href="#images" class="dropdown-item">Images</a>
+                            <a href="#inventory" class="dropdown-item">Inventory</a>
+                            <a href="#entity" class="dropdown-item">Entity</a>
+                            <a href="#pages" class="dropdown-item">Pages</a>
+                            <a href="#postal-address" class="dropdown-item">Postal Address</a>
+                            <a href="#specific" class="dropdown-item">Specific</a>
+                            <a href="#composition" class="dropdown-item">Composition</a>
+                            <a href="#interaction" class="dropdown-item">Interaction</a>
+                            <a href="#ownership" class="dropdown-item">Ownership</a>
+                            <a href="#calendar" class="dropdown-item">Calendar</a>
+                            <a href="#schedule" class="dropdown-item">Schedule</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Botão de motor de pesquisa -->
+                <div class="border-start ps-4 d-none d-lg-block">
+                    <button type="button" class="btn btn-sm p-0">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+    
+    
+    
+    
+    
+        <!-- Secção para a Identificação do Roteiro Locativo -->
+        <section id="page-identification-section">
+            <!-- Imagem + Titulo + Descrição -->
+            <div class="container-fluid page-header padding-medium wow fadeIn" data-wow-delay="0.1s">
+                <!-- Imagem -->
+                <div class="recurso-image padding-small no-padding-top">
+                    <img src="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/20200805_174914.jpg" alt="Image 5">
+                </div>
+                <!-- Descrição -->
+                <div class="container text-center">
+                    <h1 class="display-3 text-black mb-4 animated slideInDown">All Web Components</h1>
+                    <p>Listing of all the web components used to support this Locative Project</p>
+                </div>
+            </div>
+        </section>
+
+
+
+    <!-- Secção para a Identificação do Roteiro Locativo -->
+    <section id="page-identification-section">
+        <!-- Imagem + Titulo + Descrição -->
+        <div class="container-fluid page-header padding-medium wow fadeIn" data-wow-delay="0.1s">
+            <!-- Imagem -->
+            <div class="recurso-image padding-small no-padding-top">
+                <img src="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/20200805_174914.jpg" alt="Image 5">
+            </div>
+            <!-- Descrição -->
+            <div class="container text-center">
+                <h1 class="display-3 text-black mb-4 animated slideInDown">All Web Components</h1>
+                <p>Listing of all the web components used to support this Locative Project</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Secção Global com todos os componentes web utilizados para represetnar o conteúdo locativo -->
+    <section id="locative-content-section" class="resource-store padding-medium position-relative overflow-hidden">
+        <div class="container-fluid">
+            
+            <!-- Secção em que são encorporados os componentes web por secção de do json (divisão dos componentes em secções) -->
+            <section id="web-components-section" class=" position-relative overflow-hidden">
+                <div class="container">
+
+                    <!-- Caracterization -->
+                    <div id="caracterization" class="row padding-medium no-padding-top">
+                        <!-- First Column -->
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex flex-column justify-content-center align-items-center border p-3">
+                                <h2 class="mb-3">&lt;caracterization-component&gt;</h2>
+                                <div class="nav-item dropdown">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Css Styles</button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-1', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Caracterization/Caracterization-1.css')">Change to style 1</a>
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-1', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Caracterization/Caracterization-2.css')">Change to style 2</a>
+                                        <a class="dropdown-item" onclick="createCssAttribute('component-1', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Caracterization/Caracterization-custom.css')">Custom style</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Second Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura de Apresentação</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <caracterization-component id='component-1' css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Caracterization/Caracterization-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "caracterization"}]'></caracterization-component>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Third Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura dos Dados</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <json-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Json/Json-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "caracterization"}]'></json-component>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+
+                    <!-- CreativeWork -->
+                    <div id="creative-work" class="row padding-medium">
+                        <!-- First Column -->
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex flex-column justify-content-center align-items-center border p-3">
+                                <h2 class="mb-3">&lt;creative-work-component&gt;</h2>
+                                <div class="nav-item dropdown">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Css Styles</button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-2', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/CreativeWork/CreativeWork-1.css')">Change to style 1</a>
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-2', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/CreativeWork/CreativeWork-2.css')">Change to style 2</a>
+                                        <a class="dropdown-item" onclick="createCssAttribute('component-2', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/CreativeWork/CreativeWork-custom.css')">Custom style</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Second Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura de Apresentação</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <creative-work-component id='component-2' css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/CreativeWork/CreativeWork-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "creativeWork"}]'></creative-work-component>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Third Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura dos Dados</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <json-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Json/Json-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "creativeWork"}]'></json-component>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- GeoCoordinates -->
+                    <div id="geo-coordinates" class="row padding-medium">
+                        <!-- First Column -->
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex flex-column justify-content-center align-items-center border p-3">
+                                <h2 class="mb-3">&lt;geo-coordinates-component&gt;</h2>
+                                <div class="nav-item dropdown">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Css Styles</button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-3', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/GeoCoordinates/GeoCoordinates-1.css')">Change to style 1</a>
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-3', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/GeoCoordinates/GeoCoordinates-2.css')">Change to style 2</a>
+                                        <a class="dropdown-item" onclick="createCssAttribute('component-3', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/GeoCoordinates/GeoCoordinates-custom.css')">Custom style</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Second Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura de Apresentação</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <geo-coordinates-component id='component-3' css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/GeoCoordinates/GeoCoordinates-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "geoCoordinates"}]'></geo-coordinates-component>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Third Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura dos Dados</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <json-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Json/Json-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "geoCoordinates"}]'></json-component>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+  
+
+                    <!-- Images -->
+                    <div id="images" class="row padding-medium">
+                        <!-- First Column -->
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex flex-column justify-content-center align-items-center border p-3">
+                                <h2 class="mb-3">&lt;images-component&gt;</h2>
+                                <div class="nav-item dropdown">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Css Styles</button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-4', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Images/Images-1.css')">Change to style 1</a>
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-4', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Images/Images-2.css')">Change to style 2</a>
+                                        <a class="dropdown-item" onclick="createCssAttribute('component-4', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Images/Images-custom.css')">Custom style</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Second Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura de Apresentação</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <images-component id='component-4' css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Images/Images-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "images"}]'></images-component>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Third Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura dos Dados</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <json-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Json/Json-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "images"}]'></json-component>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inventory-->
+                    <div id="inventory" class="row padding-medium">
+                        <!-- First Column -->
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex flex-column justify-content-center align-items-center border p-3">
+                                <h2 class="mb-3">&lt;inventory-component&gt;</h2>
+                                <div class="nav-item dropdown">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Css Styles</button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-5', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Inventory/Inventory-1.css')">Change to style 1</a>
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-5', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Inventory/Inventory-2.css')">Change to style 2</a>
+                                        <a class="dropdown-item" onclick="createCssAttribute('component-5', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Inventory/Inventory-custom.css')">Custom style</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Second Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura de Apresentação</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <inventory-component id='component-5' css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Inventory/Inventory-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "inventory"}]'></inventory-component>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Third Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura dos Dados</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <json-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Json/Json-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "inventory"}]'></json-component>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Entity -->
+                    <div id="entity" class="row padding-medium">
+                        <!-- First Column -->
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex flex-column justify-content-center align-items-center border p-3">
+                                <h2 class="mb-3">&lt;entity-component&gt;</h2>
+                                <div class="nav-item dropdown">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Css Styles</button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-6', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Entity/Entity-1.css')">Change to style 1</a>
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-6', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Entity/Entity-2.css')">Change to style 2</a>
+                                        <a class="dropdown-item" onclick="createCssAttribute('component-6', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Entity/Entity-custom.css')">Custom style</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Second Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura de Apresentação</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <entity-component id='component-6' css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Entity/Entity-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "entity"}]'></entity-component>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Third Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura dos Dados</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <json-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Json/Json-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "entity"}]'></json-component>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+  
+                    <!-- Pages -->
+                    <div id="pages" class="row padding-medium">
+                        <!-- First Column -->
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex flex-column justify-content-center align-items-center border p-3">
+                                <h2 class="mb-3">&lt;pages-component&gt;</h2>
+                                <div class="nav-item dropdown">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Css Styles</button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-7', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Pages/Pages-1.css')">Change to style 1</a>
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-7', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Pages/Pages-2.css')">Change to style 2</a>
+                                        <a class="dropdown-item" onclick="createCssAttribute('component-7', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Pages/Pages-custom.css')">Custom style</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Second Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura de Apresentação</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <pages-component id='component-7' css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Pages/Pages-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "pages"}]'></pages-component>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Third Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura dos Dados</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <json-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Json/Json-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "pages"}]'></json-component>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PostalAddress -->
+                    <div id="postal-address" class="row padding-medium">
+                        <!-- First Column -->
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex flex-column justify-content-center align-items-center border p-3">
+                                <h2 class="mb-3">&lt;postal-address-component&gt;</h2>
+                                <div class="nav-item dropdown">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Css Styles</button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-9', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/PostalAddress/PostalAddress-1.css')">Change to style 1</a>
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-9', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/PostalAddress/PostalAddress-2.css')">Change to style 2</a>
+                                        <a class="dropdown-item" onclick="createCssAttribute('component-9', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/PostalAddress/PostalAddress-custom.css')">Custom style</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Second Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura de Apresentação</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <postal-address-component id='component-9' css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/PostalAddress/PostalAddress-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "postalAddress"}]'></postal-address-component>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Third Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura dos Dados</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <json-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Json/Json-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "postalAddress"}]'></json-component>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                      
+                    <!-- Specific -->
+                    <div id="specific" class="row padding-medium">
+                        <!-- First Column -->
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex flex-column justify-content-center align-items-center border p-3">
+                                <h2 class="mb-3">&lt;specific-component&gt;</h2>
+                                <div class="nav-item dropdown">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Css Styles</button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-10', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Specific/Specific-1.css')">Change to style 1</a>
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-10', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Specific/Specific-2.css')">Change to style 2</a>
+                                        <a class="dropdown-item" onclick="createCssAttribute('component-10', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Specific/Specific-custom.css')">Custom style</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Second Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura de Apresentação</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <specific-component id='component-10' css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Specific/Specific-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "specific"}]'></specific-component>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Third Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura dos Dados</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <json-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Json/Json-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "specific"}]'></json-component>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Composition -->
+                    <div id="composition" class="row padding-medium">
+                        <!-- First Column -->
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex flex-column justify-content-center align-items-center border p-3">
+                                <h2 class="mb-3">&lt;composition-component&gt;</h2>
+                                <div class="nav-item dropdown">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Css Styles</button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-11', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Composition/Composition-1.css')">Change to style 1</a>
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-11', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Composition/Composition-2.css')">Change to style 2</a>
+                                        <a class="dropdown-item" onclick="createCssAttribute('component-11', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Composition/Composition-custom.css')">Custom style</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Second Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura de Apresentação</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <composition-component id='component-10' css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Composition/Composition-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "composition"}]'></composition-component>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Third Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura dos Dados</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <json-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Json/Json-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "composition"}]'></json-component>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interaction -->
+                    <div id="interaction" class="row padding-medium">
+                        <!-- First Column -->
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex flex-column justify-content-center align-items-center border p-3">
+                                <h2 class="mb-3">&lt;interaction-component&gt;</h2>
+                                <div class="nav-item dropdown">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Css Styles</button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-12', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Interaction/Interaction-1.css')">Change to style 1</a>
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-12', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Interaction/Interaction-2.css')">Change to style 2</a>
+                                        <a class="dropdown-item" onclick="createCssAttribute('component-12', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Interaction/Interaction-custom.css')">Custom style</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Second Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura de Apresentação</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <interaction-component id='component-10' css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Interaction/Interaction-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "interaction"}]'></interaction-component>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Third Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura dos Dados</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <json-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Json/Json-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "interaction"}]'></json-component>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ownership -->
+                    <div id="ownership" class="row padding-medium">
+                        <!-- First Column -->
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex flex-column justify-content-center align-items-center border p-3">
+                                <h2 class="mb-3">&lt;ownership-component&gt;</h2>
+                                <div class="nav-item dropdown">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Css Styles</button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-13', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Ownership/Ownership-1.css')">Change to style 1</a>
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-13', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Ownership/Ownership-2.css')">Change to style 2</a>
+                                        <a class="dropdown-item" onclick="createCssAttribute('component-13', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Ownership/Ownership-custom.css')">Custom style</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Second Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura de Apresentação</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <ownership-component id='component-10' css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Ownership/Ownership-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "ownership"}]'></ownership-component>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Third Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura dos Dados</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <json-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Json/Json-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "ownership"}]'></json-component>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calendar -->
+                    <div id="calendar" class="row padding-medium">
+                        <!-- First Column -->
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex flex-column justify-content-center align-items-center border p-3">
+                                <h2 class="mb-3">&lt;calendar-component&gt;</h2>
+                                <div class="nav-item dropdown">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Css Styles</button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-14', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Calendar/Calendar-1.css')">Change to style 1</a>
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-14', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Calendar/Calendar-2.css')">Change to style 2</a>
+                                        <a class="dropdown-item" onclick="createCssAttribute('component-14', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Calendar/Calendar-custom.css')">Custom style</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Second Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura de Apresentação</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <calendar-component id='component-10' css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Calendar/Calendar-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "calendar"}]'></calendar-component>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Third Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura dos Dados</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <json-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Json/Json-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "calendar"}]'></json-component>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Schedule -->
+                    <div id="schedule" class="row padding-medium">
+                        <!-- First Column -->
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex flex-column justify-content-center align-items-center border p-3">
+                                <h2 class="mb-3">&lt;schedule-component&gt;</h2>
+                                <div class="nav-item dropdown">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Css Styles</button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-15', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Schedule/Schedule-1.css')">Change to style 1</a>
+                                        <a class="dropdown-item" onclick="changeCssAttribute('component-15', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Schedule/Schedule-2.css')">Change to style 2</a>
+                                        <a class="dropdown-item" onclick="createCssAttribute('component-15', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Schedule/Schedule-custom.css')">Custom style</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Second Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura de Apresentação</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <schedule-component id='component-10' css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Schedule/Schedule-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "schedule"}]'></schedule-component>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Third Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura dos Dados</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <json-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/Json/Json-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/catalogue.json' pointers='[{"path": "schedule"}]'></json-component>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </section>
+
+
+
+    <!-- Footer Start -->
+    <section id="footer-section">
+        <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Our Office</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <div class="d-flex pt-3">
+                        <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Business Hours</h5>
+                    <p class="mb-1">Monday - Friday</p>
+                    <h6 class="text-light">09:00 am - 07:00 pm</h6>
+                    <p class="mb-1">Saturday</p>
+                    <h6 class="text-light">09:00 am - 12:00 pm</h6>
+                    <p class="mb-1">Sunday</p>
+                    <h6 class="text-light">Closed</h6>
+                </div>
+                    <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Newsletter</h5>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                <div class="position-relative w-100">
+                    <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                    <button type="button" class="btn btn-secondary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Copyright Start -->
+        <div class="container-fluid bg-secondary text-body copyright py-4">
+            <div class="container">
+                <div class="row padding-medium">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="fw-semi-bold" href="#">Your Site Name</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="fw-semi-bold" href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </section>
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-secondary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Template Javascript -->
+    <script type="text/javascript" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/lib/Navigate.js></script>
+    <script type="text/javascript" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/lib/Expand.js></script>
+    <script type="text/javascript" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/lib/changeCss.js></script>
+    <script type="text/javascript" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/lib/Json.js></script>
+  
+    <!-- Funções de geração de web components -->   
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Caracterization.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/CreativeWork.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/GeoCoordinates.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Map.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Images.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Inventory.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Entity.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Pages.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/PostalAddress.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Specific.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Calendar.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Schedule.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Interaction.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Composition.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Ownership.js></script>
+    
+    <!-- Bootstarp script ================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+</body>
+</html>

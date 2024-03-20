@@ -1,0 +1,54 @@
+.custom-container {
+    text-align: center;
+}
+
+.custom-image {
+    width: 100%;
+    height: auto;
+}
+
+.custom-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 3px; /* mb-3 spacing */
+}
+
+.custom-sub-title {
+    font-size: 20px;
+    margin-bottom: 3px; /* mb-3 spacing */
+}
+
+.no-mb {
+    margin-bottom: 0px !important;
+}
+
+.no-mt {
+    margin-top: 0px !important;
+}
+
+.m-4-tb {
+    margin-top: 4px;
+    margin-bottom: 5px;
+}
+
+.custom-type {
+    margin-bottom: 3px; /* mb-3 spacing */
+}
+
+.custom-id {
+    margin-bottom: 3px; /* mb-3 spacing */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.custom-description {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}

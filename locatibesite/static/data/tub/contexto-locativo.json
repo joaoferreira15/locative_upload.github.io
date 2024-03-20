@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "geo": {
+        "type": "GeoCoordinates",
+        "latitude": 41.54833333333333,
+        "longitude": -8.42686111111111,
+        "elevation": null
+      }
+    },
+    {
+      "geo": {
+        "type": "GeoCoordinates",
+        "latitude": 41.54002777777777,
+        "longitude": -8.398583333333333,
+        "elevation": null
+      }
+    },
+    {
+      "geo": {
+        "type": "GeoCoordinates",
+        "latitude": 41.549305555555556,
+        "longitude": -8.433861111111112,
+        "elevation": null
+      }
+    },
+    {
+      "geo": {
+        "type": "GeoCoordinates",
+        "latitude": 41.55130555555555,
+        "longitude": -8.425333333333333,
+        "elevation": null
+      }
+    }
+  ]
+}

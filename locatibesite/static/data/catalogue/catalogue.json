@@ -1,0 +1,189 @@
+{
+    "caracterization": {
+        "id": "30307",
+        "type": "locative.locative_resource",
+        "name": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  ",
+        "description": "Escultura de H\u00c9LDER CARVALHO | GERARDO ESTEVES  , localizada em LARGO DE S. PAULO  ",
+        "photo": {
+            "url": "https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/Est\u00e1tua D. Frei Bartolomeu dos M\u00e1rtiresA.jpg",
+            "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
+        }
+    },
+    "creativeWork": {
+        "identifier": "001",
+        "genre": "Type 1",
+        "name": "My Favorite Restaurant: Review",
+        "description": "Locative Resource about a Restaurant review",
+        "publisher": {
+            "name": "João Ferreira"
+        },
+        "datePublished": "2023-12-20",
+        "fileFormat": "Json"
+    },
+    "entity": {
+        "name": "Leonardo da Vinci",
+        "birthDate": "1452-04-15",
+        "deathDate": "1519-05-02",
+        "identifier": "Italian Renaissance",
+        "description": "Polymath, painter, sculptor, architect, scientist, writer, and inventor.",
+        "email": "john.doe@example.com",
+        "telephone": "912345678",
+        "url": "http://www.example-publishing.com"
+    },
+    "postalAddress": {
+        "streetAddress": "123 Main Street",
+        "addressLocality": "Cityville",
+        "addressRegion": "Stateville",
+        "postalCode": "12345",
+        "addressCountry": "Countryland"
+    },
+    "geoCoordinates": {
+        "latitude": 37.7749,
+        "longitude": -122.4194
+    },
+    "images": [
+        {
+            "url": "https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/Est\u00e1tua D. Frei Bartolomeu dos M\u00e1rtiresA.jpg",
+            "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
+        },
+        {
+            "url": "https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/Est\u00e1tua D. Frei Bartolomeu dos M\u00e1rtiresB.jpg",
+            "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
+        }
+    ],
+    "inventory": {
+        "inventoryNumber": "Numero inventario",
+        "dateInInventory": "Data de inventario"
+    },
+    "specific": {
+        "monumentType": "Tipo de monumento",
+        "constructionMaterial": "Material de construcao",
+        "dateCreated": "Data de construcao",
+        "condition": "Estado de conservacao"
+    },
+    "pages": {
+        "filename": "struct30307",
+        "id": "30307",
+        "title": "ESTÁTUA - D. FREI BARTOLOMEU DOS MÁRTIRES  ",
+        "description": "Escultura de HÉLDER CARVALHO | GERARDO ESTEVES  , localizada em LARGO DE S. PAULO  ",
+        "thumbnail": "https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/Estátua D. Frei Bartolomeu dos MártiresA.jpg"
+    },
+    "calendar": {
+        "id": "Madrid:Rule1267",
+        "type": "GtfsCalendarRule",
+        "name": "Rule Hospital Service 1",
+        "hasService": "Madrid:Hospital_1",
+        "monday": true,
+        "tuesday": true,
+        "wednesday": true,
+        "thursday": true,
+        "friday": true,
+        "saturday": true,
+        "sunday": true,
+        "startDate": "2018-01-01",
+        "endDate": "2019-01-01",
+        "appliesOn": "2018-03-19",
+        "exceptionType": "1"
+    },
+    "composition": {
+        "id": "123",
+        "name": "nameRoute",
+        "shortName": "shortName",
+        "hasStop": "EMT:737",
+        "hasTrip": "EMT:FE0010011",
+        "hasFares": [
+            {
+                "id": "001",
+                "price": "1.55",
+                "priceCurrency": "EUR",
+                "hasStops": [
+                    {
+                        "id": "1",
+                        "name": "BOM JESUS",
+                        "geo": {
+                            "latitude": "41.554462",
+                            "longitude": "-8.381193"
+                        },
+                        "zone": "1"
+                    },
+                    {
+                        "id": "2",
+                        "name": "JESUS BOM",
+                        "geo": {
+                            "latitude": "41.554462",
+                            "longitude": "-8.381193"
+                        },
+                        "zone": "1"
+                    }
+                ]
+            }
+        ]
+    },
+    "interaction": {
+        "arrivalTime": "07:04:24",
+        "departureTime": "07:04:24"
+    },
+    "ownership": {
+        "operatedBy": "Malaga_EMT"
+    },
+    "schedule": [
+        {
+            "hasRoute": {
+                "id": "123",
+                "name": "nameRoute",
+                "shortName": "shortName",
+                "hasTrips": [
+                    {
+                        "id": "321",
+                        "tripHeadSign": "tripHeadSign",
+                        "hasStopTimes": [
+                            {
+                                "distanceTravelled": 759,
+                                "stopSequence": 4,
+                                "arrivalTime": "07:04:24",
+                                "departureTime": "07:04:24",
+                                "hasStop": {
+                                    "id": "1",
+                                    "name": "BOM JESUS",
+                                    "geo": {
+                                        "latitude": "41.554462",
+                                        "longitude": "-8.381193"
+                                    },
+                                    "zone": "1"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "hasStop": {
+                "id": "1",
+                "name": "BOM JESUS",
+                "geo": {
+                    "latitude": "41.554462",
+                    "longitude": "-8.381193"
+                },
+                "zone": "1",
+                "hasStopTimes": [
+                    {
+                        "distanceTravelled": 759,
+                        "stopSequence": 4,
+                        "arrivalTime": "07:04:24",
+                        "departureTime": "07:04:24",
+                        "hasTrip": {
+                            "id": "321",
+                            "tripHeadSign": "tripHeadSign",
+                            "hasRoute": {
+                                "id": "123",
+                                "name": "nameRoute",
+                                "shortName": "shortName"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

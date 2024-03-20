@@ -1,0 +1,63 @@
+{
+  "items": [
+    {
+      "url": "struct30307",
+      "id": "30307",
+      "title": "ESTÁTUA - D. FREI BARTOLOMEU DOS MÁRTIRES  ",
+      "description": "Escultura de HÉLDER CARVALHO | GERARDO ESTEVES  , localizada em LARGO DE S. PAULO  ",
+      "thumbnail": "https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/Estátua D. Frei Bartolomeu dos MártiresA.jpg"
+    },
+    {
+      "url": "struct30319",
+      "id": "30319",
+      "title": "ELEMENTO ESCULTÓRICO – JANELAS ABERTAS",
+      "description": "Escultura de MIGUEL NEVES OLIVEIRA  , localizada em ROTUNDA DAS BRETAS  ",
+      "thumbnail": "https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/Elemento Escultórico  Janelas AbertasA.jpg"
+    },
+    {
+      "url": "struct30327",
+      "id": "30327",
+      "title": "MONUMENTO AO EIXO ATLÂNTICO ",
+      "description": "Escultura de FRANCISCO LUCENA  , localizada em PRAÇA EIXO ATLÂNTICO   ",
+      "thumbnail": "https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/Elemento Escultórico Eixo Atlantico.jpg"
+    },
+    {
+      "url": "struct30349",
+      "id": "30349",
+      "title": "ELEMENTO ESCULTÓRICO – DRAGÃO",
+      "description": "Escultura de AURELIANO AGUIAR  , localizada em PRAÇA JOSÉ FERREIRA SALGADO  ",
+      "thumbnail": "https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/Elemento Escultórico DragãoA.jpg"
+    },
+    {
+      "url": "struct30350",
+      "id": "30350",
+      "title": "ELEMENTO  ESCULTÓRICO TERESA WALKING ",
+      "description": "Escultura de JULIAN OPIE , localizada em AV. DR. FRANCISCO PIRES GONÇALVES  ",
+      "thumbnail": "https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/53 - Elemento Escultórico Teresa.jpg"
+    },
+    {
+      "url": "struct30351",
+      "id": "30351",
+      "title": "ESTÁTUA  – CÓNEGO DE MELO",
+      "description": "Escultura de FERNANDO JORGE  , localizada em LARGO MONTE DE ARCOS  ",
+      "thumbnail": "https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/Estátua Cónego de Melo.jpg"
+    },
+    {
+      "url": "struct30352",
+      "id": "30352",
+      "title": "BUSTO - ALBERTO CRUZ",
+      "description": "Escultura de ANTÓNIO CARLOS VILA CHÃ ESTEVES  , localizada em LARGO SRA. A. BRANCA  ",
+      "thumbnail": "https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/121802630_4569096449830014_554366477453223077_n.jpg"
+    },
+    {
+      "title": "Site Oficial da insituição CMB",
+      "description": "Clita erat ipsum et lorem et sit, sed stet lorem sit clita duojusto magna dolore erat amet",
+      "url": "https://www.cm-braga.pt/pt"
+    },
+    {
+      "title": "Página na Wikipédia referente à insituição CMB",
+      "description": "Clita erat ipsum et lorem et sit, sed stet lorem sit clita duojusto magna dolore erat amet",
+      "url": "https://pt.wikipedia.org/wiki/Braga"
+    }
+  ]
+}
