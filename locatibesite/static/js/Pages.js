@@ -56,6 +56,7 @@ class Pages extends HTMLElement {
     const template = document.createElement("template");
     template.innerHTML = `
         <div id="container" class="recurso-square-col">
+          <style id="styleDiv"></style>
           <link rel="stylesheet" type="text/css" id="css" href="">
           <div id="aresentacao" class="recurso-square">
               <div id="imagem" class="image-holder"></div>
@@ -71,7 +72,10 @@ class Pages extends HTMLElement {
 
   populateElements(data, css, pointers, produto, map) {
     const shadowRoot = this.shadowRoot;
-    shadowRoot.getElementById("css").setAttribute("href", css);
+    
+    if (css.startsWith("static") || css.startsWith("https")){
+      shadowRoot.getElementById("css").setAttribute("href", css);
+    } else { shadowRoot.getElementById("styleDiv").innerHTML = css;}
 
     const imagem = shadowRoot.getElementById("imagem");
     const descricao = shadowRoot.getElementById("descricao");

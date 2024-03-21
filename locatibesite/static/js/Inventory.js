@@ -47,6 +47,7 @@ class Inventory extends HTMLElement {
     const template = document.createElement("template");
     template.innerHTML = `
         <div id="container" class="container custom-container">
+          <style id="styleDiv"></style>
           <link rel="stylesheet" type="text/css" id="css" href="">
           <div id="inventory_data" class="text-left"></div>
         </div>
@@ -58,7 +59,11 @@ class Inventory extends HTMLElement {
 
   populateElements(data, css, pointers) {
     const shadowRoot = this.shadowRoot;
-    shadowRoot.getElementById("css").setAttribute("href", css);
+    
+    if (css.startsWith("static") || css.startsWith("https")){
+      shadowRoot.getElementById("css").setAttribute("href", css);
+    } else { shadowRoot.getElementById("styleDiv").innerHTML = css;}
+
     const inventory_data = shadowRoot.getElementById("inventory_data")
 
     // Access the nested structure using the parts

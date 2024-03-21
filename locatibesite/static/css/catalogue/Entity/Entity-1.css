@@ -57,10 +57,18 @@
     gap: 5px;
 }
 
-.custom-description {
+.custom-description-top {
     border-top: 1px solid #ddd;
     padding: 10px;
     text-align: center;
+    margin-bottom: 3px;
+}
+
+.custom-description {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 3px;
 }
 
 .border {

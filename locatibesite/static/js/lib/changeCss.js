@@ -5,9 +5,8 @@ function changeCssAttribute(elementId, newCssValue) {
         targetElement.setAttribute('css', newCssValue);
     } else {
         console.error(`Element with ID '${elementId}' not found.`);
-    }   
+    }
 }
-
 
 function createCssAttribute(elementId, newCssValue) {
     const targetElement = document.getElementById(elementId);
@@ -16,19 +15,19 @@ function createCssAttribute(elementId, newCssValue) {
     const newPage = window.open(developmentPageUrl, '_blank');
 
     if (newPage) {
-        // Listen for message from the child window
-        window.addEventListener('message', event => {
-            if (event.data && event.data.action === 'saveChangesCompleted') {
-                console.log('Message "saveChangesCompleted" received from child window');
-                // Proceed with the rest of the code after saveChanges completes in the child window
+        // Check for the existence of the specific localStorage or sessionStorage item
+        const checkItemInterval = setInterval(() => {
+            const storedCSS = localStorage.getItem(`customCSS-${newCssValue}`) || sessionStorage.getItem(`customCSS-${newCssValue}`);
+            if (storedCSS) {
+                clearInterval(checkItemInterval); // Stop checking once the item is found
+                // Proceed with the rest of the code after the item is set
                 if (targetElement) {
-                    targetElement.setAttribute('css', "");
-                    targetElement.setAttribute('css', newCssValue);
+                    targetElement.setAttribute('css', storedCSS);
                 } else {
                     console.error(`Element with ID '${elementId}' not found.`);
                 }
             }
-        });
+        }, 100); // Check every 100 milliseconds
     } else {
         console.error('Failed to open the development page.');
     }
@@ -37,58 +36,35 @@ function createCssAttribute(elementId, newCssValue) {
 
 
 
-function saveChanges() {
-    const newCssValue = document.getElementById('code-editor').value;
-    
-    // Send the updated CSS content and file path to the server using AJAX
-    const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                console.log('Changes saved successfully!');
-            } else {
-                console.error('Failed to save changes:', xhr.statusText);
-            }
-        }
-    };
 
-    // Replace 'save_css.php' with the server-side script or endpoint for saving the changes
-    const urlParams = new URLSearchParams(window.location.search);
-    const cssFilePath = urlParams.get('filePath');
 
-    // Construct the parameters to be sent to the server
-    const params = 'cssFilePath=' + encodeURIComponent(cssFilePath) + '&cssContent=' + encodeURIComponent(newCssValue);
 
-    xhr.open('POST', "http://localhost:5000/update-css", true);
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhr.send(params);
-    
-    // Close the window or navigate back to the main page
-    window.opener.postMessage({ action: 'saveChangesCompleted' }, '*');
-    //window.close();
+function applyCSS(storageType) {
+    var cssCode = document.getElementById("code-editor").value;
+    var cssFilePath = getQueryParam('filepath');
+    storeCSS(cssFilePath, storageType, cssCode);
 }
 
-
-function loadCssFile(filePath) {
-    const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            document.getElementById('code-editor').value = xhr.responseText;
-        }
-    };
-    xhr.open('GET', filePath, true);
-    xhr.send();
+function getQueryParam(name) {
+    // Get query parameters from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    // Return the value of the specified query parameter
+    return urlParams.get(name);
 }
 
-// Execute the function when the page is loaded
-document.addEventListener("DOMContentLoaded", function() {
-    // Get the CSS file path from the query parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    const cssFilePath = urlParams.get('filePath');
-
-    // Load the CSS file content into the code editor
-    if (cssFilePath) {
-        loadCssFile(cssFilePath);
+function storeCSS(cssFilePath, storageType, cssCode) {
+    if (storageType === 'localStorage') {
+        localStorage.setItem(`customCSS-${cssFilePath}`, cssCode);
+    } else if (storageType === 'sessionStorage') {
+        sessionStorage.setItem(`customCSS-${cssFilePath}`, cssCode);
     }
-});
+}
 
+function applyStoredCSS() {
+    var storedCSS = localStorage.getItem('customCSS') || sessionStorage.getItem('customCSS');
+    if (storedCSS) {
+        var styleTag = document.createElement("style");
+        styleTag.innerHTML = storedCSS;
+        document.head.appendChild(styleTag);
+    }
+}

@@ -67,6 +67,7 @@ class GeoCoordinates extends HTMLElement {
     const template = document.createElement("template");
     template.innerHTML = `
         <div id="map-geo-coordinates" class="container custom-container">
+          <style id="styleDiv"></style>
           <link rel="stylesheet" type="text/css" id="css" href="">
           <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
           <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -80,7 +81,11 @@ class GeoCoordinates extends HTMLElement {
 
   populateElements(data, css, pointers, pattern) {
     const shadowRoot = this.shadowRoot;
-    shadowRoot.getElementById("css").setAttribute("href", css);
+    
+    if (css.startsWith("static") || css.startsWith("https")){
+      shadowRoot.getElementById("css").setAttribute("href", css);
+    } else { shadowRoot.getElementById("styleDiv").innerHTML = css;}
+
     const container = shadowRoot.getElementById("map-geo-coordinates");
     const geo_coordinates = shadowRoot.getElementById("geo_coordinates");
 

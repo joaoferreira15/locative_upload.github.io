@@ -49,6 +49,7 @@ class Images extends HTMLElement {
     const template = document.createElement("template");
     template.innerHTML = `
         <div id="container" class="custom-container">
+          <style id="styleDiv"></style>
           <link rel="stylesheet" type="text/css" id="css" href="">
           <div id="images" class="gallery text-left"></div>
         </div>
@@ -60,19 +61,28 @@ class Images extends HTMLElement {
 
   populateElements(data, css, pointers) {
     const shadowRoot = this.shadowRoot;
-    shadowRoot.getElementById("css").setAttribute("href", css);
+    
+    if (css.startsWith("static") || css.startsWith("https")){
+      shadowRoot.getElementById("css").setAttribute("href", css);
+    } else { shadowRoot.getElementById("styleDiv").innerHTML = css;}
 
     const container = shadowRoot.getElementById("images");
 
     // Access the nested structure using the parts
     let keysToSearchList = ["images"];
     const resultList = getPathFromPointers(data, pointers, keysToSearchList);
+    console.log("resultList", resultList)
 
     for (const { path, lastKey } of resultList) {
       const n_rows = Object.keys(path).length
       console.log(path)
-      if (path.images && keysToSearchList.includes("images")) {
-        let pathImages = path.images
+      console.log(lastKey)
+
+      let pathImages = ""
+      if (lastKey == "images" && !path.images) {pathImages = path} else if (path.images) { pathImages = path.images}
+      console.log(pathImages)
+
+      if (pathImages != "" && keysToSearchList.includes("images")) {
         const registoInstance = new Titulo("Images", "", "Fotografias", ["custom-title", "m-4-tb"]);
 
         const div = document.createElement("div")

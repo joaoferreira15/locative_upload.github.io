@@ -96,6 +96,7 @@ class MapComponent extends HTMLElement {
         const template = document.createElement("template");
         template.innerHTML = `
         <div id="map-general" class="container">
+          <style id="styleDiv"></style>
           <link rel="stylesheet" type="text/css" id="css" href="">
           <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
           <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -108,7 +109,11 @@ class MapComponent extends HTMLElement {
 
     populateElements(data, css, pointers, pattern, componentID) {
         const shadowRoot = this.shadowRoot;
-        shadowRoot.getElementById("css").setAttribute("href", css);
+        
+        if (css.startsWith("static") || css.startsWith("https")){
+            shadowRoot.getElementById("css").setAttribute("href", css);
+        } else { shadowRoot.getElementById("styleDiv").innerHTML = css;}
+
         const container = shadowRoot.getElementById("map-general");
 
         if (pattern == "2" || pattern == "fixed") {
