@@ -78,7 +78,7 @@ class Json extends HTMLElement {
         <div class="container">
           <link rel="stylesheet" type="text/css" id="css" href="">
           <div id="aresentacao" class="all_centredR">
-            <div id="json_data"></div>
+          <div id="json_data" class="jsonDiv"></div>
           </div>
         </div>
       `;

@@ -11,6 +11,10 @@ h2, p {
     height: auto;
 }
 
+.jsonDiv {
+    overflow: auto;
+}
+
 .custom-logo {
     width: 40%;
     height: auto;
