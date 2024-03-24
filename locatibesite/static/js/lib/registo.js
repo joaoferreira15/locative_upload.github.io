@@ -18,7 +18,7 @@ export default class Registo extends HTMLElement {
 
       try {
           const row = document.createElement("p");
-          row.id = `${type}_${key}`;
+          row.id = `${type}Registo`;
 
           if (key == "") {
               row.textContent = `${value}`;

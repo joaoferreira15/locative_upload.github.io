@@ -22,9 +22,18 @@ class Composition extends HTMLElement {
     const pointers = JSON.parse(pointers_string.replace(/'/g, '"'));
 
     // Fetch data from JSON and populate the elements
-    fetchData(json)
-      .then(data => this.populateElements(data, css, pointers))
-      .catch(error => this.handleError(error));
+    if (json.startsWith("{") && json.endsWith("}")) {
+      try {
+        const data = JSON.parse(json);
+        this.populateElements(data, css, pointers);
+      } catch (error) {
+        this.handleError(error);
+      }
+    } else {
+      fetchData(json)
+        .then(data => this.populateElements(data, css, pointers))
+        .catch(error => this.handleError(error));
+    }
   }
 
 
@@ -64,15 +73,18 @@ class Composition extends HTMLElement {
 
   populateElements(data, css, pointers) {
     const shadowRoot = this.shadowRoot;
-    
-    if (css.startsWith("static") || css.startsWith("https")){
+
+    if (css.startsWith("static") || css.startsWith("https")) {
+      shadowRoot.getElementById("styleDiv").innerHTML = "";
       shadowRoot.getElementById("css").setAttribute("href", css);
-    } else { shadowRoot.getElementById("styleDiv").innerHTML = css;}
+    } else {
+      shadowRoot.getElementById("css").setAttribute("href", "");
+      shadowRoot.getElementById("styleDiv").innerHTML = css;
+    }
 
     const composition_data = shadowRoot.getElementById("composition_data");
 
     // Access the nested structure using the parts
-    // MAKE A SEARCH ENINE FOR KEYS STARTED WITH "has"
     let keysToSearchList = ["hasStop", "hasTrip", "hasService", "hasRoute", "hasFares", "hasStops", "hasTrips", "hasServices", "hasRoutes"];
     let valuesToCheck = ["hasStop", "hasTrip", "hasService", "hasRoute", "hasStops", "hasTrips", "hasServices", "hasRoutes"];
     const resultList = getPathFromPointers(data, pointers, keysToSearchList);
@@ -101,11 +113,50 @@ class Composition extends HTMLElement {
           const value = path[key];
           //console.log(value)
           if (typeof value == "object") {
-            //console.log(value)
-            const divCol = document.createElement("div")
-            divCol.classList.add("custom-id-col")
+            if (Array.isArray(value)) {
+              //console.log(value)
+              const divCol = document.createElement("div")
+              divCol.classList.add("custom-id-col")
 
-            value.forEach(item => {
+              value.forEach(item => {
+                const div = document.createElement("div")
+                div.classList.add("custom-id")
+
+                let names = ["name", "tripHeadSign", "longName"]
+                let namePath = ""
+                let nameValue = ""
+
+                for (const name of names) {
+                  switch (name) {
+                    case "name":
+                      if (item.name) { namePath = item.name; nameValue = item.name }
+                      break;
+                    case "tripHeadSign":
+                      if (item.tripHeadSign) { namePath = item.tripHeadSign; nameValue = item.tripHeadSign }
+                      break;
+                    case "longName":
+                      if (item.longName) { namePath = item.longName; if (item.shortName) { nameValue = `${item.shortName} | ${item.longName}` } }
+                      break;
+                  }
+                }
+
+                const icon = document.createElement("ion-icon");
+                icon.setAttribute("name", "clipboard-outline");
+                icon.classList.add("icon");
+
+                const registoInstance = new Registo("Composition", `${keyNoPrefix} called`, nameValue, ["custom-type", "m-4-tb"]);
+
+                div.appendChild(icon);
+                div.appendChild(registoInstance);
+                divCol.appendChild(div)
+              })
+              composition_data.appendChild(divCol)
+            }
+            else {
+              //console.log(value)
+              const divCol = document.createElement("div")
+              divCol.classList.add("custom-id-col")
+
               const div = document.createElement("div")
               div.classList.add("custom-id")
 
@@ -116,13 +167,13 @@ class Composition extends HTMLElement {
               for (const name of names) {
                 switch (name) {
                   case "name":
-                    if (item.name) { namePath = item.name; nameValue = item.name }
+                    if (value.name) { namePath = value.name; nameValue = value.name }
                     break;
                   case "tripHeadSign":
-                    if (item.tripHeadSign) { namePath = item.tripHeadSign; nameValue = item.tripHeadSign }
+                    if (value.tripHeadSign) { namePath = value.tripHeadSign; nameValue = value.tripHeadSign }
                     break;
                   case "longName":
-                    if (item.longName) { namePath = item.longName; if (item.shortName) { nameValue = `${item.shortName} | ${item.longName}` } }
+                    if (value.longName) { namePath = value.longName; if (value.shortName) { nameValue = `${value.shortName} | ${value.longName}` } }
                     break;
                 }
               }
@@ -136,8 +187,9 @@ class Composition extends HTMLElement {
               div.appendChild(icon);
               div.appendChild(registoInstance);
               divCol.appendChild(div)
-            })
-            composition_data.appendChild(divCol)
+
+              composition_data.appendChild(divCol)
+            }
           }
 
           else if (typeof value != "object") {

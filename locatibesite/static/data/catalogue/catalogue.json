@@ -5,7 +5,7 @@
         "name": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  ",
         "description": "Escultura de H\u00c9LDER CARVALHO | GERARDO ESTEVES  , localizada em LARGO DE S. PAULO  ",
         "photo": {
-            "url": "https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/Est\u00e1tua D. Frei Bartolomeu dos M\u00e1rtiresA.jpg",
+            "url": "static/images/Est\u00e1tua D. Frei Bartolomeu dos M\u00e1rtiresA.jpg",
             "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
         }
     },
@@ -43,11 +43,11 @@
     },
     "images": [
         {
-            "url": "https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/Est\u00e1tua D. Frei Bartolomeu dos M\u00e1rtiresA.jpg",
+            "url": "static/images/Est\u00e1tua D. Frei Bartolomeu dos M\u00e1rtiresA.jpg",
             "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
         },
         {
-            "url": "https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/Est\u00e1tua D. Frei Bartolomeu dos M\u00e1rtiresB.jpg",
+            "url": "static/images/Est\u00e1tua D. Frei Bartolomeu dos M\u00e1rtiresB.jpg",
             "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
         }
     ],
@@ -66,7 +66,7 @@
         "id": "30307",
         "title": "ESTÁTUA - D. FREI BARTOLOMEU DOS MÁRTIRES  ",
         "description": "Escultura de HÉLDER CARVALHO | GERARDO ESTEVES  , localizada em LARGO DE S. PAULO  ",
-        "thumbnail": "https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/Estátua D. Frei Bartolomeu dos MártiresA.jpg"
+        "thumbnail": "static/images/Estátua D. Frei Bartolomeu dos MártiresA.jpg"
     },
     "calendar": {
         "id": "Madrid:Rule1267",
@@ -185,5 +185,10 @@
                 ]
             }
         }
-    ]
+    ],
+    "presentation": {
+        "title": "Patrimonio: ESTÁTUA - D. FREI BARTOLOMEU DOS MÁRTIRES",
+        "description": "Listing of all the information related to 'ESTÁTUA - D. FREI BARTOLOMEU DOS MÁRTIRES' in the possession of the CMB institution",
+        "thumbnail": "static/images/20200805_174914.jpg"
+    }
 }

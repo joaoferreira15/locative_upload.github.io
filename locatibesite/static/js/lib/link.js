@@ -1,36 +1,48 @@
 export default class Link extends HTMLElement {
-    constructor(type, key, value) {
+    constructor(type, key, value, url, classV) {
         super();
-  
+
         // Fetch data from JSON and populate the elements
-        this.populateElements(type, key, value, (row) => {
+        this.populateElements(type, key, value, url, classV, (row) => {
             this.appendChild(row);
         });
     }
 
-    populateElements(type, key, value) {
+    formatInventoryNumber(input) {
+        return input.replace(/([a-z])([A-Z])/g, '$1 $2')
+            .replace(/^./, function (str) { return str.toUpperCase(); });
+    }
 
+    populateElements(type, key, value, url, classV, callback) {
         try {
             const row = document.createElement("a");
-            row.id = `${type}_${key}`
-            row.classList.add("centrado")
-            if (key == "branco") {
-                row.classList.add("branco")
-            }
+            row.id = `${type}Link`
             row.textContent = value
-            row.href = value;
+            
+            if (url.startsWith("https")) { row.href = url = url; } 
+            else { row.href = url = `${url}.html`; }
+            
             row.target = "_blank";
-            callback(row);
 
+            if (classV !== "") {
+                if (typeof classV === "string") {
+                    row.classList.add(classV);
+                } else if (Array.isArray(classV)) {
+                    for (const cls of classV) {
+                        row.classList.add(cls);
+                    }
+                }
+            }
+
+            callback(row);
         } catch (error) {
             this.handleError(error);
         }
     }
-  
+
     handleError(error) {
         console.error('Erro ao carregar o arquivo JSON:', error);
     }
-  }
-  
-  customElements.define("link-component", Link);
-  
+}
+
+customElements.define("link-component", Link);

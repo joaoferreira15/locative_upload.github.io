@@ -18,7 +18,7 @@ export default class SubTitulo extends HTMLElement {
 
         try {
             const row = document.createElement("h3");
-            row.id = `${type}_${key}`
+            row.id = `${type}SubTitulo`
             row.classList.add("centrado")
             if (key == ""){
                 row.textContent = `${value}`;

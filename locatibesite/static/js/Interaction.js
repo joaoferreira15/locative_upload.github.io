@@ -1,6 +1,6 @@
 import Titulo from "./lib/titulo.js";
 import Registo from "./lib/registo.js";
-import { fetchData, getPathFromPointers, updateValue} from "./lib/functions.js"
+import { fetchData, getPathFromPointers, updateValue } from "./lib/functions.js"
 
 class Interaction extends HTMLElement {
     constructor() {
@@ -19,9 +19,18 @@ class Interaction extends HTMLElement {
         const pointers = JSON.parse(pointers_string.replace(/'/g, '"'));
 
         // Fetch data from JSON and populate the elements
-        fetchData(json)
-            .then(data => this.populateElements(data, css, pointers))
-            .catch(error => this.handleError(error));
+        if (json.startsWith("{") && json.endsWith("}")) {
+            try {
+                const data = JSON.parse(json);
+                this.populateElements(data, css, pointers);
+            } catch (error) {
+                this.handleError(error);
+            }
+        } else {
+            fetchData(json)
+                .then(data => this.populateElements(data, css, pointers))
+                .catch(error => this.handleError(error));
+        }
     }
 
 
@@ -61,10 +70,14 @@ class Interaction extends HTMLElement {
 
     populateElements(data, css, pointers) {
         const shadowRoot = this.shadowRoot;
-        
-        if (css.startsWith("static") || css.startsWith("https")){
+
+        if (css.startsWith("static") || css.startsWith("https")) {
+            shadowRoot.getElementById("styleDiv").innerHTML = "";
             shadowRoot.getElementById("css").setAttribute("href", css);
-        } else { shadowRoot.getElementById("styleDiv").innerHTML = css;}
+        } else {
+            shadowRoot.getElementById("css").setAttribute("href", "");
+            shadowRoot.getElementById("styleDiv").innerHTML = css;
+        }
 
         const interaction_data = shadowRoot.getElementById("interaction_data");
 
@@ -91,7 +104,7 @@ class Interaction extends HTMLElement {
                     icon.classList.add("icon");
 
                     const registoInstance2 = new Registo("Caracterization", "arrivalTime", path.arrivalTime, ["custom-type", "m-4-tb"]);
-                    
+
                     div.appendChild(icon);
                     div.appendChild(registoInstance2);
 

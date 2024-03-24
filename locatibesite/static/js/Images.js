@@ -21,9 +21,18 @@ class Images extends HTMLElement {
     //const pointers = [{ path: "No Path" }];
 
     // Fetch data from JSON and populate the elements
-    fetchData(json)
-      .then(data => this.populateElements(data, css, pointers))
-      .catch(error => this.handleError(error));
+    if (json.startsWith("{") && json.endsWith("}")) {
+      try {
+        const data = JSON.parse(json);
+        this.populateElements(data, css, pointers);
+      } catch (error) {
+        this.handleError(error);
+      }
+    } else {
+      fetchData(json)
+        .then(data => this.populateElements(data, css, pointers))
+        .catch(error => this.handleError(error));
+    }
   }
 
 
@@ -37,7 +46,7 @@ class Images extends HTMLElement {
     //console.log(`Attribute '${name}' changed from '${oldValue}' to '${newValue}'`);
     if (oldValue !== newValue && oldValue !== null) {
       const images = this.shadowRoot.getElementById("images");
-      images.innerHTML=""
+      images.innerHTML = ""
 
       updateValue(this, name, newValue);
     }
@@ -61,26 +70,30 @@ class Images extends HTMLElement {
 
   populateElements(data, css, pointers) {
     const shadowRoot = this.shadowRoot;
-    
-    if (css.startsWith("static") || css.startsWith("https")){
+
+    if (css.startsWith("static") || css.startsWith("https")) {
+      shadowRoot.getElementById("styleDiv").innerHTML = "";
       shadowRoot.getElementById("css").setAttribute("href", css);
-    } else { shadowRoot.getElementById("styleDiv").innerHTML = css;}
+    } else {
+      shadowRoot.getElementById("css").setAttribute("href", "");
+      shadowRoot.getElementById("styleDiv").innerHTML = css;
+    }
 
     const container = shadowRoot.getElementById("images");
 
     // Access the nested structure using the parts
     let keysToSearchList = ["images"];
     const resultList = getPathFromPointers(data, pointers, keysToSearchList);
-    console.log("resultList", resultList)
+    //console.log("resultList", resultList)
 
     for (const { path, lastKey } of resultList) {
       const n_rows = Object.keys(path).length
-      console.log(path)
-      console.log(lastKey)
+      //console.log(path)
+      //console.log(lastKey)
 
       let pathImages = ""
-      if (lastKey == "images" && !path.images) {pathImages = path} else if (path.images) { pathImages = path.images}
-      console.log(pathImages)
+      if (lastKey == "images" && !path.images) { pathImages = path } else if (path.images) { pathImages = path.images }
+      //console.log(pathImages)
 
       if (pathImages != "" && keysToSearchList.includes("images")) {
         const registoInstance = new Titulo("Images", "", "Fotografias", ["custom-title", "m-4-tb"]);

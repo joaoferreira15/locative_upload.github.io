@@ -1,0 +1,62 @@
+{
+    "schedule": [
+        {
+            "hasRoute": {
+                "id": "123",
+                "name": "nameRoute",
+                "shortName": "shortName",
+                "hasTrips": [
+                    {
+                        "id": "321",
+                        "tripHeadSign": "tripHeadSign",
+                        "hasStopTimes": [
+                            {
+                                "distanceTravelled": 759,
+                                "stopSequence": 4,
+                                "arrivalTime": "07:04:24",
+                                "departureTime": "07:04:24",
+                                "hasStop": {
+                                    "id": "1",
+                                    "name": "BOM JESUS",
+                                    "geo": {
+                                        "latitude": "41.554462",
+                                        "longitude": "-8.381193"
+                                    },
+                                    "zone": "1"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "hasStop": {
+                "id": "1",
+                "name": "BOM JESUS",
+                "geo": {
+                    "latitude": "41.554462",
+                    "longitude": "-8.381193"
+                },
+                "zone": "1",
+                "hasStopTimes": [
+                    {
+                        "distanceTravelled": 759,
+                        "stopSequence": 4,
+                        "arrivalTime": "07:04:24",
+                        "departureTime": "07:04:24",
+                        "hasTrip": {
+                            "id": "321",
+                            "tripHeadSign": "tripHeadSign",
+                            "hasRoute": {
+                                "id": "123",
+                                "name": "nameRoute",
+                                "shortName": "shortName"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

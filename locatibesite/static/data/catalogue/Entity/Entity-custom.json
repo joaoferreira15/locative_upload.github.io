@@ -1,0 +1,12 @@
+{
+    "entity": {
+        "name": "Leonardo da Vinci",
+        "birthDate": "1452-04-15",
+        "deathDate": "1519-05-02",
+        "identifier": "Italian Renaissance",
+        "description": "Polymath, painter, sculptor, architect, scientist, writer, and inventor.",
+        "email": "john.doe@example.com",
+        "telephone": "912345678",
+        "url": "http://www.example-publishing.com"
+    }
+}

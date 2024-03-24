@@ -7,14 +7,14 @@ function navigateToPage(buttonId) {
   fetch(json)
     .then(response => response.json())
     .then(data => {
-      const path = extractPath(data, pointers) 
+      const path = extractPath(data, pointers)
       window.location.href = `${path.filename}.html`;
     })
     .catch(error => console.error('Error fetching JSON:', error));
 }
 
 function navigateToPage2(filename) {
-      window.location.href = `${filename}.html`;
+  window.location.href = `${filename}.html`;
 
 }
 
@@ -50,10 +50,10 @@ function extractPath(data, pointers) {
 function navigateToMarker(pageName, mapID) {
   // Dispatch a custom event with the 'name' property
   const event = new CustomEvent("navigateToMarkerEvent", {
-      detail: {
-          name: pageName,
-          id: mapID
-      }
+    detail: {
+      name: pageName,
+      id: mapID
+    }
   });
 
   // Dispatch the event to the document
@@ -62,11 +62,34 @@ function navigateToMarker(pageName, mapID) {
   // Scroll to the map component
   const mapElement = document.getElementById(mapID);
   if (mapElement) {
-      mapElement.scrollIntoView({
-          behavior: 'smooth'
-      });
+    mapElement.scrollIntoView({
+      behavior: 'smooth'
+    });
   } else {
-      console.error(`Map element with ID ${mapID} not found.`);
+    console.error(`Map element with ID ${mapID} not found.`);
   }
 }
 
+function navigateToMarker2(latitude, longitude, mapID) {
+  // Dispatch a custom event with the 'name' property
+  const event = new CustomEvent("navigateToMarkerEventCoords", {
+    detail: {
+      latitude: latitude,
+      longitude: longitude,
+      id: mapID
+    }
+  });
+
+  // Dispatch the event to the document
+  document.dispatchEvent(event);
+
+  // Scroll to the map component
+  const mapElement = document.getElementById(mapID);
+  if (mapElement) {
+    mapElement.scrollIntoView({
+      behavior: 'smooth'
+    });
+  } else {
+    console.error(`Map element with latitude: ${latitude} and longitude: ${longitude} not found.`);
+  }
+}

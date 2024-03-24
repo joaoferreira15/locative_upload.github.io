@@ -19,9 +19,18 @@ class Specific extends HTMLElement {
     const pointers = JSON.parse(pointers_string.replace(/'/g, '"'));
 
     // Fetch data from JSON and populate the elements
-    fetchData(json)
-      .then(data => this.populateElements(data, css, pointers))
-      .catch(error => this.handleError(error));
+    if (json.startsWith("{") && json.endsWith("}")) {
+      try {
+        const data = JSON.parse(json);
+        this.populateElements(data, css, pointers);
+      } catch (error) {
+        this.handleError(error);
+      }
+    } else {
+      fetchData(json)
+        .then(data => this.populateElements(data, css, pointers))
+        .catch(error => this.handleError(error));
+    }
   }
 
 
@@ -35,7 +44,7 @@ class Specific extends HTMLElement {
     //console.log(`Attribute '${name}' changed from '${oldValue}' to '${newValue}'`);
     if (oldValue !== newValue && oldValue !== null) {
       const specific_data = this.shadowRoot.getElementById("specific_data");
-      specific_data.innerHTML=""
+      specific_data.innerHTML = ""
 
       updateValue(this, name, newValue);
     }
@@ -59,10 +68,14 @@ class Specific extends HTMLElement {
 
   populateElements(data, css, pointers) {
     const shadowRoot = this.shadowRoot;
-    
-    if (css.startsWith("static") || css.startsWith("https")){
+
+    if (css.startsWith("static") || css.startsWith("https")) {
+      shadowRoot.getElementById("styleDiv").innerHTML = "";
       shadowRoot.getElementById("css").setAttribute("href", css);
-    } else { shadowRoot.getElementById("styleDiv").innerHTML = css;}
+    } else {
+      shadowRoot.getElementById("css").setAttribute("href", "");
+      shadowRoot.getElementById("styleDiv").innerHTML = css;
+    }
 
     const specific_data = shadowRoot.getElementById("specific_data")
 
@@ -143,9 +156,9 @@ class Specific extends HTMLElement {
           icon.classList.add("icon");
 
           let registoInstance = null
-          if (path.priceCurrency){
+          if (path.priceCurrency) {
             registoInstance = new Registo("Specific", "", `Preço: ${path.price} ${path.priceCurrency}`, "m-4-tb");
-          } else {registoInstance = new Registo("Specific", "", `Preço: ${path.price} EUR`, "m-4-tb");}
+          } else { registoInstance = new Registo("Specific", "", `Preço: ${path.price} EUR`, "m-4-tb"); }
 
           div.appendChild(icon);
           div.appendChild(registoInstance);

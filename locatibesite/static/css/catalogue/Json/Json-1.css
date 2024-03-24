@@ -12,10 +12,6 @@
     margin: 20px;
 }
 
-.jsonDiv {
-    overflow: auto;
-}
-
 .apresentacao {
     display: flex;
     flex-direction: column;

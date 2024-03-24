@@ -19,18 +19,18 @@ class GeoCoordinates extends HTMLElement {
     let pattern = this.getAttribute("pattern");
     const pointers_string = this.getAttribute("pointers");
     const pointers = JSON.parse(pointers_string.replace(/'/g, '"'));
-    
-    if (pattern != "fixed" || pattern == null) {
-        windowSize(this);
-        pattern = this.getAttribute("pattern")
 
-        window.addEventListener('resize', () => {
+    if (pattern != "fixed" || pattern == null) {
+      windowSize(this);
+      pattern = this.getAttribute("pattern")
+
+      window.addEventListener('resize', () => {
         const screenWidth = window.innerWidth;
 
         GeoCoordinates.map = null
         const div_map_geo = shadowRoot.getElementById("div_map_geo")
         const geo_coordinates = shadowRoot.getElementById("geo_coordinates")
-        if (div_map_geo) {div_map_geo.remove();}
+        if (div_map_geo) { div_map_geo.remove(); }
         geo_coordinates.innerHTML = ""
 
         // Adjust attributes based on screen width
@@ -42,9 +42,18 @@ class GeoCoordinates extends HTMLElement {
       });
     }
 
-    fetchData(json)
-        .then(data => this.populateElements(data, css, pointers, pattern))
+    if (json.startsWith("{") && json.endsWith("}")) {
+      try {
+        const data = JSON.parse(json);
+        this.populateElements(data, css, pointers);
+      } catch (error) {
+        this.handleError(error);
+      }
+    } else {
+      fetchData(json)
+        .then(data => this.populateElements(data, css, pointers))
         .catch(error => this.handleError(error));
+    }
   }
 
 
@@ -58,7 +67,7 @@ class GeoCoordinates extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     //console.log(`Attribute '${name}' changed from '${oldValue}' to '${newValue}'`);
-    if (oldValue !== newValue && oldValue !== null) { updateValue(this, name, newValue);}
+    if (oldValue !== newValue && oldValue !== null) { updateValue(this, name, newValue); }
   }
 
 
@@ -81,10 +90,14 @@ class GeoCoordinates extends HTMLElement {
 
   populateElements(data, css, pointers, pattern) {
     const shadowRoot = this.shadowRoot;
-    
-    if (css.startsWith("static") || css.startsWith("https")){
+
+    if (css.startsWith("static") || css.startsWith("https")) {
+      shadowRoot.getElementById("styleDiv").innerHTML = "";
       shadowRoot.getElementById("css").setAttribute("href", css);
-    } else { shadowRoot.getElementById("styleDiv").innerHTML = css;}
+    } else {
+      shadowRoot.getElementById("css").setAttribute("href", "");
+      shadowRoot.getElementById("styleDiv").innerHTML = css;
+    }
 
     const container = shadowRoot.getElementById("map-geo-coordinates");
     const geo_coordinates = shadowRoot.getElementById("geo_coordinates");
@@ -112,10 +125,10 @@ class GeoCoordinates extends HTMLElement {
         geo_coordinates.appendChild(div)
 
         if (pattern == "1") {
-          
+
           const div_map_geo = document.createElement("div")
           div_map_geo.setAttribute("id", "div_map_geo")
-          div_map_geo.classList.add("small-map")
+          div_map_geo.classList.add("small-map", "border-map")
 
           container.appendChild(div_map_geo)
 

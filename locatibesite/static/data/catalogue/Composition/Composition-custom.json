@@ -1,0 +1,36 @@
+{
+    "composition": {
+        "id": "123",
+        "name": "nameRoute",
+        "shortName": "shortName",
+        "hasStop": "EMT:737",
+        "hasTrip": "EMT:FE0010011",
+        "hasFares": [
+            {
+                "id": "001",
+                "price": "1.55",
+                "priceCurrency": "EUR",
+                "hasStops": [
+                    {
+                        "id": "1",
+                        "name": "BOM JESUS",
+                        "geo": {
+                            "latitude": "41.554462",
+                            "longitude": "-8.381193"
+                        },
+                        "zone": "1"
+                    },
+                    {
+                        "id": "2",
+                        "name": "JESUS BOM",
+                        "geo": {
+                            "latitude": "41.554462",
+                            "longitude": "-8.381193"
+                        },
+                        "zone": "1"
+                    }
+                ]
+            }
+        ]
+    }
+}

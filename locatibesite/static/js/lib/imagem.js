@@ -11,7 +11,7 @@ export default class Imagem extends HTMLElement {
   populateElements(type, key, value, callback) {
       try {
           const row = document.createElement("img");
-          row.id = `${type}_${key}_image`
+          row.id = `${type}Imagem`
           if (key != ""){
             row.classList.add(key)
           }

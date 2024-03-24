@@ -235,6 +235,15 @@ section {
   text-align: center;
 }
 
+.gap-section {
+  margin: 40px;
+}
+
+.gap {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .recurso-square-recursos {
   background-color: #ffffff; /* Placeholder background color */
   border: 1px solid #dee2e6; /* Placeholder border color */
@@ -883,6 +892,10 @@ h3.post-title {
 
 .border-left {
   border-left: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.border {
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 

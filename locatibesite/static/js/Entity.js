@@ -21,9 +21,18 @@ class Entity extends HTMLElement {
     const pointers = JSON.parse(pointers_string.replace(/'/g, '"'));
 
     // Fetch data from JSON and populate the elements
-    fetchData(json)
-      .then(data => this.populateElements(data, css, pointers))
-      .catch(error => this.handleError(error));
+    if (json.startsWith("{") && json.endsWith("}")) {
+      try {
+        const data = JSON.parse(json);
+        this.populateElements(data, css, pointers);
+      } catch (error) {
+        this.handleError(error);
+      }
+    } else {
+      fetchData(json)
+        .then(data => this.populateElements(data, css, pointers))
+        .catch(error => this.handleError(error));
+    }
   }
 
 
@@ -39,9 +48,9 @@ class Entity extends HTMLElement {
       const papel = this.shadowRoot.getElementById("papel");
       const imagem = this.shadowRoot.getElementById("imagem");
       const entity_data = this.shadowRoot.getElementById("entity_data");
-      papel.innerHTML=""
-      imagem.innerHTML=""
-      entity_data.innerHTML=""
+      papel.innerHTML = ""
+      imagem.innerHTML = ""
+      entity_data.innerHTML = ""
 
       updateValue(this, name, newValue);
     }
@@ -69,10 +78,14 @@ class Entity extends HTMLElement {
 
   populateElements(data, css, pointers) {
     const shadowRoot = this.shadowRoot;
-    
-    if (css.startsWith("static") || css.startsWith("https")){
+
+    if (css.startsWith("static") || css.startsWith("https")) {
+      shadowRoot.getElementById("styleDiv").innerHTML = "";
       shadowRoot.getElementById("css").setAttribute("href", css);
-    } else { shadowRoot.getElementById("styleDiv").innerHTML = css;}
+    } else {
+      shadowRoot.getElementById("css").setAttribute("href", "");
+      shadowRoot.getElementById("styleDiv").innerHTML = css;
+    }
 
     const entity_data = shadowRoot.getElementById("entity_data");
     const imagem = shadowRoot.getElementById("imagem");

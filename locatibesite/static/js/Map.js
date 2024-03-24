@@ -41,10 +41,10 @@ class MapComponent extends HTMLElement {
             // Pattern Event, where the map structure to use is selected
             window.addEventListener('resize', () => {
                 const screenWidth = window.innerWidth;
-                
+
                 MapComponent.map = null
                 const divMap = shadowRoot.getElementById("div_map")
-                if (divMap) {divMap.remove();}
+                if (divMap) { divMap.remove(); }
 
                 // Adjust attributes based on screen width
                 if (screenWidth <= 900) {
@@ -55,9 +55,19 @@ class MapComponent extends HTMLElement {
             })
         };
 
-        fetchData(json)
-            .then(data => this.populateElements(data, css, pointers, pattern, componentID))
-            .catch(error => this.handleError(error));
+        // Fetch data from JSON and populate the elements
+        if (json.startsWith("{") && json.endsWith("}")) {
+            try {
+                const data = JSON.parse(json);
+                this.populateElements(data, css, pointers);
+            } catch (error) {
+                this.handleError(error);
+            }
+        } else {
+            fetchData(json)
+                .then(data => this.populateElements(data, css, pointers))
+                .catch(error => this.handleError(error));
+        }
     }
 
 
@@ -71,8 +81,8 @@ class MapComponent extends HTMLElement {
 
     attributeChangedCallback(name, oldValue, newValue) {
         //console.log(`Attribute '${name}' changed from '${oldValue}' to '${newValue}'`);
-        if (oldValue !== newValue && oldValue !== null) { updateValue(this, name, newValue);}
-      }
+        if (oldValue !== newValue && oldValue !== null) { updateValue(this, name, newValue); }
+    }
 
 
 
@@ -109,17 +119,21 @@ class MapComponent extends HTMLElement {
 
     populateElements(data, css, pointers, pattern, componentID) {
         const shadowRoot = this.shadowRoot;
-        
-        if (css.startsWith("static") || css.startsWith("https")){
+
+        if (css.startsWith("static") || css.startsWith("https")) {
+            shadowRoot.getElementById("styleDiv").innerHTML = "";
             shadowRoot.getElementById("css").setAttribute("href", css);
-        } else { shadowRoot.getElementById("styleDiv").innerHTML = css;}
+        } else {
+            shadowRoot.getElementById("css").setAttribute("href", "");
+            shadowRoot.getElementById("styleDiv").innerHTML = css;
+        }
 
         const container = shadowRoot.getElementById("map-general");
 
         if (pattern == "2" || pattern == "fixed") {
             const div_map = document.createElement("div")
             div_map.setAttribute("id", "div_map")
-            div_map.classList.add("big-map")
+            div_map.classList.add("big-map", "border-map")
             container.appendChild(div_map)
 
             // Access the nested structure using the parts
@@ -186,7 +200,7 @@ class MapComponent extends HTMLElement {
                     }
                 }
             }
-            setTimeout(function() {
+            setTimeout(function () {
                 MapComponent.map.invalidateSize();
             }, 100);
         }

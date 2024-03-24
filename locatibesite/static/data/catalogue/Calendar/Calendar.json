@@ -1,0 +1,19 @@
+{
+    "calendar": {
+        "id": "Madrid:Rule1267",
+        "type": "GtfsCalendarRule",
+        "name": "Rule Hospital Service 1",
+        "hasService": "Madrid:Hospital_1",
+        "monday": true,
+        "tuesday": true,
+        "wednesday": true,
+        "thursday": true,
+        "friday": true,
+        "saturday": true,
+        "sunday": true,
+        "startDate": "2018-01-01",
+        "endDate": "2019-01-01",
+        "appliesOn": "2018-03-19",
+        "exceptionType": "1"
+    }
+}

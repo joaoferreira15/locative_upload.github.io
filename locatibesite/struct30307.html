@@ -81,15 +81,15 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Templates Listing</a>
                     <div class="dropdown-menu bg-light m-0">
-                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/listing-sites-locativos.html" target="_blank" class="dropdown-item">Listing 1</a>
-                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/listing-sites-locativos-2.html" target="_blank" class="dropdown-item">Listing 2</a>
-                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/listing-all-1-map-n-organized.html" target="_blank" class="dropdown-item">Listing 3</a>
+                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/listing-all-1-map-n-organized.html" target="_blank" class="dropdown-item">Listing 1</a>
+                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/listing-all-1-map.html" target="_blank" class="dropdown-item">Listing 2</a>
+                        <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/listing-all-m-maps.html" target="_blank" class="dropdown-item">Listing 3</a>
                     </div>
                 </div>
 
-                 <!-- Botão de navegação para o catálogo de componentes web -->
-                 <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/catalogue.html" target="_blank" class="nav-item nav-link">Catálogo</a>
-
+                <!-- Botão de navegação para o catálogo de componentes web -->
+                <a href="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/catalogue.html" target="_blank" class="nav-item nav-link">Catálogo</a>
+                
                 <!-- Botões de navegação entre secções entre-roteiro -->
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Secções Internas</a>
@@ -119,16 +119,9 @@
     <!-- Secção para a Identificação do Roteiro Locativo -->
     <section id="page-identification-section">
         <!-- Imagem + Titulo + Descrição -->
-        <div class="container-fluid page-header padding-medium wow fadeIn" data-wow-delay="0.1s">
-            <!-- Imagem -->
-            <div class="recurso-image padding-small no-padding-top">
-                <img src="https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/images/20200805_174914.jpg" alt="Image 5">
-            </div>
-            <!-- Descrição -->
-            <div class="container text-center">
-                <h1 class="display-3 text-black mb-4 animated slideInDown">Patrimonio: ESTÁTUA - D. FREI BARTOLOMEU DOS MÁRTIRES</h1>
-                <p>Listing of all the information related to "ESTÁTUA - D. FREI BARTOLOMEU DOS MÁRTIRES" in the possession of the CMB institution</p>
-            </div>
+        <div class="container-fluid px-0">
+            <presentation-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/patrimonio/list.json'
+                pointers='[{"path": "[\"items\"][0]"}]'></presentation-component>
         </div>
 
         <!-- Mapeamento dos roteiros locativos (Localização Absoluta) -->
@@ -147,7 +140,7 @@
         <div class="container-fluid">
 
             <!-- Secção em que são encorporados os componentes web por secção de do json (divisão dos componentes em secções) -->
-            <section id="web-components-section" class=" position-relative padding-small overflow-hidden">
+            <section id="web-components-section" class=" position-relative padding-small overflow-hidden border gap-section">
                 <div class="container">
 
                     <!-- Lista -->
@@ -204,7 +197,7 @@
             <!-- Secção Orientada à navegação entre recursos locativos -->
             <!-- Links Internos (Links que apontam para outros recursos locativos e/ou secções dentro desses) -->
             <section id="inner-navigation-content"
-                class="resource-store padding-small position-relative overflow-hidden" style="display: none;">
+                class="resource-store padding-small position-relative overflow-hidden border gap-section" style="display: none;">
                 <div class="container">
 
                     <div class="container text-center">
@@ -268,7 +261,7 @@
 
 
             <!-- Secção de navegação direcionada a links externos (Conteúdo Extra não proporcionado pelos roteiros) -->
-            <section id="outer-navigation-content" class="resource-store padding-small position-relative overflow-hidden"
+            <section id="outer-navigation-content" class="resource-store padding-small position-relative overflow-hidden border gap-section"
                 style="display: none;">
                 <div class="container">
 
@@ -410,6 +403,7 @@
     <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Interaction.js></script>
     <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Composition.js></script>
     <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Ownership.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Presentation.js></script>
 
     <!-- Bootstarp script ================================================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

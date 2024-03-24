@@ -18,9 +18,18 @@ class Ownership extends HTMLElement {
         const pointers = JSON.parse(pointers_string.replace(/'/g, '"'));
 
         // Fetch data from JSON and populate the elements
-        fetchData(json)
-            .then(data => this.populateElements(data, css, pointers))
-            .catch(error => this.handleError(error));
+        if (json.startsWith("{") && json.endsWith("}")) {
+            try {
+                const data = JSON.parse(json);
+                this.populateElements(data, css, pointers);
+            } catch (error) {
+                this.handleError(error);
+            }
+        } else {
+            fetchData(json)
+                .then(data => this.populateElements(data, css, pointers))
+                .catch(error => this.handleError(error));
+        }
     }
 
 
@@ -60,10 +69,14 @@ class Ownership extends HTMLElement {
 
     populateElements(data, css, pointers) {
         const shadowRoot = this.shadowRoot;
-        
-        if (css.startsWith("static") || css.startsWith("https")){
+
+        if (css.startsWith("static") || css.startsWith("https")) {
+            shadowRoot.getElementById("styleDiv").innerHTML = "";
             shadowRoot.getElementById("css").setAttribute("href", css);
-        } else { shadowRoot.getElementById("styleDiv").innerHTML = css;}
+        } else {
+            shadowRoot.getElementById("css").setAttribute("href", "");
+            shadowRoot.getElementById("styleDiv").innerHTML = css;
+        }
 
         const ownership_data = shadowRoot.getElementById("ownership_data");
 
@@ -77,7 +90,7 @@ class Ownership extends HTMLElement {
                 const n_rows = Object.keys(path).length
 
                 if (Object.keys(path).includes(key)) {
-                    
+
                     const div = document.createElement("div")
                     div.classList.add("custom-id")
 

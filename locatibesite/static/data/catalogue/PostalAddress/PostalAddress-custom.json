@@ -1,0 +1,9 @@
+{
+    "postalAddress": {
+        "streetAddress": "123 Main Street",
+        "addressLocality": "Cityville",
+        "addressRegion": "Stateville",
+        "postalCode": "12345",
+        "addressCountry": "Countryland"
+    }
+}

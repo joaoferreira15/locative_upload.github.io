@@ -19,9 +19,18 @@ class Calendar extends HTMLElement {
         const pointers = JSON.parse(pointers_string.replace(/'/g, '"'));
 
         // Fetch data from JSON and populate the elements
-        fetchData(json)
-            .then(data => this.populateElements(data, css, pointers))
-            .catch(error => this.handleError(error));
+        if (json.startsWith("{") && json.endsWith("}")) {
+            try {
+                const data = JSON.parse(json);
+                this.populateElements(data, css, pointers);
+            } catch (error) {
+                this.handleError(error);
+            }
+        } else {
+            fetchData(json)
+                .then(data => this.populateElements(data, css, pointers))
+                .catch(error => this.handleError(error));
+        }
     }
 
 
@@ -62,16 +71,20 @@ class Calendar extends HTMLElement {
     populateElements(data, css, pointers) {
         const shadowRoot = this.shadowRoot;
 
-        if (css.startsWith("static") || css.startsWith("https")){
+        if (css.startsWith("static") || css.startsWith("https")) {
+            shadowRoot.getElementById("styleDiv").innerHTML = "";
             shadowRoot.getElementById("css").setAttribute("href", css);
-        } else { shadowRoot.getElementById("styleDiv").innerHTML = css;}
+        } else {
+            shadowRoot.getElementById("css").setAttribute("href", "");
+            shadowRoot.getElementById("styleDiv").innerHTML = css;
+        }
 
         const calendar_data = shadowRoot.getElementById("calendar_data");
 
         // Access the nested structure using the parts
         let keysToSearchList = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "startDate", "endDate", "appliesOn", "exceptionType"];
         const resultList = getPathFromPointers(data, pointers, keysToSearchList);
-        
+
         if (resultList.length > 0) {
             const registoInstance = new Titulo("Inventory", "", "Calendar Informations", ["custom-sub-title", "no-mb"]);
             calendar_data.appendChild(registoInstance);
@@ -90,7 +103,7 @@ class Calendar extends HTMLElement {
                     availability = false;
                 } else { availability = true; }
             }
-            
+
             if (daysOfWeek && availability) {
                 let count = 0;
                 let dayString = "";

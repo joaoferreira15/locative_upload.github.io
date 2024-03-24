@@ -20,7 +20,7 @@ export default class Titulo extends HTMLElement {
       try {
           // Create the elements directly
           const row = document.createElement("h2");
-          row.id = `${type}_${key}`;
+          row.id = `${type}Titulo`;
           if (key == "") {
             row.textContent = `${valuen}`;
           }

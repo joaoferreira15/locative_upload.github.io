@@ -1,0 +1,8 @@
+{
+    "specific": {
+        "monumentType": "Tipo de monumento",
+        "constructionMaterial": "Material de construcao",
+        "dateCreated": "Data de construcao",
+        "condition": "Estado de conservacao"
+    }
+}

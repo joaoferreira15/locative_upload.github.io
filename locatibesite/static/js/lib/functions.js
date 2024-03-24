@@ -17,10 +17,10 @@ export function getPathFromPointers(data, pointers, keysToSearch) {
 
         if (pointerPath === "No Path") {
             const results = searchKeysInJson(data, keysToSearch);
-            
+
             // Use spread operator to push each item inside 'results' to 'resultsList'
             resultsList.push(...results);
-            
+
         } else {
             if (typeof pointerPath === 'string' && pointerPath.trim() !== '') {
                 const keys = pointerPath.match(/\w+/g);
@@ -47,43 +47,43 @@ export function getPathFromPointers(data, pointers, keysToSearch) {
 
 function searchKeysInJson(data, keysToSearch) {
     const results = [];
-  
+
     function recursiveSearch(currentData, currentPath = '') {
         for (const key in currentData) {
             const newPath = currentPath ? `${currentPath}.${key}` : key;
-  
+
             if (keysToSearch.includes(key)) {
-              let lastKey = '';
-              let path = data;
-  
-              const pathSegments = currentPath.split('.');
-              if (pathSegments == '') {
-                lastKey = '';
-                path = data;  
-              } else {
-                lastKey = pathSegments[pathSegments.length - 1];
-                path = data;
-                pathSegments.forEach(segment => {
-                    path[segment] = path[segment] || {};
-                    path = path[segment];
-                })
-              }
-  
-              results.push({ path, lastKey });
+                let lastKey = '';
+                let path = data;
+
+                const pathSegments = currentPath.split('.');
+                if (pathSegments == '') {
+                    lastKey = '';
+                    path = data;
+                } else {
+                    lastKey = pathSegments[pathSegments.length - 1];
+                    path = data;
+                    pathSegments.forEach(segment => {
+                        path[segment] = path[segment] || {};
+                        path = path[segment];
+                    })
+                }
+
+                results.push({ path, lastKey });
             }
-  
+
             if (typeof currentData[key] === 'object') {
                 recursiveSearch(currentData[key], newPath);
             }
         }
     }
     recursiveSearch(data);
-  
+
     return results;
-  }
+}
 
 
-export function updateValue(instance, name, newValue){
+export function updateValue(instance, name, newValue) {
     let json = instance.getAttribute('json')
     let css = instance.getAttribute('css')
     let pointers = JSON.parse(instance.getAttribute('pointers').replace(/'/g, '"'))
@@ -108,9 +108,18 @@ export function updateValue(instance, name, newValue){
             break;
     }
 
-    fetchData(json)
-        .then(data => instance.populateElements(data, css, pointers, pattern, componentID))
-        .catch(error => instance.handleError(error));
+    if (isValidJsonString(json)) {
+        try {
+            const data = JSON.parse(json);
+            instance.populateElements(data, css, pointers, pattern, componentID);
+        } catch (error) {
+            instance.handleError(error);
+        }
+    } else {
+        fetchData(json)
+            .then(data => instance.populateElements(data, css, pointers, pattern, componentID))
+            .catch(error => instance.handleError(error));
+    }
 }
 
 
@@ -139,3 +148,13 @@ export function extractSubstring(string, prefix) {
     return string;
 }
 
+
+
+export function isValidJsonString(str) {
+    try {
+        JSON.parse(str);
+        return true;
+    } catch (e) {
+        return false;
+    }
+}

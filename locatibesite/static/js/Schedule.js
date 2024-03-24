@@ -20,9 +20,18 @@ class Schedule extends HTMLElement {
     const pointers = JSON.parse(pointers_string.replace(/'/g, '"'));
 
     // Fetch data from JSON and populate the elements
-    fetchData(json)
-      .then(data => this.populateElements(data, css, pointers))
-      .catch(error => this.handleError(error));
+    if (json.startsWith("{") && json.endsWith("}")) {
+      try {
+        const data = JSON.parse(json);
+        this.populateElements(data, css, pointers);
+      } catch (error) {
+        this.handleError(error);
+      }
+    } else {
+      fetchData(json)
+        .then(data => this.populateElements(data, css, pointers))
+        .catch(error => this.handleError(error));
+    }
   }
 
 
@@ -62,10 +71,14 @@ class Schedule extends HTMLElement {
 
   populateElements(data, css, pointers) {
     const shadowRoot = this.shadowRoot;
-    
-    if (css.startsWith("static") || css.startsWith("https")){
+
+    if (css.startsWith("static") || css.startsWith("https")) {
+      shadowRoot.getElementById("styleDiv").innerHTML = "";
       shadowRoot.getElementById("css").setAttribute("href", css);
-    } else { shadowRoot.getElementById("styleDiv").innerHTML = css;}
+    } else {
+      shadowRoot.getElementById("css").setAttribute("href", "");
+      shadowRoot.getElementById("styleDiv").innerHTML = css;
+    }
 
     const schedule_data = this.shadowRoot.getElementById("schedule_data");
 
@@ -90,11 +103,11 @@ class Schedule extends HTMLElement {
               //console.log("funcionou")
 
               //if (isFirstIteration) {
-                const tableTrips = document.createElement("table");
-                tableTrips.id = "scheduleTripsTable";
-                tableTrips.classList.add("custom-table")
-                schedule_data.appendChild(tableTrips);
-                //console.log("criou")
+              const tableTrips = document.createElement("table");
+              tableTrips.id = "scheduleTripsTable";
+              tableTrips.classList.add("custom-table")
+              schedule_data.appendChild(tableTrips);
+              //console.log("criou")
               //}
 
               //console.log("second value", value)
@@ -199,10 +212,10 @@ class Schedule extends HTMLElement {
 
             if (keytoSearch == "hasStop" && key == "hasStop" && list.hasOwnProperty("hasStop")) {
               //if (isFirstIteration) {
-                const tableStops = document.createElement("table");
-                tableStops.id = "scheduleStopsTable";
-                tableStops.classList.add("custom-table")
-                schedule_data.appendChild(tableStops);
+              const tableStops = document.createElement("table");
+              tableStops.id = "scheduleStopsTable";
+              tableStops.classList.add("custom-table")
+              schedule_data.appendChild(tableStops);
               //}
 
               //const tableStops = this.shadowRoot.getElementById("scheduleStopsTable");

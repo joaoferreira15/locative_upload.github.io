@@ -21,7 +21,7 @@ export default class Description extends HTMLElement {
           }
     
           const row = document.createElement("p");
-          row.id = `${type}_${key}`;
+          row.id = `${type}Description`;
           row.classList.add("centrado", "paddingL");
           if (classV !== "") {
             if (typeof classV === "string") {
