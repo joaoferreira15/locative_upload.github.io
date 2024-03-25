@@ -2,7 +2,7 @@ import Titulo from "./lib/titulo.js";
 import Imagem from './lib/imagem.js';
 import Registo from "./lib/registo.js";
 import Description from "./lib/description.js";
-import { fetchData, getPathFromPointers, updateValue } from "./lib/functions.js"
+import { fetchData, getPathFromPointers, updateValue, isValidJsonString } from "./lib/functions.js"
 
 class Caracterization extends HTMLElement {
   constructor() {
@@ -21,7 +21,7 @@ class Caracterization extends HTMLElement {
     const pointers = JSON.parse(pointers_string.replace(/'/g, '"'));
 
     // Fetch data from JSON and populate the elements
-    if (json.startsWith("{") && json.endsWith("}")) {
+    if (isValidJsonString(json)) {
       try {
         const data = JSON.parse(json);
         this.populateElements(data, css, pointers);

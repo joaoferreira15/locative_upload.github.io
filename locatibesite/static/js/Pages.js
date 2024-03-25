@@ -1,9 +1,8 @@
-import Registo from "./lib/registo.js";
 import Description from "./lib/description.js";
 import Imagem from "./lib/imagem.js";
 import Titulo from "./lib/titulo.js";
 import Link from "./lib/link.js";
-import { fetchData, getPathFromPointers, updateValue } from "./lib/functions.js"
+import { fetchData, getPathFromPointers, updateValue, isValidJsonString } from "./lib/functions.js"
 
 class Pages extends HTMLElement {
   constructor() {
@@ -25,7 +24,7 @@ class Pages extends HTMLElement {
     //const pointers = [{ "path": 'No Path' }];
 
     // Fetch data from JSON and populate the elements
-    if (json.startsWith("{") && json.endsWith("}")) {
+    if (isValidJsonString(json)) {
       try {
         const data = JSON.parse(json);
         this.populateElements(data, css, pointers);
@@ -69,11 +68,7 @@ class Pages extends HTMLElement {
         <div id="container" class="recurso-square-col">
           <style id="styleDiv"></style>
           <link rel="stylesheet" type="text/css" id="css" href="">
-          <div id="aresentacao" class="recurso-square">
-              <div id="imagem" class="image-holder"></div>
-              <div id="descricao" class="recurso-text"></div>
-          </div>
-          <div id="navigation-button"></div>
+          <div id="apresentacao" class="recurso-square"></div>
         </div>
       `;
     return template;
@@ -92,9 +87,7 @@ class Pages extends HTMLElement {
       shadowRoot.getElementById("styleDiv").innerHTML = css;
     }
 
-    const imagem = shadowRoot.getElementById("imagem");
-    const descricao = shadowRoot.getElementById("descricao");
-    const navigationButton = this.shadowRoot.getElementById("navigation-button");
+    const apresentacao = shadowRoot.getElementById("apresentacao")
 
     // Access the nested structure using the parts
     let keysToSearchList = ["thumbnail", "title", "id", "description", "url", "geo"];
@@ -105,70 +98,82 @@ class Pages extends HTMLElement {
       //console.log("path", path)
 
       if (path.thumbnail && keysToSearchList.includes("thumbnail")) {
+        const imagem = document.createElement("div")
+        imagem.setAttribute("id", "imagem")
+        imagem.classList.add("image-holder")
+
 
         const registoInstance = new Imagem("Pages", "resource-image", path.thumbnail);
         imagem.appendChild(registoInstance)
+        apresentacao.appendChild(imagem)
 
         keysToSearchList = keysToSearchList.filter(item => item !== "thumbnail");
       }
 
-      if (path.title && keysToSearchList.includes("title")) {
-        if (path.url && keysToSearchList.includes("url")) {
-          const registoInstance = new Link("Pages", "", path.title, path.url, ["custom-title"]);
-          descricao.appendChild(registoInstance)
+      if (path.title || path.geo || path.description) {
+        const descricao = document.createElement("div")
+        descricao.setAttribute("id", "descricao")
+        descricao.classList.add("recurso-text")
 
-          keysToSearchList = keysToSearchList.filter(item => item !== "url");
-        } else {
-          const registoInstance = new Titulo("Pages", "", path.title, ["custom-title"]);
-          descricao.appendChild(registoInstance)
+        if (path.title && keysToSearchList.includes("title")) {
+          if (path.url && keysToSearchList.includes("url")) {
+            const registoInstance = new Link("Pages", "", path.title, path.url, ["custom-title-pages"]);
+            descricao.appendChild(registoInstance)
+
+            keysToSearchList = keysToSearchList.filter(item => item !== "url");
+          } else {
+            const registoInstance = new Titulo("Pages", "", path.title, ["custom-title-pages"]);
+            descricao.appendChild(registoInstance)
+          }
+
+          keysToSearchList = keysToSearchList.filter(item => item !== "title");
         }
 
-        keysToSearchList = keysToSearchList.filter(item => item !== "title");
-      }
+        //if (path.id && keysToSearchList.includes("id")) {
+        //  const registoInstance = new Registo("Pages", "ID", path.id, ["custom-type", "no-mt"]);
+        //  descricao.appendChild(registoInstance)
 
-      //if (path.id && keysToSearchList.includes("id")) {
-      //  const registoInstance = new Registo("Pages", "ID", path.id, ["custom-type", "no-mt"]);
-      //  descricao.appendChild(registoInstance)
+        //  keysToSearchList = keysToSearchList.filter(item => item !== "id");
+        //}
 
-      //  keysToSearchList = keysToSearchList.filter(item => item !== "id");
-      //}
-
-      if (path.geo) {
-        if (keysToSearchList.includes("geo")) {
-          const registoInstance = new Description("Pages", "", `Localizado em: ${path.geo.latitude}, ${path.geo.latitude}`, ["custom-type"]);
+        if (path.geo) {
+          if (keysToSearchList.includes("geo")) {
+            const registoInstance = new Description("Pages", "", `Localizado em: ${path.geo.latitude}, ${path.geo.latitude}`, ["custom-description-pages"]);
+            descricao.appendChild(registoInstance);
+            //console.log("geo", path.id)
+            keysToSearchList = keysToSearchList.filter(item => item !== "geo");
+          }
+        } else if (path.description && keysToSearchList.includes("description")) {
+          const registoInstance = new Description("Pages", "", path.description, "custom-description-pages");
           descricao.appendChild(registoInstance);
-          //console.log("geo", path.id)
-          keysToSearchList = keysToSearchList.filter(item => item !== "geo");
-        }
-      } else if (path.description && keysToSearchList.includes("description")) {
-        const registoInstance = new Description("Pages", "", path.description, "smallDescription");
-        descricao.appendChild(registoInstance);
-        //console.log("description", path.id)
-        keysToSearchList = keysToSearchList.filter(item => item !== "description");
-      }
-
-      //if (path.url && keysToSearchList.includes("url")) {
-      //  const seeRecursoButton = document.createElement('a');
-      //  if (path.url.startsWith("https")) {
-      //    seeRecursoButton.href = path.url;
-      //  } else { seeRecursoButton.href = `${path.url}.html`; }
-      //  seeRecursoButton.classList.add('btn', 'btn-medium', 'btn-black');
-      //  seeRecursoButton.target = "_blank"
-      //  seeRecursoButton.textContent = 'See Recurso';
-
-      //  navigationButton.appendChild(seeRecursoButton);
-      //}
-
-      if (produto && map) {
-        const showMapButton = document.createElement('a');
-        showMapButton.id = `button-${produto}-${map}`;
-        showMapButton.classList.add('btn', 'btn-medium', 'btn-black');
-        showMapButton.textContent = 'Show Map';
-        showMapButton.onclick = function () {
-          navigateToMarker(produto, map);
+          //console.log("description", path.id)
+          keysToSearchList = keysToSearchList.filter(item => item !== "description");
         }
 
-        navigationButton.appendChild(showMapButton);
+        //if (path.url && keysToSearchList.includes("url")) {
+        //  const seeRecursoButton = document.createElement('a');
+        //  if (path.url.startsWith("https")) {
+        //    seeRecursoButton.href = path.url;
+        //  } else { seeRecursoButton.href = `${path.url}.html`; }
+        //  seeRecursoButton.classList.add('btn', 'btn-medium', 'btn-black');
+        //  seeRecursoButton.target = "_blank"
+        //  seeRecursoButton.textContent = 'See Recurso';
+
+        //  navigationButton.appendChild(seeRecursoButton);
+        //}
+
+        //if (produto && map) {
+        //  const showMapButton = document.createElement('a');
+        //  showMapButton.id = `button-${produto}-${map}`;
+        //  showMapButton.classList.add('btn', 'btn-medium', 'btn-black');
+        //  showMapButton.textContent = 'Show Map';
+        //  showMapButton.onclick = function () {
+        //    navigateToMarker(produto, map);
+        //  }
+
+        //  navigationButton.appendChild(showMapButton);
+        //}
+        apresentacao.appendChild(descricao)
       }
     }
   }

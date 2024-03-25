@@ -1,7 +1,7 @@
 import Imagem from './lib/imagem.js';
 import Registo from "./lib/registo.js";
 import Titulo from "./lib/titulo.js";
-import { fetchData, getPathFromPointers, updateValue } from "./lib/functions.js"
+import { fetchData, getPathFromPointers, updateValue, isValidJsonString } from "./lib/functions.js"
 
 class Images extends HTMLElement {
   constructor() {
@@ -21,7 +21,7 @@ class Images extends HTMLElement {
     //const pointers = [{ path: "No Path" }];
 
     // Fetch data from JSON and populate the elements
-    if (json.startsWith("{") && json.endsWith("}")) {
+    if (isValidJsonString(json)) {
       try {
         const data = JSON.parse(json);
         this.populateElements(data, css, pointers);

@@ -1,6 +1,6 @@
 import Registo from "./lib/registo.js";
 import Titulo from "./lib/titulo.js";
-import { fetchData, getPathFromPointers, updateValue } from "./lib/functions.js"
+import { fetchData, getPathFromPointers, updateValue, isValidJsonString } from "./lib/functions.js"
 
 class Inventory extends HTMLElement {
   constructor() {
@@ -19,7 +19,7 @@ class Inventory extends HTMLElement {
     const pointers = JSON.parse(pointers_string.replace(/'/g, '"'));
 
     // Fetch data from JSON and populate the elements
-    if (json.startsWith("{") && json.endsWith("}")) {
+    if (isValidJsonString(json)) {
       try {
         const data = JSON.parse(json);
         this.populateElements(data, css, pointers);

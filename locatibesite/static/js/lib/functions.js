@@ -90,6 +90,14 @@ export function updateValue(instance, name, newValue) {
     let pattern = instance.getAttribute('pattern')
     let componentID = instance.getAttribute('id')
 
+    //console.log("name:", name);
+    //console.log("newValue:", newValue);
+    //console.log("json:", json);
+    //console.log("css:", css);
+    //console.log("pointers:", pointers);
+    //console.log("pattern:", pattern);
+    //console.log("componentID:", componentID);
+
     switch (name) {
         case "json":
             json = newValue;
@@ -104,7 +112,7 @@ export function updateValue(instance, name, newValue) {
             pattern = newValue;
             break;
         case "id":
-            pattern = newValue;
+            componentID = newValue;
             break;
     }
 
@@ -126,12 +134,25 @@ export function updateValue(instance, name, newValue) {
 
 export function windowSize(instance) {
     const windowWidth = window.innerWidth;
+    pattern = instance.getAttribute("pattern");
 
     // Adjust attributes based on screen width
-    if (windowWidth <= 900) {
-        instance.setAttribute("pattern", "1");
-    } else {
-        instance.setAttribute("pattern", "2");
+    if (windowWidth < 900) {
+        if (pattern != "1") {
+            instance.clearMapElements();
+            instance.setAttribute("pattern", "1");
+        }
+        if (pattern == null) {
+            instance.setAttribute("pattern", "1");
+        }
+    } else if (windowWidth => 900) {
+        if (pattern != "1") {
+            instance.clearMapElements();
+            instance.setAttribute("pattern", "2");
+        }
+        if (pattern == null) {
+            instance.setAttribute("pattern", "2");
+        }
     }
 }
 

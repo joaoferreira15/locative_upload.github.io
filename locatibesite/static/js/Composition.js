@@ -3,7 +3,7 @@ import Registo from "./lib/registo.js";
 import createTableRegistoLinha from "./lib/table_registo_linha.js";
 import createTableTituloLinha from "./lib/table_titulo_linha.js";
 
-import { fetchData, getPathFromPointers, extractSubstring, updateValue } from "./lib/functions.js"
+import { fetchData, getPathFromPointers, extractSubstring, updateValue, isValidJsonString } from "./lib/functions.js"
 
 class Composition extends HTMLElement {
   constructor() {
@@ -22,7 +22,7 @@ class Composition extends HTMLElement {
     const pointers = JSON.parse(pointers_string.replace(/'/g, '"'));
 
     // Fetch data from JSON and populate the elements
-    if (json.startsWith("{") && json.endsWith("}")) {
+    if (isValidJsonString(json)) {
       try {
         const data = JSON.parse(json);
         this.populateElements(data, css, pointers);

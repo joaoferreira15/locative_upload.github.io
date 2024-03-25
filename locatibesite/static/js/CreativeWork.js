@@ -2,7 +2,7 @@ import createTableTitulo from "./lib/table_titulo.js";
 import createTableRegisto from "./lib/table_registo.js";
 import Registo from "./lib/registo.js";
 import Description from "./lib/description.js";
-import { fetchData, getPathFromPointers, updateValue } from "./lib/functions.js"
+import { fetchData, getPathFromPointers, updateValue, isValidJsonString } from "./lib/functions.js"
 
 class CreativeWork extends HTMLElement {
   constructor() {
@@ -23,7 +23,7 @@ class CreativeWork extends HTMLElement {
     const pointers = JSON.parse(pointers_string.replace(/'/g, '"'));
 
     // Fetch data from JSON and populate the elements
-    if (json.startsWith("{") && json.endsWith("}")) {
+    if (isValidJsonString(json)) {
       try {
         const data = JSON.parse(json);
         this.populateElements(data, css, pointers);

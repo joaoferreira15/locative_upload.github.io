@@ -109,6 +109,18 @@ a:hover {
     gap: 5px;
 }
 
+.border-bottom {
+    border-bottom: 1px solid #ddd;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
 .custom-description-top {
     border-top: 1px solid #ddd;
     padding: 10px;
@@ -120,7 +132,6 @@ a:hover {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
-    margin-bottom: 3px;
 }
 
 .text-left {
@@ -129,6 +140,16 @@ a:hover {
 
 .custom-container {
     text-align: center;
+}
+
+.circuit-container {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.m-10 {
+margin-top: 10px;
+margin-bottom: 10px;
 }
 
 .custom-image {
@@ -140,14 +161,31 @@ a:hover {
     img.resource-image {
       width: 90%;
       margin: 0 auto;
-      display: flex;
+      object-fit: cover;
     }
+}
+
+.image-holder{
+    width: 80px !important;
+    height: 80px !important;
+    overflow: hidden !important;
 }
 
 .custom-title {
     font-size: 26px;
     font-weight: bold;
     margin-bottom: 3px; /* mb-3 spacing */
+}
+
+.custom-title-pages {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 3px; /* mb-3 spacing */
+}
+
+.custom-description-pages {
+    font-size: 12px !important;
+    margin-bottom: 3px !important; /* mb-3 spacing */
 }
 
 .no-mb {
@@ -208,6 +246,11 @@ a:hover {
     padding-top: 5px;
 }
 
+ion-icon {
+    min-width: 20px;
+    size: 20px;
+}
+
 #gallery-list {
     display: flex;
     flex-wrap: wrap;
@@ -226,10 +269,14 @@ a:hover {
 
 .big-map {
   height: 565px;
+  /*margin-top: 10px;
+  margin-bottom: 30px;*/
 }
 
 .small-map {
   height: 300px;
+  /*margin-top: 10px;
+  margin-bottom: 30px;*/
 }
 
 .custom-id {
@@ -262,10 +309,12 @@ a:hover {
 
 .custom-table {
     height: 100%;
+    width: 100%;
+    max-width: 600px;
     overflow: auto;
-    border: 1px solid black;
     margin-top: 20px;
     margin-bottom: 20px;
+    border-collapse: collapse;
 }
 
 th {
@@ -275,15 +324,13 @@ th {
     text-align: center;
     font-weight: bold;
     padding: 8px;
-    border-bottom: 1px solid #ddd;
-    border-right: 1px solid #ddd;
+    border: 1px solid #ddd;
 }
 
 td {
     font-family: "DM Sans", Verdana, sans-serif;
     text-align: center;
-    border-bottom: 1px solid #ddd;
-    border-right: 1px solid #ddd;
+    border: 1px solid #ddd;
 }
 
 .custom-container {
@@ -349,7 +396,7 @@ td {
 .recurso-square {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     text-align: left;
 }
 

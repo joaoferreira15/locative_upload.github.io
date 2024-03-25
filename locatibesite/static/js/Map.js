@@ -1,4 +1,4 @@
-import { fetchData, getPathFromPointers, updateValue, windowSize } from "./lib/functions.js"
+import { fetchData, getPathFromPointers, updateValue, isValidJsonString } from "./lib/functions.js"
 
 class MapComponent extends HTMLElement {
     static markerList = [];
@@ -22,56 +22,88 @@ class MapComponent extends HTMLElement {
         const pointers = JSON.parse(pointers_string.replace(/'/g, '"'));
 
         // Navigate Event needed to construct the map markers
-        document.addEventListener("navigateToMarkerEvent", (event) => {
-            const name = event.detail.name;
-            const mapID = event.detail.id;
-            console.log("componentID", componentID)
-
-            if (mapID == componentID) {
-                this.scrollToMarker(name);
-            }
-
-            console.log(`Received name: ${name}`);
-        });
-
         if (pattern != "fixed" || pattern == null) {
-            windowSize(this);
-            pattern = this.getAttribute("pattern")
-
-            // Pattern Event, where the map structure to use is selected
-            window.addEventListener('resize', () => {
+            window.addEventListener('load', () => {
                 const screenWidth = window.innerWidth;
-
-                MapComponent.map = null
-                const divMap = shadowRoot.getElementById("div_map")
-                if (divMap) { divMap.remove(); }
+                const pattern = this.getAttribute("pattern");
 
                 // Adjust attributes based on screen width
-                if (screenWidth <= 900) {
-                    this.setAttribute("pattern", "1")
-                } else {
-                    this.setAttribute("pattern", "2")
+                console.log("Inputs", screenWidth, pattern)
+                if (screenWidth < 900) {
+                    console.log(true)
+                    if (!pattern) {
+                        console.log(true)
+                        this.setAttribute("pattern", "0");
+                        this.setAttribute("pattern", "1");
+                    }
+                    else if (pattern != "1") {
+                        this.clearMapElements();
+                        this.setAttribute("pattern", "1");
+                    }
+                    else { return }
+                } else if (screenWidth >= 900) {
+                    if (!pattern) {
+                        this.setAttribute("pattern", "0");
+                        this.setAttribute("pattern", "2");
+                    }
+                    else if (pattern != "2") {
+                        this.clearMapElements();
+                        this.setAttribute("pattern", "2");
+                    }
+                    else { return }
                 }
-            })
-        };
+            });
+        }
 
-        // Fetch data from JSON and populate the elements
-        if (json.startsWith("{") && json.endsWith("}")) {
+        if (pattern != "fixed") {
+
+            window.addEventListener('resize', () => {
+                const screenWidth = window.innerWidth;
+                const pattern = this.getAttribute("pattern");
+
+                // Adjust attributes based on screen width
+                //console.log("Inputs", screenWidth, pattern)
+                if (screenWidth < 900) {
+                    if (pattern != "1") {
+                        this.clearMapElements();
+                        this.setAttribute("pattern", "1");
+                    }
+                } else if (screenWidth >= 900) {
+                    if (pattern != "2") {
+                        this.clearMapElements();
+                        this.setAttribute("pattern", "2");
+                    }
+                }
+            });
+        }
+
+        pattern = this.getAttribute("pattern");
+        console.log("pattern", pattern)
+
+        if (isValidJsonString(json)) {
             try {
                 const data = JSON.parse(json);
-                this.populateElements(data, css, pointers);
+                this.populateElements(data, css, pointers, pattern);
             } catch (error) {
                 this.handleError(error);
             }
         } else {
             fetchData(json)
-                .then(data => this.populateElements(data, css, pointers))
+                .then(data => this.populateElements(data, css, pointers, pattern))
                 .catch(error => this.handleError(error));
         }
     }
 
 
 
+    clearMapElements() {
+        MapComponent.map = null
+        const divMap = this.shadowRoot.getElementById("div_map")
+        if(divMap) { divMap.remove(); }
+    }
+
+    
+    
     static get observedAttributes() {
         // Lista de atributos que você deseja observar as mudanças
         return ['css', "json", "pointers", "pattern", "id"];

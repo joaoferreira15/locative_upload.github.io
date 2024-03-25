@@ -12,7 +12,7 @@ function changeAttribute(elementId, newValue) {
 function createCustomAttribute(elementId, newValue, fileType) {
     const targetElement = document.getElementById(elementId);
     // Open the development environment with the specified CSS file
-    const developmentPageUrl = `https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/develop.html?filePath=${newValue}&elementId=${elementId}&fileType=${fileType}`;
+    const developmentPageUrl = `develop.html?filePath=${newValue}&elementId=${elementId}&fileType=${fileType}`;
     const newPage = window.open(developmentPageUrl, '_blank');
     //console.log(newValue)
 

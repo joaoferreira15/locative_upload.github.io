@@ -94,8 +94,8 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Secções Internas</a>
                     <div class="dropdown-menu bg-light m-0">
-                        <a href="#Inicio" class="dropdown-item">Inicio</a>
                         <a href="#ContextoLocativo" class="dropdown-item">Contexto Locativo</a>
+                        <a href="#Descrição" class="dropdown-item">Descrição</a>
                         <a href="#agency" class="dropdown-item">Agency</a>
                         <a href="#itinerary" class="dropdown-item">Itinerary</a>
                     </div>
@@ -123,12 +123,6 @@
             <presentation-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/tub/list.json'
                 pointers='[{"path": "[\"items\"][0]"}]'></presentation-component>
         </div>
-
-        <!-- Mapeamento dos roteiros locativos (Localização Absoluta) -->
-        <div class="container-fluid px-0">
-            <map-component id="map-1" css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/tub/route.json'
-                pointers='[{"path": "[\"operatedBy\"][\"geo\"]"}]'></map-component>
-        </div>
     </section>
 
 
@@ -148,17 +142,17 @@
                     <div class="row">
 
                         <!-- Secção 1 de componentes web -->
-                        <div class="section bottom-border gap" id="Inicio">
-                            <caracterization-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/tub/route.json'
-                                pointers='[{"path": ""}]'>
-                            </caracterization-component>
-                        </div>
-
-                        <!-- Secção 2 de componentes web -->
                         <div class="section bottom-border gap" id="ContextoLocativo">
                             <circuit-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/tub/route.json'
                                 pointers='[{"path": "[\"locative_context\"][\"circuit\"]"}]'
                                 pattern='fixed'></circuit-component>
+                        </div>
+
+                        <!-- Secção 2 de componentes web -->
+                        <div class="section bottom-border gap" id="Descrição">
+                            <caracterization-component css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/WCstyle.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/tub/route.json'
+                                pointers='[{"path": ""}]'>
+                            </caracterization-component>
                         </div>
 
                         <!-- Secção 3 de componentes web -->

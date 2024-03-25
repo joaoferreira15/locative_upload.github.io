@@ -1,7 +1,7 @@
 import createTableRegistoLinha from "./lib/table_registo_linha.js";
 import createTableTituloLinha from "./lib/table_titulo_linha.js";
 
-import { fetchData, getPathFromPointers, updateValue } from "./lib/functions.js"
+import { fetchData, getPathFromPointers, updateValue, isValidJsonString } from "./lib/functions.js"
 
 class Schedule extends HTMLElement {
   constructor() {
@@ -20,7 +20,7 @@ class Schedule extends HTMLElement {
     const pointers = JSON.parse(pointers_string.replace(/'/g, '"'));
 
     // Fetch data from JSON and populate the elements
-    if (json.startsWith("{") && json.endsWith("}")) {
+    if (isValidJsonString(json)) {
       try {
         const data = JSON.parse(json);
         this.populateElements(data, css, pointers);
@@ -124,8 +124,8 @@ class Schedule extends HTMLElement {
               } else { values.push(["identifier", "---"]) }
 
               if (value.name) {
-                let size = 3
-                if (value.id) { size = 2 }
+                let size = 2
+                if (value.id) { size = 1 }
                 if (value.shortName) {
                   values.push(["name", `${value.shortName} - ${value.name}`, size])
                 } else { values.push(["name", `${value.name}`, size]) }
@@ -150,10 +150,8 @@ class Schedule extends HTMLElement {
                   } else { values.push(["identifier", "---"]) }
 
                   if (tripItem.tripHeadSign) {
-                    let size = 3
-                    if (value.id) {
-                      size = 2
-                    }
+                    let size = 2
+                    if (value.id) { size = 1 }
                     values.push(["tripHeadSign", `${tripItem.tripHeadSign}`, size])
                   } else { values.push(["tripHeadSign", "---"], size) }
 
@@ -168,7 +166,8 @@ class Schedule extends HTMLElement {
                       let titles = []
                       //console.log("item", item)
                       if (Object.keys(item).length > 0) {
-                        titles = [["stop", "Stop"], ["name", "Name"], ["arrivalTime", "Arrival Time"], ["price", "Price"]]
+                        //titles = [["stop", "Stop"], ["name", "Name"], ["arrivalTime", "Arrival Time"], ["price", "Price"]]
+                        titles = [["stop", "Stop"], ["name", "Name"], ["arrivalTime", "Arrival Time"]]
                         const registoInstance = createTableTituloLinha("Schedule", titles, "th");
                         tableTrips.appendChild(registoInstance)
                       }
@@ -190,11 +189,11 @@ class Schedule extends HTMLElement {
                         values.push(["arrivalTime", `${item.arrivalTime}`])
                       } else { values.push(["arrivalTime", "---"]) }
 
-                      if (item.price) {
-                        if (item.priceCurrency) {
-                          values.push(["price", `${item.price} ${item.priceCurrency}`])
-                        } else { values.push(["price", `${item.price} EUR`]) }
-                      } else { values.push(["price", "---"]) }
+                      //if (item.price) {
+                      //  if (item.priceCurrency) {
+                      //    values.push(["price", `${item.price} ${item.priceCurrency}`])
+                      //  } else { values.push(["price", `${item.price} EUR`]) }
+                      //} else { values.push(["price", "---"]) }
 
                       //console.log("values", values)
                       const registoInstance3 = createTableRegistoLinha("Schedule", values, "td");
@@ -223,7 +222,8 @@ class Schedule extends HTMLElement {
               let values = []
 
               if (Object.keys(value).length > 0) {
-                titles = [["trip", "Trip"], ["route", "Route"], ["arrivalTime", "Arrival Time"], ["price", "Price"]]
+                //titles = [["trip", "Trip"], ["route", "Route"], ["arrivalTime", "Arrival Time"], ["price", "Price"]]
+                titles = [["trip", "Trip"], ["route", "Route"], ["arrivalTime", "Arrival Time"]]
                 const registoInstance4 = createTableTituloLinha("Schedule", titles, "th");
                 tableStops.appendChild(registoInstance4)
               }
@@ -256,11 +256,11 @@ class Schedule extends HTMLElement {
                     values.push(["arrivalTime", `${item.arrivalTime}`])
                   } else { values.push(["arrivalTime", "---"]) }
 
-                  if (item.price) {
-                    if (item.priceCurrency) {
-                      values.push(["price", `${item.price} ${item.priceCurrency}`])
-                    } else { values.push(["price", `${item.price} EUR`]) }
-                  } else { values.push(["price", "---"]) }
+                  //if (item.price) {
+                  //  if (item.priceCurrency) {
+                  //    values.push(["price", `${item.price} ${item.priceCurrency}`])
+                  //  } else { values.push(["price", `${item.price} EUR`]) }
+                  //} else { values.push(["price", "---"]) }
 
                 })
               }

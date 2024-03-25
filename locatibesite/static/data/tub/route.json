@@ -1,12 +1,8 @@
 {
     "id": "2",
     "shortName": "2",
-    "longitudegName": "Ponte de Prado - Bom Jesus",
+    "longName": "Ponte de Prado - Bom Jesus",
     "routeType": "3",
-    "photo": {
-        "url": "static/images/Est\u00e1tua D. Frei Bartolomeu dos M\u00e1rtiresA.jpg",
-        "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
-    },
     "operatedBy": {
         "id": "ID_da_Agencia",
         "name": "Nome_da_Agencia",

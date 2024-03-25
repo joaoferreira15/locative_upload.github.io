@@ -1,5 +1,5 @@
 import Registo from "./lib/registo.js";
-import { fetchData, getPathFromPointers, updateValue, windowSize } from "./lib/functions.js"
+import { fetchData, getPathFromPointers, updateValue, isValidJsonString } from "./lib/functions.js"
 
 class GeoCoordinates extends HTMLElement {
   static mapGeo;
@@ -20,40 +20,87 @@ class GeoCoordinates extends HTMLElement {
     const pointers_string = this.getAttribute("pointers");
     const pointers = JSON.parse(pointers_string.replace(/'/g, '"'));
 
+
     if (pattern != "fixed" || pattern == null) {
-      windowSize(this);
-      pattern = this.getAttribute("pattern")
-
-      window.addEventListener('resize', () => {
+      window.addEventListener('load', () => {
         const screenWidth = window.innerWidth;
-
-        GeoCoordinates.map = null
-        const div_map_geo = shadowRoot.getElementById("div_map_geo")
-        const geo_coordinates = shadowRoot.getElementById("geo_coordinates")
-        if (div_map_geo) { div_map_geo.remove(); }
-        geo_coordinates.innerHTML = ""
+        const pattern = this.getAttribute("pattern");
 
         // Adjust attributes based on screen width
-        if (screenWidth <= 900) {
-          this.setAttribute("pattern", "1")
-        } else {
-          this.setAttribute("pattern", "2")
+        console.log("Inputs", screenWidth, pattern)
+        if (screenWidth < 900) {
+          console.log(true)
+          if (!pattern) {
+            console.log(true)
+            this.setAttribute("pattern", "0");
+            this.setAttribute("pattern", "1");
+          }
+          else if (pattern != "1") {
+            this.clearMapElements();
+            this.setAttribute("pattern", "1");
+          }
+          else { return }
+        } else if (screenWidth >= 900) {
+          if (!pattern) {
+            this.setAttribute("pattern", "0");
+            this.setAttribute("pattern", "2");
+          }
+          else if (pattern != "2") {
+            this.clearMapElements();
+            this.setAttribute("pattern", "2");
+          }
+          else { return }
         }
       });
     }
 
-    if (json.startsWith("{") && json.endsWith("}")) {
+    if (pattern != "fixed") {
+
+      window.addEventListener('resize', () => {
+        const screenWidth = window.innerWidth;
+        const pattern = this.getAttribute("pattern");
+
+        // Adjust attributes based on screen width
+        //console.log("Inputs", screenWidth, pattern)
+        if (screenWidth < 900) {
+          if (pattern != "1") {
+            this.clearMapElements();
+            this.setAttribute("pattern", "1");
+          }
+        } else if (screenWidth >= 900) {
+          if (pattern != "2") {
+            this.clearMapElements();
+            this.setAttribute("pattern", "2");
+          }
+        }
+      });
+    }
+
+    pattern = this.getAttribute("pattern");
+    console.log("pattern", pattern)
+
+    if (isValidJsonString(json)) {
       try {
         const data = JSON.parse(json);
-        this.populateElements(data, css, pointers);
+        this.populateElements(data, css, pointers, pattern);
       } catch (error) {
         this.handleError(error);
       }
     } else {
       fetchData(json)
-        .then(data => this.populateElements(data, css, pointers))
+        .then(data => this.populateElements(data, css, pointers, pattern))
         .catch(error => this.handleError(error));
     }
+  }
+
+
+
+  clearMapElements() {
+    GeoCoordinates.map = null;
+    const div_map_geo = this.shadowRoot.getElementById("div_map_geo");
+    const geo_coordinates = this.shadowRoot.getElementById("geo_coordinates");
+    if (div_map_geo) { div_map_geo.remove(); }
+    geo_coordinates.innerHTML = "";
   }
 
 
@@ -66,7 +113,7 @@ class GeoCoordinates extends HTMLElement {
 
 
   attributeChangedCallback(name, oldValue, newValue) {
-    //console.log(`Attribute '${name}' changed from '${oldValue}' to '${newValue}'`);
+    console.log(`Attribute '${name}' changed from '${oldValue}' to '${newValue}'`);
     if (oldValue !== newValue && oldValue !== null) { updateValue(this, name, newValue); }
   }
 
@@ -108,7 +155,7 @@ class GeoCoordinates extends HTMLElement {
 
     for (const { path, lastKey } of resultList) {
 
-      if (path.latitude && path.longitude && keysToSearchList.includes("latitude") && keysToSearchList.includes("longitude")) {
+      if (pattern && path.latitude && path.longitude && keysToSearchList.includes("latitude") && keysToSearchList.includes("longitude")) {
 
         const div = document.createElement("div")
         div.classList.add("custom-id")

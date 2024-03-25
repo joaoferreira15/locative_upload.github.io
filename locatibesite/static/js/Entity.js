@@ -2,7 +2,7 @@ import Registo from "./lib/registo.js";
 import Titulo from "./lib/titulo.js";
 import Description from "./lib/description.js";
 import Imagem from "./lib/imagem.js";
-import { fetchData, getPathFromPointers, updateValue } from "./lib/functions.js"
+import { fetchData, getPathFromPointers, updateValue, isValidJsonString } from "./lib/functions.js"
 
 class Entity extends HTMLElement {
   constructor() {
@@ -21,7 +21,7 @@ class Entity extends HTMLElement {
     const pointers = JSON.parse(pointers_string.replace(/'/g, '"'));
 
     // Fetch data from JSON and populate the elements
-    if (json.startsWith("{") && json.endsWith("}")) {
+    if (isValidJsonString(json)) {
       try {
         const data = JSON.parse(json);
         this.populateElements(data, css, pointers);
@@ -61,11 +61,11 @@ class Entity extends HTMLElement {
   getTemplate() {
     const template = document.createElement("template");
     template.innerHTML = `
-        <div id="container" class="container custom-container">
+        <div id="container" class="container custom-container m-10">
           <style id="styleDiv"></style>
           <link rel="stylesheet" type="text/css" id="css" href="">
           <div id="apresentacao" class="border">      
-              <div id="papel" class="border-bottom mb-10"></div> 
+              <div id="papel" class="border-bottom mb-20"></div> 
               <div id="imagem"></div>
               <div id="entity_data"></div>
           </div>
