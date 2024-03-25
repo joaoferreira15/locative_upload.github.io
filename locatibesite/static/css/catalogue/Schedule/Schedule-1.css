@@ -55,10 +55,12 @@
 
 .custom-table {
     height: 100%;
+    width: 100%;
+    max-width: 600px;
     overflow: auto;
-    border: 1px solid black;
     margin-top: 20px;
     margin-bottom: 20px;
+    border-collapse: collapse;
 }
 
 th {
@@ -68,13 +70,11 @@ th {
     text-align: center;
     font-weight: bold;
     padding: 8px;
-    border-bottom: 1px solid #ddd;
-    border-right: 1px solid #ddd;
+    border: 1px solid #ddd;
 }
 
 td {
     font-family: "DM Sans", Verdana, sans-serif;
     text-align: center;
-    border-bottom: 1px solid #ddd;
-    border-right: 1px solid #ddd;
+    border: 1px solid #ddd;
 }

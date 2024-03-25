@@ -32,7 +32,7 @@ class CreativeWork extends HTMLElement {
       }
     } else {
       fetchData(json)
-        .then(data => this.populateElements(data, css, pointers))
+        .then(data => this.populateElements(data, css, pointers, pattern))
         .catch(error => this.handleError(error));
     }
   }
@@ -84,7 +84,7 @@ class CreativeWork extends HTMLElement {
     const header_data = shadowRoot.getElementById("header_data");
     const container = shadowRoot.getElementById("container");
 
-    if (pattern === "1") {
+    if (pattern == "1") {
       // Create a table element
       const table = document.createElement("table");
       table.id = "headerTable"

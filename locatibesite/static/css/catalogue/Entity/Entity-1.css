@@ -45,6 +45,10 @@
     margin-bottom: 10px;
 }
 
+.mb-20 {
+    margin-bottom: 20px;
+}
+
 .custom-type {
     margin-bottom: 3px; /* mb-3 spacing */
 }
