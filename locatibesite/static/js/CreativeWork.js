@@ -26,7 +26,7 @@ class CreativeWork extends HTMLElement {
     if (isValidJsonString(json)) {
       try {
         const data = JSON.parse(json);
-        this.populateElements(data, css, pointers);
+        this.populateElements(data, css, pointers, pattern);
       } catch (error) {
         this.handleError(error);
       }
@@ -149,7 +149,7 @@ class CreativeWork extends HTMLElement {
         header_data.appendChild(table);
       }
 
-      else if (pattern === "2") {
+      else if (pattern == "2") {
 
         if (path.name && keysToSearchList.includes("name")) {
 
