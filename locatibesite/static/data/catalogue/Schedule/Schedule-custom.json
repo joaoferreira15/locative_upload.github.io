@@ -2,13 +2,13 @@
     "schedule": [
         {
             "hasRoute": {
-                "id": "123",
-                "name": "nameRoute",
-                "shortName": "shortName",
+                "id": "2",
+                "longName": "Ponte de Prado - Bom Jesus",
+                "shortName": "2",
                 "hasTrips": [
                     {
-                        "id": "321",
-                        "tripHeadSign": "tripHeadSign",
+                        "id": "2_305",
+                        "tripHeadSign": "BOM JESUS",
                         "hasStopTimes": [
                             {
                                 "distanceTravelled": 759,
@@ -46,12 +46,12 @@
                         "arrivalTime": "07:04:24",
                         "departureTime": "07:04:24",
                         "hasTrip": {
-                            "id": "321",
-                            "tripHeadSign": "tripHeadSign",
+                            "id": "2_305",
+                            "tripHeadSign": "BOM JESUS",
                             "hasRoute": {
-                                "id": "123",
-                                "name": "nameRoute",
-                                "shortName": "shortName"
+                                "id": "2",
+                                "longName": "Ponte de Prado - Bom Jesus",
+                                "shortName": "2"
                             }
                         }
                     }

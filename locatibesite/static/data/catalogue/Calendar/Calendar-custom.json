@@ -1,9 +1,9 @@
 {
     "calendar": {
-        "id": "Madrid:Rule1267",
+        "id": "7",
         "type": "GtfsCalendarRule",
         "name": "Rule Hospital Service 1",
-        "hasService": "Madrid:Hospital_1",
+        "hasService": "1",
         "monday": true,
         "tuesday": true,
         "wednesday": true,

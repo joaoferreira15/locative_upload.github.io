@@ -116,19 +116,19 @@ class Schedule extends HTMLElement {
               //const tableTrips = this.shadowRoot.getElementById("scheduleTripsTable");
               let values = []
 
-              if (value.id || value.name || value.shortName) {
+              if (value.id || value.longName || value.shortName) {
                 values.push(["route", `Route`])
               }
               if (value.id) {
                 values.push(["route", `${value.id}`])
               } else { values.push(["identifier", "---"]) }
 
-              if (value.name) {
+              if (value.longName) {
                 let size = 2
                 if (value.id) { size = 1 }
                 if (value.shortName) {
-                  values.push(["name", `${value.shortName} - ${value.name}`, size])
-                } else { values.push(["name", `${value.name}`, size]) }
+                  values.push(["name", `${value.shortName} - ${value.longName}`, size])
+                } else { values.push(["name", `${value.longName}`, size]) }
               } else { values.push(["name", "---"]) }
 
               const registoInstance = createTableRegistoLinha("Schedule", values, "th");
@@ -245,8 +245,8 @@ class Schedule extends HTMLElement {
                       let routeItem = tripItem.hasRoute
 
                       if (routeItem.id) {
-                        if (routeItem.name) {
-                          values.push(["route", `${routeItem.id}-${routeItem.name}`])
+                        if (routeItem.longName) {
+                          values.push(["route", `${routeItem.id}-${routeItem.longName}`])
                         } else if (!routeItem.id) { values.push(["route", `${routeItem.id}`]) }
                       } else { values.push(["nameRoute", "---"]) }
                     }

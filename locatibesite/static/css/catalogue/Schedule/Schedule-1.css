@@ -1,3 +1,11 @@
+p {
+    font-family: "DM Sans", Verdana, sans-serif;
+}
+
+h2 {
+    font-family: "Syne", Lato, sans-serif;
+}
+
 .custom-container {
     text-align: center;
 }

@@ -1,124 +1,72 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-    padding: 0 auto;
-    position: relative;
-}
-
-#containerBorder {
-    border: 1px solid black;
-    width: 90%;
-    margin: 20px;
-}
-
-.apresentacao {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding-bottom: 10px;
-    border: 1px solid black;
-}
-
-.apresentacaoT {
-    border-top: 1px solid black;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    width: 100%;
-}
-
-.apresentacaoURL {
-    border-top: 1px solid black;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: #333;
-}
-
-.apresentacaoB {
-    border-bottom: 1px solid black;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-/* Styles for the presentation elements */
-.apresentacao2 {
-    border-radius: 10px;
-    border: 1px solid black;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 90%;
-}
-
-.apresentacao3 {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.apresentacao4 {
-    display: flex;
-    flex-direction: row;
-    align-items: start;
-    margin: 0;
-    padding-bottom: 10px;
-    border: 1px solid black;
-}
-
-.all_centred {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.all_centredR {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-}
-
-pre {
-    max-width: 600px; /* Set the maximum width as needed */
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-
-.titulo {
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.padding {
-    padding-left: 20px;
-}
-
-/* Styles for the tables */
-.table1, .table2 {
-    width: 80%;
-    margin-bottom: 20px;
-    margin-top: 15px;
-}
-
 .jsonDiv {
     overflow: auto
 }
 
-.table2 {
+.custom-container {
+    text-align: center;
+}
+
+.custom-image {
+    width: 100%;
+    height: auto;
+}
+
+.custom-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 3px; /* mb-3 spacing */
+}
+
+.custom-sub-title {
+    font-size: 18px;
+    margin-bottom: 3px; /* mb-3 spacing */
+}
+
+.no-mb {
+    margin-bottom: 0px !important;
+}
+
+.no-mt {
+    margin-top: 0px !important;
+}
+
+.m-4-tb {
+    margin-top: 4px;
+    margin-bottom: 5px;
+}
+
+.custom-type {
+    margin-bottom: 3px; /* mb-3 spacing */
+}
+
+.custom-id {
+    margin-bottom: 3px; /* mb-3 spacing */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.custom-description {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.custom-table {
     height: 100%;
     overflow: auto;
     border: 1px solid black;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 th {
+    font-family: "DM Sans", Verdana, sans-serif;
     background-color: #333;
     color: white;
     text-align: center;
@@ -129,200 +77,8 @@ th {
 }
 
 td {
+    font-family: "DM Sans", Verdana, sans-serif;
     text-align: center;
     border-bottom: 1px solid #ddd;
     border-right: 1px solid #ddd;
 }
-
-/* Styles for the left image */
-.imagem {
-    width: 100%;
-    /*padding: 10px;*/
-    object-fit: contain;
-}
-
-.logo {
-    width: 40%;
-    margin-top: 10px;
-    object-fit: contain;
-    float: left;
-    border: 1px solid black;
-}
-
-.logoP {
-    width: 40%;
-    margin: 10px;
-    object-fit: contain;
-    float: left;
-}
-
-/* Styles for text elements */
-.textoCentrado {
-    flex: 1;
-    padding: 10px;
-    max-width: 80%;
-    text-align: center;
-}
-
-.centrado {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.paddingL {
-    padding-left: 10px;
-}
-/* Styles for text */
-p {
-    font-family: 'Arial', sans-serif;
-    font-size: 15px;
-    color: #333;
-    padding-right: 5px;
-}
-
-.map {
-    height: 300px; 
-    width: 100%; 
-    border-top: 1px solid black;
-}
-
-.Mzero {
-    margin: 0;
-}
-
-.MBzero {
-    margin-bottom: 0px;   
-}
-
-.MTzero {
-    margin-top: 0px;   
-}
-
-.in-line-container {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-  }
-
-  ion-icon {
-    color: #404040;
-    padding-right: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-size: 24px;
-  }
-
-.branco {
-    color: white;
-  }
-
-.small {
-  font-size: 12px;
-} 
-
-.smallDescription {
-    font-size: 8px;
-}
-
-.smallOther {
-    font-size: 8px;
-}
-
-.smallTitle {
-    font-size: 10px;
-} 
-
-.DBorder {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-.DBorderImage {
-    margin-bottom: 15px;
-}
-
-.image_list {
-    padding-bottom: 30px;
-}
-
-h2 {
-    font-size: 17px;
-    font-family: 'Arial', sans-serif;
-    margin-top: 15px;
-    color: #333;
-}
-
-#imagem_div img {
-    width: 90%; /* Ensure the image takes 100% of the container width */
-    height: auto; /* Maintain the image's aspect ratio */
-    object-fit: cover;
-}
-
-#imagem_div {
-    width: 80%; /* Ensure the image takes 100% of the container width */
-    height: 80%; /* Maintain the image's aspect ratio */
-    border-right: 1px solid black;
-}
-
-.navbar-expand-lg .navbar-nav {
-    max-height: 100vh; /* Set maximum height to the viewport height */
-    overflow-y: auto;  /* Enable vertical scrolling if the content exceeds the maximum height */
-}   
-
-.fs24 {
-    font-size: 24px;
-}
-
-.ajustado {
-    height: 100%;
-    margin-top: auto;
-    margin-bottom: auto; 
-  }
-
-@media screen and (max-width: 600px) {
-    h2 {
-        font-size: 14px;
-        font-family: 'Arial', sans-serif;
-        margin-top: 15px;
-        color: #333;
-    }
-
-    p {
-        font-family: 'Arial', sans-serif;
-        font-size: 12px;
-        color: #333;
-    }
-
-    .fs24 {
-        font-size: 18px;
-    }
-
-    .small {
-        font-size: 10px;
-    } 
-      
-    .smallDescription {
-          font-size: 8px;
-    }
-      
-    .smallOther {
-        font-size: 8px;
-    }
-    
-    .smallTitle {
-        font-size: 10px;
-    } 
-
-    .padding {
-        padding-left: 20px;
-    }
-
-    pre {
-        max-width: 400px;
-        white-space: pre-wrap;
-        word-wrap: break-word;
-    }
-}
-

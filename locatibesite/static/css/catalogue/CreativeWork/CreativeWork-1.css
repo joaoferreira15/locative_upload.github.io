@@ -1,5 +1,9 @@
-h2, p {
-    font-family: "DM Sans", Verdana, sans-serif;;
+p {
+    font-family: "DM Sans", Verdana, sans-serif;
+}
+
+h2 {
+    font-family: "Syne", Lato, sans-serif;
 }
 
 .custom-container {
@@ -51,144 +55,10 @@ h2, p {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
-    margin-bottom: 3px;
 }
 
 .text-left {
     text-align: left;
-}
-
-.custom-container {
-    text-align: center;
-}
-
-.custom-image {
-    width: 100%;
-    height: auto;
-}
-
-.custom-title {
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 3px; /* mb-3 spacing */
-}
-
-.no-mb {
-    margin-bottom: 0px !important;
-}
-
-.no-mt {
-    margin-top: 0px !important;
-}
-
-.custom-type {
-    margin-bottom: 3px; /* mb-3 spacing */
-}
-
-.custom-id {
-    margin-bottom: 3px; /* mb-3 spacing */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5px;
-}
-
-.custom-description {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-}
-
-.text-left {
-    text-align: left;
-}
-
-.custom-container {
-    text-align: center;
-}
-
-.custom-image {
-    width: 100%;
-    display: inline-block !important; 
-    height: auto;
-}
-
-.custom-title {
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 3px; /* mb-3 spacing */
-}
-
-.custom-sub-title {
-    font-size: 18px;
-    margin-bottom: 3px; /* mb-3 spacing */
-}
-
-.no-mb {
-    margin-bottom: 0px !important;
-}
-
-.no-mt {
-    margin-top: 0px !important;
-}
-
-.lyric {
-    margin: 0 auto;
-    padding-top: 5px;
-}
-
-#gallery-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.m-4-tb {
-    margin-top: 4px;
-    margin-bottom: 20px;
-}
-
-.custom-type {
-    margin-bottom: 3px; /* mb-3 spacing */
-}
-
-.big-map {
-  height: 565px;
-}
-
-.small-map {
-  height: 300px;
-}
-
-.custom-id {
-    margin-bottom: 3px; /* mb-3 spacing */
-    flex-direction: row;
-    align-items: center;
-    gap: 5px;
-}
-
-.custom-description {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-}
-
-.text-left {
-    text-align: left;
-}
-
-.gallery {
-    box-sizing: border-box;
-    margin: 5px;
-}
-
-.border {
-    border: 1px solid #ddd;
-}
-
-.border-top {
-    border-top: 1px solid #ddd;
 }
 
 .custom-table {

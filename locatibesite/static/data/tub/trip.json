@@ -24,23 +24,23 @@
           "zone": "1"
         },
         {
-          "identifier": "1",
-          "name": "BOM JESUS",
+          "identifier": "2",
+          "name": "REPÚBLICA II",
           "locative_context": {
             "geo": {
-              "latitude": "41.554462",
-              "longitude": "-8.381193"
+              "latitude": "41.553543",
+              "longitude": "-8.383646"
             }
           },
           "zone": "1"
         },
         {
-          "identifier": "1",
-          "name": "BOM JESUS",
+          "identifier": "3",
+          "name": "REPÚBLICA I",
           "locative_context": {
             "geo": {
-              "latitude": "41.554462",
-              "longitude": "-8.381193"
+              "latitude": "41.555836",
+              "longitude": "-8.385874"
             }
           },
           "zone": "1"
@@ -50,7 +50,7 @@
     {
       "section_name": "service",
       "hasService": {
-        "id": "urn:ngsi-ld:GtfsService:Madrid:Hospital_1",
+        "id": "5",
         "monday": true,
         "tuesday": true,
         "wednesday": true,
@@ -62,7 +62,7 @@
         "endDate": "2019-01-01",
         "exception_dates": [
           {
-            "id": "urn:ngsi-ld:CalendarDateRule:Malaga:Rule67",
+            "id": "5",
             "appliesOn": "2018-03-19",
             "exceptionType": "1"
           }
@@ -74,13 +74,13 @@
       "itinerary": [
         {
           "hasRoute": {
-            "id": "123",
-            "name": "nameRoute",
-            "shortName": "shortName",
+            "id": "2",
+            "longName": "Ponte de Prado - Bom Jesus",
+            "shortName": "2",
             "hasTrips": [
               {
-                "id": "321",
-                "tripHeadSign": "tripHeadSign",
+                "id": "2_305",
+                "tripHeadSign": "BOM JESUS",
                 "hasStopTimes": [
                   {
                     "distanceTravelled": 759,

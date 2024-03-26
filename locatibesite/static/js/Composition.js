@@ -245,8 +245,8 @@ class Composition extends HTMLElement {
             let titles = []
 
             if (path.id) {
-              if (path.name) {
-                values2.push(["route", `${path.id}-${path.name}`, 2])
+              if (path.longName) {
+                values2.push(["route", `${path.id}-${path.longName}`, 2])
               } else { values2.push(["route", `${path.id}`, 2]) }
               const registoInstance = createTableTituloLinha("Schedule", values2, "th");
               tableFares.appendChild(registoInstance)
