@@ -127,7 +127,7 @@ class Schedule extends HTMLElement {
                 let size = 2
                 if (value.id) { size = 1 }
                 if (value.shortName) {
-                  values.push(["name", `${value.shortName} - ${value.longName}`, size])
+                  values.push(["name", `${value.shortName} | ${value.longName}`, size])
                 } else { values.push(["name", `${value.longName}`, size]) }
               } else { values.push(["name", "---"]) }
 
@@ -237,7 +237,7 @@ class Schedule extends HTMLElement {
 
                     if (tripItem.id) {
                       if (tripItem.tripHeadSign) {
-                        values.push(["identifier", `${tripItem.id}-${tripItem.tripHeadSign}`])
+                        values.push(["identifier", `${tripItem.id} | ${tripItem.tripHeadSign}`])
                       } else if (!tripItem.tripHeadSign) { values.push(["identifier", `${tripItem.id}`]) }
                     } else { values.push(["identifier", "---"]) }
 
@@ -246,7 +246,7 @@ class Schedule extends HTMLElement {
 
                       if (routeItem.id) {
                         if (routeItem.longName) {
-                          values.push(["route", `${routeItem.id}-${routeItem.longName}`])
+                          values.push(["route", `${routeItem.id} | ${routeItem.longName}`])
                         } else if (!routeItem.id) { values.push(["route", `${routeItem.id}`]) }
                       } else { values.push(["nameRoute", "---"]) }
                     }

@@ -72,7 +72,7 @@
             "section_name": "stops",
             "hasStops": [
                 {
-                    "identifier": "1",
+                    "id": "1",
                     "name": "BOM JESUS",
                     "geo": {
                         "latitude": "41.554462",
@@ -81,24 +81,20 @@
                     "zone": "1"
                 },
                 {
-                    "identifier": "2",
+                    "id": "2",
                     "name": "REPÚBLICA II",
-                    "locative_context": {
-                        "geo": {
-                            "latitude": "41.553543",
-                            "longitude": "-8.383646"
-                        }
+                    "geo": {
+                        "latitude": "41.553543",
+                        "longitude": "-8.383646"
                     },
                     "zone": "1"
                 },
                 {
-                    "identifier": "3",
+                    "id": "3",
                     "name": "REPÚBLICA I",
-                    "locative_context": {
-                        "geo": {
-                            "latitude": "41.555836",
-                            "longitude": "-8.385874"
-                        }
+                    "geo": {
+                        "latitude": "41.555836",
+                        "longitude": "-8.385874"
                     },
                     "zone": "1"
                 }

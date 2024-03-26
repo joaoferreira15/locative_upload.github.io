@@ -22,6 +22,11 @@
     margin-bottom: 0px !important;
 }
 
+ion-icon {
+    min-width: 20px;
+    size: 20px;
+}
+
 .no-mt {
     margin-top: 0px !important;
 }

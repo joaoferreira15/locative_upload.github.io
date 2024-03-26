@@ -51,6 +51,11 @@ h2 {
     gap: 5px;
 }
 
+ion-icon {
+    min-width: 20px;
+    size: 20px;
+}
+
 .custom-description {
     border: 1px solid #ddd;
     padding: 10px;

@@ -15,6 +15,11 @@ h2 {
     height: auto;
 }
 
+ion-icon {
+    min-width: 20px;
+    size: 20px;
+}
+
 .custom-title {
     font-size: 26px;
     font-weight: bold;

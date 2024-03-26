@@ -10,6 +10,11 @@ h2 {
     text-align: center;
 }
 
+ion-icon {
+    min-width: 20px;
+    size: 20px;
+}
+
 .custom-image {
     width: 100%;
     height: auto;

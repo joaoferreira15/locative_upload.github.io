@@ -29,6 +29,11 @@ h2 {
     margin-top: 0px !important;
 }
 
+ion-icon {
+    min-width: 20px;
+    size: 20px;
+}
+
 .custom-type {
     margin-bottom: 3px; /* mb-3 spacing */
 }

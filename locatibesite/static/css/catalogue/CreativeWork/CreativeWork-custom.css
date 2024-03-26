@@ -21,8 +21,18 @@
     margin-top: 0px !important;
 }
 
+ion-icon {
+    min-width: 20px;
+    size: 20px;
+}
+
 .m-5-tb {
     margin-top: 3px;
+    margin-bottom: 5px;
+}
+
+.m-4-tb {
+    margin-top: 4px;
     margin-bottom: 5px;
 }
 

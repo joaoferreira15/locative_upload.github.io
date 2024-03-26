@@ -21,6 +21,11 @@
     border: 1px solid black;
 }
 
+ion-icon {
+    min-width: 20px;
+    size: 20px;
+}
+
 .apresentacaoT {
     border-top: 1px solid black;
     display: flex;

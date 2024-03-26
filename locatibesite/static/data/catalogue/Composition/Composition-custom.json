@@ -22,13 +22,11 @@
                         "zone": "1"
                     },
                     {
-                        "identifier": "2",
+                        "id": "2",
                         "name": "REPÚBLICA II",
-                        "locative_context": {
-                            "geo": {
-                                "latitude": "41.553543",
-                                "longitude": "-8.383646"
-                            }
+                        "geo": {
+                            "latitude": "41.553543",
+                            "longitude": "-8.383646"
                         },
                         "zone": "1"
                     }

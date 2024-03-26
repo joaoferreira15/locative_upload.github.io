@@ -13,6 +13,11 @@
     margin-bottom: 3px; /* mb-3 spacing */
 }
 
+ion-icon {
+    min-width: 20px;
+    size: 20px;
+}
+
 .no-mb {
     margin-bottom: 0px !important;
 }

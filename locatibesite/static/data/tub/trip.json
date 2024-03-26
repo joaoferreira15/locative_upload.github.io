@@ -1,5 +1,5 @@
 {
-  "identifier": "2_305",
+  "id": "2_305",
   "tripHeadSign": "BOM JESUS",
   "sections": [
     {
@@ -15,7 +15,7 @@
       "section_name": "stops",
       "hasStops": [
         {
-          "identifier": "1",
+          "id": "1",
           "name": "BOM JESUS",
           "geo": {
             "latitude": "41.554462",
@@ -24,7 +24,7 @@
           "zone": "1"
         },
         {
-          "identifier": "2",
+          "id": "2",
           "name": "REPÚBLICA II",
           "locative_context": {
             "geo": {
@@ -35,7 +35,7 @@
           "zone": "1"
         },
         {
-          "identifier": "3",
+          "id": "3",
           "name": "REPÚBLICA I",
           "locative_context": {
             "geo": {
