@@ -78,9 +78,17 @@ ion-icon {
 }
 
 .image-holder{
+    width: 100px !important;
+    height: 100px !important;
+    overflow: hidden !important;
+}
+
+@media only screen and (max-width: 900px) {
+  .image-holder{
     width: 80px !important;
     height: 80px !important;
     overflow: hidden !important;
+}
 }
 
 
