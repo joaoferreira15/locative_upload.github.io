@@ -1,0 +1,36 @@
+{
+    "circuit": [
+        {
+          "latitude": 41.594147,
+          "longitude": -8.459141
+        },
+        {
+          "latitude": 41.593258,
+          "longitude": -8.46088
+        },
+        {
+          "latitude": 41.592205,
+          "longitude": -8.45995
+        },
+        {
+          "latitude": 41.591309,
+          "longitude": -8.459158
+        },
+        {
+          "latitude": 41.591076,
+          "longitude": -8.458998
+        },
+        {
+          "latitude": 41.588036,
+          "longitude": -8.457559
+        },
+        {
+          "latitude": 41.587883,
+          "longitude": -8.45742
+        },
+        {
+          "latitude": 41.586922,
+          "longitude": -8.456326
+        }
+      ]
+}

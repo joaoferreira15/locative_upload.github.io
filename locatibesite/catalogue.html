@@ -780,6 +780,49 @@
                         </div>
                     </div>
 
+                    <!-- GeoCoordinates -->
+                    <div id="circuit-coordinates" class="row padding-medium">
+                        <!-- First Column -->
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex flex-column justify-content-center align-items-center border p-3">
+                                <h2 class="mb-3">&lt;circuit-coordinates-component&gt;</h2>
+                                <div class="nav-item dropdown">
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Css Styles</button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" onclick="changeAttribute('component-16', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/catalogue/Circuit/Circuit-1.css')">Change to style 1</a>
+                                        <a class="dropdown-item" onclick="changeAttribute('component-16', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/catalogue/Circuit/Circuit-2.css')">Change to style 2</a>
+                                        <a class="dropdown-item" onclick="createCustomAttribute('component-16', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/catalogue/Circuit/Circuit-custom.css', 'css')">Custom style</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Second Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura de Apresentação</h2>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <circuit-component id='component-16' css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/catalogue/Circuit/Circuit-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/Circuit/Circuit.json' pointers='[{"path": "circuit"}]' pattern="fixed"></circuit-component>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Third Column -->
+                        <div class="col-md-6">
+                            <div class="border p-3 mb-3">
+                                <div class="text-center mb-3">
+                                    <h2>Estrutura dos Dados</h2>
+                                    <button class="btn btn-dark" onclick="createCustomAttribute('component-16', 'https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/GeoCoordinates/GeoCoordinates-custom.json', 'json')" type="button">Data Customization</button>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <json-component id="json-component-3" css='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/css/catalogue/Json/Json-1.css' json='https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/data/catalogue/Circuit/Circuit-custom.json' pointers='[{"path": "circuit"}]'></json-component>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
         </div>
@@ -889,6 +932,7 @@
     <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Composition.js></script>
     <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Ownership.js></script>
     <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Presentation.js></script>
+    <script type="module" src=https://joaoferreira15.github.io/locative_upload.github.io/locatibesite/static/js/Circuit.js></script>
     
     <!-- Bootstarp script ================================================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

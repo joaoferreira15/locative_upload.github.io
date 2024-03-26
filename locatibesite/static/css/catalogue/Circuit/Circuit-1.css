@@ -1,0 +1,77 @@
+p {
+    font-family: "DM Sans", Verdana, sans-serif;
+}
+
+h2 {
+    font-family: "Syne", Lato, sans-serif;
+}
+
+.custom-container {
+    text-align: center;
+}
+
+.circuit-container {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.border-map {
+    border: 1px solid #535759;
+}
+
+.small-map {
+    height: 300px;
+    /*margin-top: 10px;
+    margin-bottom: 30px;*/
+  }
+
+.custom-image {
+    width: 100%;
+    height: auto;
+}
+
+.custom-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 3px; /* mb-3 spacing */
+}
+
+.no-mb {
+    margin-bottom: 0px !important;
+}
+
+.no-mt {
+    margin-top: 0px !important;
+}
+
+ion-icon {
+    min-width: 20px;
+    size: 20px;
+}
+
+.custom-type {
+    margin-bottom: 3px; /* mb-3 spacing */
+}
+
+.custom-id {
+    margin-bottom: 3px; /* mb-3 spacing */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.custom-description {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.map {
+    height: 300px;
+    border: 1px solid #ddd;
+}
