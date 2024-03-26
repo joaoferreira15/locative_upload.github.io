@@ -113,6 +113,7 @@ class Pages extends HTMLElement {
       if (path.title || path.geo || path.description) {
         const descricao = document.createElement("div")
         descricao.setAttribute("id", "descricao")
+        descricao.setAttribute("style", "padding-left: 10px")
         descricao.classList.add("recurso-text")
 
         if (path.title && keysToSearchList.includes("title")) {
