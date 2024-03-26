@@ -22,6 +22,19 @@ a {
     margin: 0 auto;
 }
 
+.recurso-image {
+  position: relative;
+  height: 400px; /* Set the height according to your design */
+  overflow: hidden;
+}
+
+.recurso-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
 .m-30-tb {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -85,4 +98,8 @@ a {
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 3px;
+}
+
+.smallDescription {
+    font-size: 8px;
 }
