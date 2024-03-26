@@ -90,7 +90,7 @@ class Json extends HTMLElement {
 
                 const pre = document.createElement('pre');
                 pre.textContent = jsonString;
-                pre.setAttribute("style", "font-size: 12px");
+                pre.setAttribute("style", "font-size: 12px; white-space: pre-wrap;");
 
                 json_data.appendChild(pre);
             }
