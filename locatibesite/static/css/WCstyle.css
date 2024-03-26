@@ -27,6 +27,10 @@ a:hover {
     margin-bottom: 3px;
 }
 
+.smallDescription {
+    font-size: 8px;
+}
+
 .custom-container {
     text-align: center;
 }

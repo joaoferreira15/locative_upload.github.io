@@ -22,6 +22,30 @@
   }
 }
 
+.w-90 {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.w-80 {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.m-30-tb {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.container-presentation{
+  width: 90%;
+  margin: 0 auto;
+}
+
 .navbar-nav{
   background-color: white !important;
 }

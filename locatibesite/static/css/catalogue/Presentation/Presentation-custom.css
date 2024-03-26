@@ -1,3 +1,41 @@
+p {
+    font-family: "DM Sans", Verdana, sans-serif;
+}
+
+h2 {
+    font-family: "Syne", Lato, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-family: "Syne", Lato, sans-serif;
+    color: inherit;
+}
+
+.w-90 {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.w-80 {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.m-30-tb {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.container-presentation{
+    width: 90%;
+    margin: 0 auto;
+}
+
 .custom-container {
     text-align: center;
 }
@@ -43,13 +81,12 @@
     text-align: left;
 }
 
-.custom-container {
-    text-align: center;
+.custom-big-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 3px;
 }
 
-.json-container {
-    font-size: 12px;
-    overflow-x: auto;
-    max-width: 100%;
-    white-space: pre-wrap;
+.smallDescription {
+    font-size: 8px;
 }

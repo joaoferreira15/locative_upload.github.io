@@ -12,6 +12,30 @@ a {
     color: inherit;
 }
 
+.w-90 {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.w-80 {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.m-30-tb {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.container-presentation{
+    width: 90%;
+    margin: 0 auto;
+}
+
 .custom-container {
     text-align: center;
 }
@@ -55,4 +79,14 @@ a {
 
 .text-left {
     text-align: left;
+}
+
+.custom-big-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.smallDescription {
+    font-size: 8px;
 }
