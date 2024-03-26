@@ -77,3 +77,16 @@ ion-icon {
   margin-bottom: 3px !important; /* mb-3 spacing */
 }
 
+.image-holder{
+    width: 80px !important;
+    height: 80px !important;
+    overflow: hidden !important;
+}
+
+
+img.resource-image {
+  width: 90%;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
