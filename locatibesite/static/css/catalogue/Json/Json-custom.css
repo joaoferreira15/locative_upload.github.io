@@ -1,3 +1,4 @@
 .jsonDiv {
-    overflow: auto
+    overflow: auto;
+    max-width: 450px;
 }
