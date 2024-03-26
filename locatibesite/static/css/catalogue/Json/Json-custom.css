@@ -1,4 +1,11 @@
 .jsonDiv {
+    display: flex;
+}
+
+pre {
+    min-width: 0;
+    flex: 1;
     overflow: auto;
-    max-width: 450px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
