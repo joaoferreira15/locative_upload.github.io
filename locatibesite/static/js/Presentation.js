@@ -92,7 +92,7 @@ class Presentation extends HTMLElement {
                 div.classList.add("recurso-image", "padding-small", "no-padding-top")
                 div.setAttribute("id", "image-div")
 
-                const registoInstance = new Imagem("Caracterization", "presentation-image", path.thumbnail);
+                const registoInstance = new Imagem("Caracterization", "custom-image", path.thumbnail);
                 div.appendChild(registoInstance)
 
                 presentation_data.appendChild(div)
@@ -114,7 +114,7 @@ class Presentation extends HTMLElement {
                 }
 
                 if (path.description && keysToSearchList.includes("description")) {
-                    const registoInstance = new Description("Presentation", "", path.description, ["smallDescription", "w-90", "mt-15"]);
+                    const registoInstance = new Description("Presentation", "", path.description, ["w-90", "mt-15"]);
 
                     div.appendChild(registoInstance)
                     presentation_data.appendChild(div)
