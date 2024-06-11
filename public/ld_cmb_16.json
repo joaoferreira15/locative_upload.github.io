@@ -1,0 +1,81 @@
+{
+   "resource_id": "cmb:16",
+   "header": {
+      "resource_id": "16",
+      "resource_type": "schema.org/statue",
+      "resource_title": "MEMORIAL AOS MORTOS DA GRANDE GUERRA",
+      "resource_description": "Elememto Escult\u00f3rico em Braga: Inaugurado em 26 de junho de 1924, o Memorial aos Mortos da Grande Guerra foi mandado erguer para prestar homenagem aos combatentes mortos na Grande Guerra de 1914-1918. O Monumento \u00e9 um exemplar pertencente ao conjunto de monumentos aos mortos edificados sob o modelo lan\u00e7ado pela Junta Patri\u00f3tica do Norte em janeiro de 1920 e implantado no jardim da Avenida Central. O monumento \u00e9 constitu\u00eddo por um pedestal de granito, do qual se ergue uma coluna, encimada pelo Escudo Nacional, pela Esfera Armilar e a pela Cruz de Cristo. Sobre a base encontra-se uma placa de bronze com a inscri\u00e7\u00e3o onde se l\u00ea \u201cAOS COMBATENTES MORTOS PELA P\u00c1TRIA-HOMENAGEM DOS COMBATENTES DA GRANDE GUERRA-XI 1918 XI 1968\u201d. Possui tamb\u00e9m uma delimita\u00e7\u00e3o de granito, ajardinada onde se insere uma l\u00e1pide com a inscri\u00e7\u00e3o \u201cAOS MORTOS DA GRANDE GUERRA \u2013 HOMENAGEM DE BRAGA\u201d.",
+      "locative_site_id": "estatuaria_cmb",
+      "locative_site_about": "Informa\u00e7\u00e3o sobre estatuaria em Braga",
+      "data_provider": "C\u00e2mara Municipal de Braga"
+   },
+   "context": {
+      "resource_location": {
+         "bbox": null,
+         "type": "Point",
+         "coordinates": [
+            41.5515,
+            -8.419305555555555
+         ]
+      }
+   },
+   "content": [
+      {
+         "article_title": "statue info",
+         "article_type": "StatueInfo",
+         "statue_id": "16",
+         "author_id": "-",
+         "name": "MEMORIAL AOS MORTOS DA GRANDE GUERRA",
+         "description": "Inaugurado em 26 de junho de 1924, o Memorial aos Mortos da Grande Guerra foi mandado erguer para prestar homenagem aos combatentes mortos na Grande Guerra de 1914-1918. O Monumento \u00e9 um exemplar pertencente ao conjunto de monumentos aos mortos edificados sob o modelo lan\u00e7ado pela Junta Patri\u00f3tica do Norte em janeiro de 1920 e implantado no jardim da Avenida Central. O monumento \u00e9 constitu\u00eddo por um pedestal de granito, do qual se ergue uma coluna, encimada pelo Escudo Nacional, pela Esfera Armilar e a pela Cruz de Cristo. Sobre a base encontra-se uma placa de bronze com a inscri\u00e7\u00e3o onde se l\u00ea \u201cAOS COMBATENTES MORTOS PELA P\u00c1TRIA-HOMENAGEM DOS COMBATENTES DA GRANDE GUERRA-XI 1918 XI 1968\u201d. Possui tamb\u00e9m uma delimita\u00e7\u00e3o de granito, ajardinada onde se insere uma l\u00e1pide com a inscri\u00e7\u00e3o \u201cAOS MORTOS DA GRANDE GUERRA \u2013 HOMENAGEM DE BRAGA\u201d.",
+         "location": {
+            "bbox": null,
+            "type": "Point",
+            "coordinates": [
+               41.5515,
+               -8.419305555555555
+            ]
+         }
+      },
+      {
+         "article_title": "Registo de biodiversidade",
+         "article_type": "service",
+         "service_id": "registo_biodiversidade",
+         "service_url": "https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c",
+         "service_component": "iframe_embedded"
+      }
+   ],
+   "links": {
+      "site_section_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ],
+      "site_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ]
+   }
+}

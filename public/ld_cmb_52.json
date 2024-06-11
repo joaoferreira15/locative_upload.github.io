@@ -1,0 +1,81 @@
+{
+   "resource_id": "cmb:52",
+   "header": {
+      "resource_id": "52",
+      "resource_type": "schema.org/statue",
+      "resource_title": "ELEMENTO  ESCULT\u00d3RICO - DO TEMPO , NO ESPA\u00c7O, UMA PONTE, UM APELO. CONTIGO OU SEM TI ",
+      "resource_description": "Elememto Escult\u00f3rico em Braga: O elemento escult\u00f3rico designado por \u201cDo tempo, no espa\u00e7o, uma ponte, um apelo. Contigo ou sem Ti\u201d foi produzido no \u00e2mbito do Simp\u00f3sio ARTE & SUSTENTABILIDADE, que decorreu em Braga, entre 1 e 13 de outubro de 2018. A obra foi cedida ao Munic\u00edpio de Braga pela Zet Gallery, projeto de arte contempor\u00e2nea do dstgroup, e desenvolvida especificamente para o Parque da Ponte de Braga. Concebido pela artista pl\u00e1stica Rute Rosas, o elemento escult\u00f3rico foi criado a partir da utiliza\u00e7\u00e3o de chapas de ferro e ilumina\u00e7\u00e3o autossustent\u00e1vel led, \u00e0s quais foram acrescentados os elementos terra, relva e tinta. A escultura com 6m por 3m, concilia-se com as \u00e1rvores, as plantas e os animais que vivem no parque e parecem sussurrar nos nossos ouvidos: \u201cUm pouco de silencio e paz, por favor. Vejam e sintam o C\u00e9u, a Luz e o calor do Sol, a humidade da Terra e da Chuva, a Lua, as Estrelas\u2026\u201d",
+      "locative_site_id": "estatuaria_cmb",
+      "locative_site_about": "Informa\u00e7\u00e3o sobre estatuaria em Braga",
+      "data_provider": "C\u00e2mara Municipal de Braga"
+   },
+   "context": {
+      "resource_location": {
+         "bbox": null,
+         "type": "Point",
+         "coordinates": [
+            41.54094444444444,
+            -8.418999999999999
+         ]
+      }
+   },
+   "content": [
+      {
+         "article_title": "statue info",
+         "article_type": "StatueInfo",
+         "statue_id": "52",
+         "author_id": "RUTE ROSAS  ",
+         "name": "ELEMENTO  ESCULT\u00d3RICO - DO TEMPO , NO ESPA\u00c7O, UMA PONTE, UM APELO. CONTIGO OU SEM TI ",
+         "description": "O elemento escult\u00f3rico designado por \u201cDo tempo, no espa\u00e7o, uma ponte, um apelo. Contigo ou sem Ti\u201d foi produzido no \u00e2mbito do Simp\u00f3sio ARTE & SUSTENTABILIDADE, que decorreu em Braga, entre 1 e 13 de outubro de 2018. A obra foi cedida ao Munic\u00edpio de Braga pela Zet Gallery, projeto de arte contempor\u00e2nea do dstgroup, e desenvolvida especificamente para o Parque da Ponte de Braga. Concebido pela artista pl\u00e1stica Rute Rosas, o elemento escult\u00f3rico foi criado a partir da utiliza\u00e7\u00e3o de chapas de ferro e ilumina\u00e7\u00e3o autossustent\u00e1vel led, \u00e0s quais foram acrescentados os elementos terra, relva e tinta. A escultura com 6m por 3m, concilia-se com as \u00e1rvores, as plantas e os animais que vivem no parque e parecem sussurrar nos nossos ouvidos: \u201cUm pouco de silencio e paz, por favor. Vejam e sintam o C\u00e9u, a Luz e o calor do Sol, a humidade da Terra e da Chuva, a Lua, as Estrelas\u2026\u201d",
+         "location": {
+            "bbox": null,
+            "type": "Point",
+            "coordinates": [
+               41.54094444444444,
+               -8.418999999999999
+            ]
+         }
+      },
+      {
+         "article_title": "Registo de biodiversidade",
+         "article_type": "service",
+         "service_id": "registo_biodiversidade",
+         "service_url": "https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c",
+         "service_component": "iframe_embedded"
+      }
+   ],
+   "links": {
+      "site_section_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ],
+      "site_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ]
+   }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
+<title>  </title >
+<meta name="description" content="">
+<meta name="author" content="Câmara Municipal de Braga">
+<meta name="resource_type" content="schema.org/statue">
+<meta name="locative_site_id" content="estatuaria_cmb">
+<meta name="about" content="Informação sobre estatuaria em Braga">
+<link rel="icon" href="" type="image/x-icon">
+<link rel="stylesheet" href="locative.css">
+
+    
+<script type = "application/ld+json">
+{"resource_location": {"bbox": null, "type": "Point", "coordinates": [41.54094444444444, -8.418999999999999]}}
+</script>
+</head>
+<body>
+    
+<article class="statue-info"   >
+<statue-info  article_data='{"article_title": "statue info", "article_type": "statue-info", "statue_id": "52", "author_id": "RUTE ROSAS  ", "name": "ELEMENTO  ESCULT\u00d3RICO - DO TEMPO , NO ESPA\u00c7O, UMA PONTE, UM APELO. CONTIGO OU SEM TI ", "description": "O elemento escult\u00f3rico designado por \u201cDo tempo, no espa\u00e7o, uma ponte, um apelo. Contigo ou sem Ti\u201d foi produzido no \u00e2mbito do Simp\u00f3sio ARTE & SUSTENTABILIDADE, que decorreu em Braga, entre 1 e 13 de outubro de 2018. A obra foi cedida ao Munic\u00edpio de Braga pela Zet Gallery, projeto de arte contempor\u00e2nea do dstgroup, e desenvolvida especificamente para o Parque da Ponte de Braga. Concebido pela artista pl\u00e1stica Rute Rosas, o elemento escult\u00f3rico foi criado a partir da utiliza\u00e7\u00e3o de chapas de ferro e ilumina\u00e7\u00e3o autossustent\u00e1vel led, \u00e0s quais foram acrescentados os elementos terra, relva e tinta. A escultura com 6m por 3m, concilia-se com as \u00e1rvores, as plantas e os animais que vivem no parque e parecem sussurrar nos nossos ouvidos: \u201cUm pouco de silencio e paz, por favor. Vejam e sintam o C\u00e9u, a Luz e o calor do Sol, a humidade da Terra e da Chuva, a Lua, as Estrelas\u2026\u201d", "location": {"bbox": null, "type": "Point", "coordinates": [41.54094444444444, -8.418999999999999]}}'> 
+<script type="module" src="webcomponents/statue-info.js">
+</script>
+</statue-info>
+</article>
+<article class="service" >
+<iframe id="dynamic-iframe" height="800" width="700"></iframe>
+<script>
+    // Definir uma função para construir e definir dinamicamente o src do iframe
+    function getPageUrl() {
+        // Obter a URL da página atual
+        var currentUrl = window.location.href;
+        console.log('Parent page URL:', currentUrl);
+        // Construir a URL do iframe dinamicamente
+        var iframeUrl = 'https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c/' + encodeURIComponent(currentUrl);
+        // Definir o atributo src do iframe
+        var iframe = document.getElementById('dynamic-iframe');
+        iframe.src = iframeUrl;
+        }
+        // Chamar a função getPageUrl() quando a página inteira, incluindo o iframe, for carregada
+         window.onload = function () {
+                getPageUrl();
+        };
+</script>
+</article>
+</body>
+</html>

@@ -1,0 +1,81 @@
+{
+   "resource_id": "cmb:13",
+   "header": {
+      "resource_id": "13",
+      "resource_type": "schema.org/statue",
+      "resource_title": "\u201cELEMENTO ESCULT\u00d3RICO A MULHER",
+      "resource_description": "Elememto Escult\u00f3rico em Braga: Este elemento escult\u00f3rico foi adquirido pela CMBraga \u00e0 Galeria M\u00e1rio Sequeira, em 1996, apesar do autor da escultura n\u00e3o ter dado qualquer designa\u00e7\u00e3o, esta \u00e9 conhecida pelo monumento da mulher e implantado no jardim da Avenida Central. Concebida pelo escultor John Fisher, a escultura, em m\u00e1rmore representa uma mulher nua, deitada de lado sobre uma rocha.",
+      "locative_site_id": "estatuaria_cmb",
+      "locative_site_about": "Informa\u00e7\u00e3o sobre estatuaria em Braga",
+      "data_provider": "C\u00e2mara Municipal de Braga"
+   },
+   "context": {
+      "resource_location": {
+         "bbox": null,
+         "type": "Point",
+         "coordinates": [
+            41.551361111111106,
+            -8.422222222222222
+         ]
+      }
+   },
+   "content": [
+      {
+         "article_title": "statue info",
+         "article_type": "StatueInfo",
+         "statue_id": "13",
+         "author_id": "JOHN FISHER",
+         "name": "\u201cELEMENTO ESCULT\u00d3RICO A MULHER",
+         "description": "Este elemento escult\u00f3rico foi adquirido pela CMBraga \u00e0 Galeria M\u00e1rio Sequeira, em 1996, apesar do autor da escultura n\u00e3o ter dado qualquer designa\u00e7\u00e3o, esta \u00e9 conhecida pelo monumento da mulher e implantado no jardim da Avenida Central. Concebida pelo escultor John Fisher, a escultura, em m\u00e1rmore representa uma mulher nua, deitada de lado sobre uma rocha.",
+         "location": {
+            "bbox": null,
+            "type": "Point",
+            "coordinates": [
+               41.551361111111106,
+               -8.422222222222222
+            ]
+         }
+      },
+      {
+         "article_title": "Registo de biodiversidade",
+         "article_type": "service",
+         "service_id": "registo_biodiversidade",
+         "service_url": "https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c",
+         "service_component": "iframe_embedded"
+      }
+   ],
+   "links": {
+      "site_section_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ],
+      "site_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ]
+   }
+}

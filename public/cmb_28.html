@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
+<title>  </title >
+<meta name="description" content="">
+<meta name="author" content="Câmara Municipal de Braga">
+<meta name="resource_type" content="schema.org/statue">
+<meta name="locative_site_id" content="estatuaria_cmb">
+<meta name="about" content="Informação sobre estatuaria em Braga">
+<link rel="icon" href="" type="image/x-icon">
+<link rel="stylesheet" href="locative.css">
+
+    
+<script type = "application/ld+json">
+{"resource_location": {"bbox": null, "type": "Point", "coordinates": [41.552611111111105, -8.427027777777777]}}
+</script>
+</head>
+<body>
+    
+<article class="statue-info"   >
+<statue-info  json='{"article_title": "statue info", "article_type": "statue-info", "statue_id": "28", "author_id": "RUI ANAHORY", "name": "BUSTO - JOS\u00c9 FRANCISCO CORREIA ", "description": "Inaugurado em 1997, o busto foi erigido para prestar homenagem ao industrial, filantropo mecenas portugu\u00eas Jos\u00e9 Francisco Correia e implantado na pra\u00e7a Conde de Agrolongo, de frente \u00e0 Igreja do Salvador e Lar Conde de Agrolongo, obras por si custeadas. Jos\u00e9 Francisco Correia nasceu em S. Louren\u00e7o de Sande, Guimar\u00e3es, em 14-02-1853 e faleceu em Lisboa, em 15-04-1929 e sepultado na Igreja do Salvador. Foi emigrante no Brasil e regressa a Portugal, onde apoia e funda muitos estabelecimentos entre escolas, igrejas, asilos e outras ajudas de benefic\u00eancia. Recebeu v\u00e1rias condecora\u00e7\u00f5es como a Cruz de M\u00e9rito Industrial, atribu\u00edda pelo rei D. Carlos e o grau de Cavaleiro de S\u00e3o Greg\u00f3rio Magno, atribu\u00eddo pelo Papa Le\u00e3o XIII. Agraciado com o t\u00edtulo de visconde de Sande, em 20-12-1900 e de conde de Agrolongo, em 23 01-1904. Concebido pelo escultor Rui Anahory, o busto representa Jos\u00e9 Francisco Correia, assente num pedestal, ambos em bronze, sobre um fundo retangular que cont\u00e9m imagens e inscri\u00e7\u00f5es que rendem tributos \u00e0 sua vida e obra. Ao lado o bras\u00e3o do Conde de Agrolongo e uma inscri\u00e7\u00e3o onde se l\u00ea \u201cJOS\u00c9 FRANCISCO CORREIA CONDE DE AGROLONGO 14-02-1853 15 04-1929 EMIGRANTE NO BRASIL DURANTE 65 ANOS CONSTRUIU A EXPENSAS SUAS O EDIFICIO DO LAR CONDE DE AGROLONGO 1908-1914 SEPULTADO NA IGREJA DO SALVADOR\u201d.", "location": {"bbox": null, "type": "Point", "coordinates": [41.552611111111105, -8.427027777777777]}}'> 
+<script type="module" src="webcomponents/statue-info.js">
+</script>
+</statue-info>
+</article>
+<article class="service" >
+<iframe id="dynamic-iframe" height="800" width="700"></iframe>
+<script>
+    // Definir uma função para construir e definir dinamicamente o src do iframe
+    function getPageUrl() {
+        // Obter a URL da página atual
+        var currentUrl = window.location.href;
+        console.log('Parent page URL:', currentUrl);
+        // Construir a URL do iframe dinamicamente
+        var iframeUrl = 'https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c/' + encodeURIComponent(currentUrl);
+        // Definir o atributo src do iframe
+        var iframe = document.getElementById('dynamic-iframe');
+        iframe.src = iframeUrl;
+        }
+        // Chamar a função getPageUrl() quando a página inteira, incluindo o iframe, for carregada
+         window.onload = function () {
+                getPageUrl();
+        };
+</script>
+</article>
+</body>
+</html>

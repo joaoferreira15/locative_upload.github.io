@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
+<title>  </title >
+<meta name="description" content="">
+<meta name="author" content="Câmara Municipal de Braga">
+<meta name="resource_type" content="schema.org/statue">
+<meta name="locative_site_id" content="estatuaria_cmb">
+<meta name="about" content="Informação sobre estatuaria em Braga">
+<link rel="icon" href="" type="image/x-icon">
+<link rel="stylesheet" href="locative.css">
+
+    
+<script type = "application/ld+json">
+{"resource_location": {"bbox": null, "type": "Point", "coordinates": [41.54830555555555, -8.425805555555556]}}
+</script>
+</head>
+<body>
+    
+<article class="statue-info"   >
+<statue-info  json='{"article_title": "statue info", "article_type": "statue-info", "statue_id": "34", "author_id": "PEDRO NOGUEIRA  ", "name": "MONUMENTO \u00c0S VIAS ROMANAS ", "description": "Inaugurado em 30 de maio de 2008, o monumento \u00e0s Vias Romanas de Bracara Augusta foi erigido pela CMBraga para assinalar a milha 0 das Vias Romanas que ligavam Bracara Augusta, onde partiam seis itiner\u00e1rios e implantado na Pra\u00e7a de Santiago. Concebido pelo arquiteto Pedro Nogueira, o monumento representa um cilindro de a\u00e7o corten, disposto na vertical, circundado com uma inscri\u00e7\u00e3o onde se l\u00ea \u201cBRACARA AUGUSTA MMVII AS VIAS ROMANAS BRACARA AUGUSTA SAIAM VI VIAS AS VIAS XVI PARA OLISIPO XVII PARA ASTURICA AUGUSTA E A XIX PARA LUCUS AUGUSTA FORAM ABERTAS NO TEMPO DE AUGUSTO A VIA XVIII (VIA NOVA) COM DESTINO A ASTURICA FOI CONSTRU\u00cdDA SOB A DINASTIA FLAVIA DE CRONOLOGIA INCERTA S\u00c3O A VIA XX (PARA LUCUS PER LOCA MARITIMA) E A VIA QUE LIGAVA BRACARA A EMERITA AUGUSTA\u201d. No pavimento, partindo do marco, est\u00e3o representados seis tri\u00e2ngulos, de pedra, que simbolizam as seis vias romanas que partiam da cidade, com uma semicircunfer\u00eancia, na base em a\u00e7o corten, cada uma com o nome da via respetiva \u201cOLISIPO\u201d, \u201cEMERITA\u201d, \u201cASTURICA AQUA FLAVIAE\u201d, \u201cASTURICA\u201d, \u201cASTURICA LUCUS\u201d E \u201cLUCOS DE OLISIPO\u201d.", "location": {"bbox": null, "type": "Point", "coordinates": [41.54830555555555, -8.425805555555556]}}'> 
+<script type="module" src="webcomponents/statue-info.js">
+</script>
+</statue-info>
+</article>
+<article class="service" >
+<iframe id="dynamic-iframe" height="800" width="700"></iframe>
+<script>
+    // Definir uma função para construir e definir dinamicamente o src do iframe
+    function getPageUrl() {
+        // Obter a URL da página atual
+        var currentUrl = window.location.href;
+        console.log('Parent page URL:', currentUrl);
+        // Construir a URL do iframe dinamicamente
+        var iframeUrl = 'https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c/' + encodeURIComponent(currentUrl);
+        // Definir o atributo src do iframe
+        var iframe = document.getElementById('dynamic-iframe');
+        iframe.src = iframeUrl;
+        }
+        // Chamar a função getPageUrl() quando a página inteira, incluindo o iframe, for carregada
+         window.onload = function () {
+                getPageUrl();
+        };
+</script>
+</article>
+</body>
+</html>

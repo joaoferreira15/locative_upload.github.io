@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
+<title>  </title >
+<meta name="description" content="">
+<meta name="author" content="Câmara Municipal de Braga">
+<meta name="resource_type" content="schema.org/statue">
+<meta name="locative_site_id" content="estatuaria_cmb">
+<meta name="about" content="Informação sobre estatuaria em Braga">
+<link rel="icon" href="" type="image/x-icon">
+<link rel="stylesheet" href="locative.css">
+
+    
+<script type = "application/ld+json">
+{"resource_location": {"bbox": null, "type": "Point", "coordinates": [41.547555555555554, -8.428166666666666]}}
+</script>
+</head>
+<body>
+    
+<article class="statue-info"   >
+<statue-info  json='{"article_title": "statue info", "article_type": "statue-info", "statue_id": "35", "author_id": "EMMA ZAHONERO MORENO | JES\u00daS MENDIOLA PUIG ", "name": "EST\u00c1TUA \u2013 IMPERADOR OCTAVIANO C\u00c9SAR AUGUSTO ", "description": "Inaugurada a 26 de maio de 2017, numa cerim\u00f3nia integrada na programa\u00e7\u00e3o da Braga Romana de 2017, a est\u00e1tua foi erigida pela CMBraga, sendo uma homenagem da cidade de Braga ao fundador de Bracara Augusta, C\u00e9sar Augusto, primeiro imperador de Roma e implantada no Largo Paulo Or\u00f3sio, no local onde se situava o antigo f\u00f3rum da urbe romana. Octaviano C\u00e9sar Augusto viveu entre 63 a.C. e 14 d. C. e fundou a cidade de Bracara Augusta cerca de 16 a.C., o per\u00edodo em que governou ficou conhecido como \u201cPax Romana\u201d, um per\u00edodo de paz, prosperidade e expans\u00e3o. A est\u00e1tua concebida por Emma Zahonero Moreno e Jes\u00fas Mendiola Puig, executada em fibra de vidro \u00e9 uma reprodu\u00e7\u00e3o da est\u00e1tua descoberta em 20 04-1863 na Villa de Augusto, Prima Porta, ficando conhecida por Augusto de Prima Porta. C\u00e9sar Augusto \u00e9 representado em trajes militares e coura\u00e7a militar, exibindo relevos com uma alegoria da conquista da Hisp\u00e2nia e da G\u00e1lia e a toga t\u00edpica do Imp\u00e9rio, encontra-se em pose de comando e import\u00e2ncia, com a m\u00e3o direita levantada, parecendo estar a dirigir as tropas e descal\u00e7o, tendo aos p\u00e9s o Cupido. As cores utilizadas reproduzem a policromia que era usada nas esculturas executadas na antiguidade. Assenta num pedestal de granito, com uma inscri\u00e7\u00e3o onde se l\u00ea \u201cIMPERATORIS CAESARIS AUGUSTI DIVI FILII PATRIS PATRIAE\u201d ou seja, Imperador C\u00e9sar Augusto Filho de um Deus Pai da P\u00e1tria.", "location": {"bbox": null, "type": "Point", "coordinates": [41.547555555555554, -8.428166666666666]}}'> 
+<script type="module" src="webcomponents/statue-info.js">
+</script>
+</statue-info>
+</article>
+<article class="service" >
+<iframe id="dynamic-iframe" height="800" width="700"></iframe>
+<script>
+    // Definir uma função para construir e definir dinamicamente o src do iframe
+    function getPageUrl() {
+        // Obter a URL da página atual
+        var currentUrl = window.location.href;
+        console.log('Parent page URL:', currentUrl);
+        // Construir a URL do iframe dinamicamente
+        var iframeUrl = 'https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c/' + encodeURIComponent(currentUrl);
+        // Definir o atributo src do iframe
+        var iframe = document.getElementById('dynamic-iframe');
+        iframe.src = iframeUrl;
+        }
+        // Chamar a função getPageUrl() quando a página inteira, incluindo o iframe, for carregada
+         window.onload = function () {
+                getPageUrl();
+        };
+</script>
+</article>
+</body>
+</html>

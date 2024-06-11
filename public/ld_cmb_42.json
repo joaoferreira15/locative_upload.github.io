@@ -1,0 +1,81 @@
+{
+   "resource_id": "cmb:42",
+   "header": {
+      "resource_id": "42",
+      "resource_type": "schema.org/statue",
+      "resource_title": "EST\u00c1TUA  \u2013 C\u00d3NEGO DE MELO",
+      "resource_description": "Elememto Escult\u00f3rico em Braga: Inaugurada a 17 de agosto de 2013, a est\u00e1tua foi erigida por iniciativa de um grupo de cidad\u00e3os de Braga para prestar homenagem ao prelado bracarense C\u00f3nego de Melo e implantada na rotunda de Monte D\u2019Arcos. Eduardo Melo Peixoto, mais conhecido por C\u00f3nego de Melo foi um sacerdote e De\u00e3o do Cabido da S\u00e9 de Braga e Vig\u00e1rio-geral da Arquidiocese de Braga, durante mais de tr\u00eas d\u00e9cadas. Nasceu em Braga, em 30-10- 1927 e faleceu no Santu\u00e1rio de F\u00e1tima, em Our\u00e9m, em 19-04-2008 com oitenta anos de idade. Toda a sua vida foi dedicada \u00e0 Igreja, \u00e0 sua cidade e ao seu pa\u00eds, tornou-se uma das personalidades que mais se destacou no per\u00edodo revolucion\u00e1rio que se seguiu ao 25 de abril de 1974, liderando a oposi\u00e7\u00e3o cat\u00f3lica aos setores pol\u00edticos mais \u00e0 esquerda. Concebida pelo arquiteto Fernando Jorge, a est\u00e1tua de bronze, representa o C\u00f3nego de Melo, envergando vestes eclesi\u00e1sticas, segura numa m\u00e3o um livro e uma capa no bra\u00e7o contr\u00e1rio, assenta num alto pedestal de granito com uma inscri\u00e7\u00e3o onde se l\u00ea \u201cC\u00d3NEGO DE MELO EDUARDO MELO PEIXOTO 30.10.1927 \u2013 19.04.2008\u201d e ostenta o bras\u00e3o da cidade.",
+      "locative_site_id": "estatuaria_cmb",
+      "locative_site_about": "Informa\u00e7\u00e3o sobre estatuaria em Braga",
+      "data_provider": "C\u00e2mara Municipal de Braga"
+   },
+   "context": {
+      "resource_location": {
+         "bbox": null,
+         "type": "Point",
+         "coordinates": [
+            41.55808333333333,
+            -8.415222222222223
+         ]
+      }
+   },
+   "content": [
+      {
+         "article_title": "statue info",
+         "article_type": "StatueInfo",
+         "statue_id": "42",
+         "author_id": "FERNANDO JORGE  ",
+         "name": "EST\u00c1TUA  \u2013 C\u00d3NEGO DE MELO",
+         "description": "Inaugurada a 17 de agosto de 2013, a est\u00e1tua foi erigida por iniciativa de um grupo de cidad\u00e3os de Braga para prestar homenagem ao prelado bracarense C\u00f3nego de Melo e implantada na rotunda de Monte D\u2019Arcos. Eduardo Melo Peixoto, mais conhecido por C\u00f3nego de Melo foi um sacerdote e De\u00e3o do Cabido da S\u00e9 de Braga e Vig\u00e1rio-geral da Arquidiocese de Braga, durante mais de tr\u00eas d\u00e9cadas. Nasceu em Braga, em 30-10- 1927 e faleceu no Santu\u00e1rio de F\u00e1tima, em Our\u00e9m, em 19-04-2008 com oitenta anos de idade. Toda a sua vida foi dedicada \u00e0 Igreja, \u00e0 sua cidade e ao seu pa\u00eds, tornou-se uma das personalidades que mais se destacou no per\u00edodo revolucion\u00e1rio que se seguiu ao 25 de abril de 1974, liderando a oposi\u00e7\u00e3o cat\u00f3lica aos setores pol\u00edticos mais \u00e0 esquerda. Concebida pelo arquiteto Fernando Jorge, a est\u00e1tua de bronze, representa o C\u00f3nego de Melo, envergando vestes eclesi\u00e1sticas, segura numa m\u00e3o um livro e uma capa no bra\u00e7o contr\u00e1rio, assenta num alto pedestal de granito com uma inscri\u00e7\u00e3o onde se l\u00ea \u201cC\u00d3NEGO DE MELO EDUARDO MELO PEIXOTO 30.10.1927 \u2013 19.04.2008\u201d e ostenta o bras\u00e3o da cidade.",
+         "location": {
+            "bbox": null,
+            "type": "Point",
+            "coordinates": [
+               41.55808333333333,
+               -8.415222222222223
+            ]
+         }
+      },
+      {
+         "article_title": "Registo de biodiversidade",
+         "article_type": "service",
+         "service_id": "registo_biodiversidade",
+         "service_url": "https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c",
+         "service_component": "iframe_embedded"
+      }
+   ],
+   "links": {
+      "site_section_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ],
+      "site_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ]
+   }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
+<title>  </title >
+<meta name="description" content="">
+<meta name="author" content="Câmara Municipal de Braga">
+<meta name="resource_type" content="schema.org/statue">
+<meta name="locative_site_id" content="estatuaria_cmb">
+<meta name="about" content="Informação sobre estatuaria em Braga">
+<link rel="icon" href="" type="image/x-icon">
+<link rel="stylesheet" href="locative.css">
+
+    
+<script type = "application/ld+json">
+{"resource_location": {"bbox": null, "type": "Point", "coordinates": [41.53972222222222, -8.420972222222222]}}
+</script>
+</head>
+<body>
+    
+<article class="statue-info"   >
+<statue-info  article_data='{"article_title": "statue info", "article_type": "statue-info", "statue_id": "50", "author_id": "Salvador Barata Feyo", "name": "Altos-Relevos  do Est\u00e1dio 1\u00ba Maio", "description": "O est\u00e1dio est\u00e1 localizado na freguesia de S\u00e3o Jos\u00e9 de S. L\u00e1zaro e integrado no Parque da Ponte, a sua constru\u00e7\u00e3o remonta ao ano de 1946, mas s\u00f3 viria a ser inaugurado em 28 de maio de 1950, numa cerim\u00f3nia que contou com a presen\u00e7a do presidente da Rep\u00fablica, Ant\u00f3nio \u00d3scar de Fragoso Carmona (1869-1951) e de Ant\u00f3nio de Oliveira Salazar (1889-1970), entre outras personalidades da \u00e9poca. Primitivamente designado por \"EST\u00c1DIO 28 DE MAIO\", em celebra\u00e7\u00e3o ao regime que o tinha financiado e numa comprova\u00e7\u00e3o da relev\u00e2ncia atribu\u00edda a um est\u00e1dio coroado com o nome do evento pol\u00edtico que abriu passagem \u00e0 institui\u00e7\u00e3o da ditadura do Estado Novo.  Projetado pelo arquiteto e engenheiro Travassos Valdez, o est\u00e1dio apresenta planta oval e foi totalmente constru\u00eddo e revestido a granito, com bancadas descobertas, exceto na zona da tribuna presidencial e tem uma capacidade para 30.000 pessoas. Com a Revolu\u00e7\u00e3o do 25 de Abril de 1974, o est\u00e1dio recebeu uma nova denomina\u00e7\u00e3o, \"EST\u00c1DIO 1.\u00ba DE MAIO\" que mant\u00e9m at\u00e9 hoje, estando classificado como Monumento de Interesse P\u00fablico desde 31 de dezembro de 2012.  O est\u00e1dio foi utilizado pelo Sporting Clube de Braga at\u00e9 2004, com a constru\u00e7\u00e3o do Est\u00e1dio Municipal de Braga, constru\u00eddo para receber o Europeu de 2004, que se realizou em Portugal, passando os jogos do SC Braga a ser disputados no novo est\u00e1dio. Atualmente, o Est\u00e1dio 1\u00ba Maio \u00e9 utilizado pelo SC Braga B e pela equipa de futebol feminino do SC Braga e tamb\u00e9m para treinos e provas de atletismo. O acesso ao recinto \u00e9 feito atrav\u00e9s de seis entradas distribu\u00eddas a partir de uma torre prism\u00e1tica que exibe o escudo da Rep\u00fablica, nas paredes laterais, que a ladeia, encontram-se dois pain\u00e9is de bronze retangulares, concebidos pelo escultor Salvador Barata Feyo, apresentando dois altos-relevos de grande qualidade est\u00e9tica e perfeitamente contextualizados na gram\u00e1tica decorativa da \u00e9poca. Um localizado a nascente, representa um tema alusivo \u00e0 Revolu\u00e7\u00e3o Nacional, sendo vis\u00edveis duas inscri\u00e7\u00f5es, uma na parte superior do painel onde se l\u00ea \u201cTEMOS DE DAR AOS PORTUGUESES PELA DISCIPLINA DA CULTURA FISICA O SEGREDO DE FAZER DURADOURA A SUA MOCIDADE EM BENEFICIO DE PORTUGAL\u201d, outra numa placa que uma das figuras segura, onde se l\u00ea\u201d O PODER AO SERVI\u00c7O DO DESPORTO\u201d. O outro localizado a poente representa  tem\u00e1ticas alusivas \u00e0 pr\u00e1tica desportiva, tendo na parte superior do painel uma inscri\u00e7\u00e3o onde se l\u00ea \u201cOH GENTE FORTE E DE ALTOS PENSAMENTOS CAM\u00d5ES\u201d.", "location": {"bbox": null, "type": "Point", "coordinates": [41.53972222222222, -8.420972222222222]}}'> 
+<script type="module" src="webcomponents/statue-info.js">
+</script>
+</statue-info>
+</article>
+<article class="service" >
+<iframe id="dynamic-iframe" height="800" width="700"></iframe>
+<script>
+    // Definir uma função para construir e definir dinamicamente o src do iframe
+    function getPageUrl() {
+        // Obter a URL da página atual
+        var currentUrl = window.location.href;
+        console.log('Parent page URL:', currentUrl);
+        // Construir a URL do iframe dinamicamente
+        var iframeUrl = 'https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c/' + encodeURIComponent(currentUrl);
+        // Definir o atributo src do iframe
+        var iframe = document.getElementById('dynamic-iframe');
+        iframe.src = iframeUrl;
+        }
+        // Chamar a função getPageUrl() quando a página inteira, incluindo o iframe, for carregada
+         window.onload = function () {
+                getPageUrl();
+        };
+</script>
+</article>
+</body>
+</html>

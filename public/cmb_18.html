@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
+<title>  </title >
+<meta name="description" content="">
+<meta name="author" content="Câmara Municipal de Braga">
+<meta name="resource_type" content="schema.org/statue">
+<meta name="locative_site_id" content="estatuaria_cmb">
+<meta name="about" content="Informação sobre estatuaria em Braga">
+<link rel="icon" href="" type="image/x-icon">
+<link rel="stylesheet" href="locative.css">
+
+    
+<script type = "application/ld+json">
+{"resource_location": {"bbox": null, "type": "Point", "coordinates": [41.542361111111106, -8.431666666666667]}}
+</script>
+</head>
+<body>
+    
+<article class="statue-info"   >
+<statue-info  json='{"article_title": "statue info", "article_type": "statue-info", "statue_id": "18", "author_id": "LEOPOLDO DE ALMEIDA  ", "name": "EST\u00c1TUA COMENDADOR SANTOS DA CUNHA", "description": "Inaugurada a 10 de novembro de 1984, a est\u00e1tua foi mandada erguer pela CMBraga para prestar homenagem ao Comendador Ant\u00f3nio Maria Santos da Cunha e implantada na rotunda que recebeu o seu nome. Santos da Cunha foi um grande defensor dos interesses da cidade de Braga, onde nasceu a 10-11-1911 e faleceu a 26 de mar\u00e7o de 1972, entre os v\u00e1rios cargos que ocupou, destaca-se a presid\u00eancia da C\u00e2mara Municipal de Braga, entre 28-11-1949 e 10-03 1961, foi oficial da Ordem da Instru\u00e7\u00e3o P\u00fablica em 5-03-1960 e Comendador da Ordem Militar de Cristo a 31-05-1961. Foi ainda Governador Civil do Distrito de Braga entre 30-11-1968 at\u00e9 26-03-1972 e Deputado \u00e0 Assembleia Nacional, durante duas legislaturas e ainda Presidente da Santa Casa da Miseric\u00f3rdia de Braga. Concebida por Leopoldo de Almeida, a est\u00e1tua, em bronze, representa Santos da Cunha que do alto do pedestal, parece saudar quem entra na cidade, vindo de Sul, pela EN14, assenta numa base revestida a granito com 7,50 metros de altura, com uma inscri\u00e7\u00e3o onde se l\u00ea \u201cCOMENDADOR ANT\u00d3NIO MARIA SANTOS DA CUNHA 10 11-1911 A 26-03-1972\u201d.", "location": {"bbox": null, "type": "Point", "coordinates": [41.542361111111106, -8.431666666666667]}}'> 
+<script type="module" src="webcomponents/statue-info.js">
+</script>
+</statue-info>
+</article>
+<article class="service" >
+<iframe id="dynamic-iframe" height="800" width="700"></iframe>
+<script>
+    // Definir uma função para construir e definir dinamicamente o src do iframe
+    function getPageUrl() {
+        // Obter a URL da página atual
+        var currentUrl = window.location.href;
+        console.log('Parent page URL:', currentUrl);
+        // Construir a URL do iframe dinamicamente
+        var iframeUrl = 'https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c/' + encodeURIComponent(currentUrl);
+        // Definir o atributo src do iframe
+        var iframe = document.getElementById('dynamic-iframe');
+        iframe.src = iframeUrl;
+        }
+        // Chamar a função getPageUrl() quando a página inteira, incluindo o iframe, for carregada
+         window.onload = function () {
+                getPageUrl();
+        };
+</script>
+</article>
+</body>
+</html>

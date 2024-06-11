@@ -1,0 +1,81 @@
+{
+   "resource_id": "cmb:31",
+   "header": {
+      "resource_id": "31",
+      "resource_type": "schema.org/statue",
+      "resource_title": "ELEMENTO ESCULT\u00d3RICO - \u00c1RVORE DO CONHECIMENTO ",
+      "resource_description": "Elememto Escult\u00f3rico em Braga: O elemento escult\u00f3rico designado por \u201c\u00c1rvore do Conhecimento\u201d foi adquirido \u00e0 DST, no \u00e2mbito do 1\u00ba Simp\u00f3sio de Escultura DST \u201cArte na Cidade\u201d que decorreu na Av. Central de 22 setembro a 3 de outubro de 2008 que consistiu na apresenta\u00e7\u00e3o de trabalhos de 4 escultores: Jo\u00e3o Antero, Jorge P\u00e9 Curto, Volker Schnuttgen e Vitor Ribeiro que realizaram ao vivo 4 esculturas originais, tendo sido a escultura \u201c\u00c1rvore do Conhecimento\u201d a selecionada e implantada no Parque Arborizado de Frai\u00e3o. Concebida pelo escultor Victor Ribeiro, a escultura representa uma \u00e1rvore feita em granito cinzento, apresentando um tronco liso e uma copa com folhas, galhos e frutos, que assenta numa base retangular que tem esculpidas algumas folhas \u201cca\u00eddas\u201d. A \u201c\u00c1rvore do Conhecimento\u201d pretende evocar os prim\u00f3rdios da humanidade, onde h\u00e1 um caminho a percorrer para se chegar at\u00e9 l\u00e1, o espa\u00e7o vazio, enfatiza esse mesmo percurso, sendo a \u00e1rvore o culminar dum desejo, o conhecimento.",
+      "locative_site_id": "estatuaria_cmb",
+      "locative_site_about": "Informa\u00e7\u00e3o sobre estatuaria em Braga",
+      "data_provider": "C\u00e2mara Municipal de Braga"
+   },
+   "context": {
+      "resource_location": {
+         "bbox": null,
+         "type": "Point",
+         "coordinates": [
+            41.539,
+            -8.402916666666666
+         ]
+      }
+   },
+   "content": [
+      {
+         "article_title": "statue info",
+         "article_type": "StatueInfo",
+         "statue_id": "31",
+         "author_id": "VICTOR RIBEIRO  ",
+         "name": "ELEMENTO ESCULT\u00d3RICO - \u00c1RVORE DO CONHECIMENTO ",
+         "description": "O elemento escult\u00f3rico designado por \u201c\u00c1rvore do Conhecimento\u201d foi adquirido \u00e0 DST, no \u00e2mbito do 1\u00ba Simp\u00f3sio de Escultura DST \u201cArte na Cidade\u201d que decorreu na Av. Central de 22 setembro a 3 de outubro de 2008 que consistiu na apresenta\u00e7\u00e3o de trabalhos de 4 escultores: Jo\u00e3o Antero, Jorge P\u00e9 Curto, Volker Schnuttgen e Vitor Ribeiro que realizaram ao vivo 4 esculturas originais, tendo sido a escultura \u201c\u00c1rvore do Conhecimento\u201d a selecionada e implantada no Parque Arborizado de Frai\u00e3o. Concebida pelo escultor Victor Ribeiro, a escultura representa uma \u00e1rvore feita em granito cinzento, apresentando um tronco liso e uma copa com folhas, galhos e frutos, que assenta numa base retangular que tem esculpidas algumas folhas \u201cca\u00eddas\u201d. A \u201c\u00c1rvore do Conhecimento\u201d pretende evocar os prim\u00f3rdios da humanidade, onde h\u00e1 um caminho a percorrer para se chegar at\u00e9 l\u00e1, o espa\u00e7o vazio, enfatiza esse mesmo percurso, sendo a \u00e1rvore o culminar dum desejo, o conhecimento.",
+         "location": {
+            "bbox": null,
+            "type": "Point",
+            "coordinates": [
+               41.539,
+               -8.402916666666666
+            ]
+         }
+      },
+      {
+         "article_title": "Registo de biodiversidade",
+         "article_type": "service",
+         "service_id": "registo_biodiversidade",
+         "service_url": "https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c",
+         "service_component": "iframe_embedded"
+      }
+   ],
+   "links": {
+      "site_section_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ],
+      "site_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ]
+   }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
+<title>  </title >
+<meta name="description" content="">
+<meta name="author" content="Câmara Municipal de Braga">
+<meta name="resource_type" content="schema.org/statue">
+<meta name="locative_site_id" content="estatuaria_cmb">
+<meta name="about" content="Informação sobre estatuaria em Braga">
+<link rel="icon" href="" type="image/x-icon">
+<link rel="stylesheet" href="locative.css">
+
+    
+<script type = "application/ld+json">
+{"resource_location": {"bbox": null, "type": "Point", "coordinates": [41.54277777777778, -8.411027777777779]}}
+</script>
+</head>
+<body>
+    
+<article class="statue-info"   >
+<statue-info  json='{"article_title": "statue info", "article_type": "statue-info", "statue_id": "5", "author_id": "LU\u00cdS MACHADO", "name": "MONUMENTO A SANTA MARIA DE BRAGA", "description": "Inaugurado em 20 de maio de 1995, o Monumento a Santa Maria de Braga nasceu da vontade de um grupo de cat\u00f3licos, de prestar homenagem \u00e0 Nossa Senhora e implantado na Pra\u00e7a Humberto Delgado. Concebido pelo arquiteto Lu\u00eds Machado, o monumento \u00e9 constitu\u00eddo por dois elementos. Uma capela em granito, tendo ao centro inserida num nicho de vidro a imagem de Sta. Maria de Braga e ao lado um escudo, de bronze, com uma inscri\u00e7\u00e3o onde se l\u00ea \u201cPER CRUCEM AD \u2013 LUCEM\u201d e abaixo uma placa tamb\u00e9m de bronze, com a seguinte inscri\u00e7\u00e3o \u201cA IMAGEM DA SANTA MARIA DE BRAGA FOI BENZIDA POR DOM EURICO DIAS NOGUEIRA, ARCEBISPO PRIMAZ, COM A PRESEN\u00c7A DAS AUTORIDADES DO CLERO E DE MUITOS FIEIS. 20-MAIO-1995\u201d. O monumento inclui os 16 marcos, em bet\u00e3o, que est\u00e3o de frente para a capela, que exibem os bras\u00f5es* de todos os concelhos que comp\u00f5e a Arquidiocese de Braga.", "location": {"bbox": null, "type": "Point", "coordinates": [41.54277777777778, -8.411027777777779]}}'> 
+<script type="module" src="webcomponents/statue-info.js">
+</script>
+</statue-info>
+</article>
+<article class="service" >
+<iframe id="dynamic-iframe" height="800" width="700"></iframe>
+<script>
+    // Definir uma função para construir e definir dinamicamente o src do iframe
+    function getPageUrl() {
+        // Obter a URL da página atual
+        var currentUrl = window.location.href;
+        console.log('Parent page URL:', currentUrl);
+        // Construir a URL do iframe dinamicamente
+        var iframeUrl = 'https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c/' + encodeURIComponent(currentUrl);
+        // Definir o atributo src do iframe
+        var iframe = document.getElementById('dynamic-iframe');
+        iframe.src = iframeUrl;
+        }
+        // Chamar a função getPageUrl() quando a página inteira, incluindo o iframe, for carregada
+         window.onload = function () {
+                getPageUrl();
+        };
+</script>
+</article>
+</body>
+</html>

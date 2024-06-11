@@ -1,0 +1,81 @@
+{
+   "resource_id": "cmb:18",
+   "header": {
+      "resource_id": "18",
+      "resource_type": "schema.org/statue",
+      "resource_title": "EST\u00c1TUA COMENDADOR SANTOS DA CUNHA",
+      "resource_description": "Elememto Escult\u00f3rico em Braga: Inaugurada a 10 de novembro de 1984, a est\u00e1tua foi mandada erguer pela CMBraga para prestar homenagem ao Comendador Ant\u00f3nio Maria Santos da Cunha e implantada na rotunda que recebeu o seu nome. Santos da Cunha foi um grande defensor dos interesses da cidade de Braga, onde nasceu a 10-11-1911 e faleceu a 26 de mar\u00e7o de 1972, entre os v\u00e1rios cargos que ocupou, destaca-se a presid\u00eancia da C\u00e2mara Municipal de Braga, entre 28-11-1949 e 10-03 1961, foi oficial da Ordem da Instru\u00e7\u00e3o P\u00fablica em 5-03-1960 e Comendador da Ordem Militar de Cristo a 31-05-1961. Foi ainda Governador Civil do Distrito de Braga entre 30-11-1968 at\u00e9 26-03-1972 e Deputado \u00e0 Assembleia Nacional, durante duas legislaturas e ainda Presidente da Santa Casa da Miseric\u00f3rdia de Braga. Concebida por Leopoldo de Almeida, a est\u00e1tua, em bronze, representa Santos da Cunha que do alto do pedestal, parece saudar quem entra na cidade, vindo de Sul, pela EN14, assenta numa base revestida a granito com 7,50 metros de altura, com uma inscri\u00e7\u00e3o onde se l\u00ea \u201cCOMENDADOR ANT\u00d3NIO MARIA SANTOS DA CUNHA 10 11-1911 A 26-03-1972\u201d.",
+      "locative_site_id": "estatuaria_cmb",
+      "locative_site_about": "Informa\u00e7\u00e3o sobre estatuaria em Braga",
+      "data_provider": "C\u00e2mara Municipal de Braga"
+   },
+   "context": {
+      "resource_location": {
+         "bbox": null,
+         "type": "Point",
+         "coordinates": [
+            41.542361111111106,
+            -8.431666666666667
+         ]
+      }
+   },
+   "content": [
+      {
+         "article_title": "statue info",
+         "article_type": "StatueInfo",
+         "statue_id": "18",
+         "author_id": "LEOPOLDO DE ALMEIDA  ",
+         "name": "EST\u00c1TUA COMENDADOR SANTOS DA CUNHA",
+         "description": "Inaugurada a 10 de novembro de 1984, a est\u00e1tua foi mandada erguer pela CMBraga para prestar homenagem ao Comendador Ant\u00f3nio Maria Santos da Cunha e implantada na rotunda que recebeu o seu nome. Santos da Cunha foi um grande defensor dos interesses da cidade de Braga, onde nasceu a 10-11-1911 e faleceu a 26 de mar\u00e7o de 1972, entre os v\u00e1rios cargos que ocupou, destaca-se a presid\u00eancia da C\u00e2mara Municipal de Braga, entre 28-11-1949 e 10-03 1961, foi oficial da Ordem da Instru\u00e7\u00e3o P\u00fablica em 5-03-1960 e Comendador da Ordem Militar de Cristo a 31-05-1961. Foi ainda Governador Civil do Distrito de Braga entre 30-11-1968 at\u00e9 26-03-1972 e Deputado \u00e0 Assembleia Nacional, durante duas legislaturas e ainda Presidente da Santa Casa da Miseric\u00f3rdia de Braga. Concebida por Leopoldo de Almeida, a est\u00e1tua, em bronze, representa Santos da Cunha que do alto do pedestal, parece saudar quem entra na cidade, vindo de Sul, pela EN14, assenta numa base revestida a granito com 7,50 metros de altura, com uma inscri\u00e7\u00e3o onde se l\u00ea \u201cCOMENDADOR ANT\u00d3NIO MARIA SANTOS DA CUNHA 10 11-1911 A 26-03-1972\u201d.",
+         "location": {
+            "bbox": null,
+            "type": "Point",
+            "coordinates": [
+               41.542361111111106,
+               -8.431666666666667
+            ]
+         }
+      },
+      {
+         "article_title": "Registo de biodiversidade",
+         "article_type": "service",
+         "service_id": "registo_biodiversidade",
+         "service_url": "https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c",
+         "service_component": "iframe_embedded"
+      }
+   ],
+   "links": {
+      "site_section_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ],
+      "site_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ]
+   }
+}

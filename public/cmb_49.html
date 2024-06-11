@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
+<title>  </title >
+<meta name="description" content="">
+<meta name="author" content="Câmara Municipal de Braga">
+<meta name="resource_type" content="schema.org/statue">
+<meta name="locative_site_id" content="estatuaria_cmb">
+<meta name="about" content="Informação sobre estatuaria em Braga">
+<link rel="icon" href="" type="image/x-icon">
+<link rel="stylesheet" href="locative.css">
+
+    
+<script type = "application/ld+json">
+{"resource_location": {"bbox": null, "type": "Point", "coordinates": [41.54194444444444, -8.418999999999999]}}
+</script>
+</head>
+<body>
+    
+<article class="statue-info"   >
+<statue-info  json='{"article_title": "statue info", "article_type": "statue-info", "statue_id": "49", "author_id": "-", "name": "ELEMENTOS ESCULT\u00d3RICOS  DO PARQUE DE S\u00c3O JO\u00c3O DA PONTE ", "description": "O Parque de S\u00e3o Jo\u00e3o da Ponte situado no extremo sul da Avenida da Liberdade foi totalmente renovado entre 2010/2011, com a recria\u00e7\u00e3o de uma zona de recreio e lazer inserida numa \u00e1rea urbana. O projeto de arquitetura da autoria dos Arquitetos S\u00e9rgio Borges e Miguel Castro e arquitetura paisagista do arquiteto Carlos Arantes foi premiada com o pr\u00e9mio IHRU de 2011, galard\u00e3o de n\u00edvel nacional para Espa\u00e7os P\u00fablicos. O parque totalmente arborizado, comp\u00f5e-se por uma parte interior e outra parte exterior que se encontram divididas por um gradeamento de ferro proveniente do antigo Jardim P\u00fablico, projetado em 1854 na Avenida Central e desmantelado em 1913. A parte interior caracteriza-se com uma densa vegeta\u00e7\u00e3o, com jardins e um grande lago artificial. A parte exterior, a mais antiga, est\u00e1 associada \u00e0s festividades de S\u00e3o Jo\u00e3o e cresceu \u00e0 volta da Capela de S\u00e3o Jo\u00e3o. Neste espa\u00e7o podemos encontrar diversos elementos escult\u00f3ricos oriundos de alguns monumentos de Braga que foram demolidos, como o Convento e Igreja dos Rem\u00e9dios e o Mercado Municipal. Percorrendo o recinto encontramos as pedras que pertenciam ao Convento dos Rem\u00e9dios que aqui foram colocadas, servindo hoje de bancos e mesas; as colunas foram aproveitadas com os pin\u00e1culos para embelezar o parque; a coluna que serviu de suporte do Senhor da Sa\u00fade, que D. Diogo de Sousa mandou colocar perto da S\u00e9, assim como a imagem do Senhor da Sa\u00fade, em pedra colorida colocadas no altar da Capela de S\u00e3o Jo\u00e3o da Ponte; a escultura, popularmente, conhecida pelo DIABO MANQUINHO que pertencia ao Pa\u00e7o D. Jos\u00e9 de Bragan\u00e7a e parece representar um bobo, v\u00e1rios capit\u00e9is, cor\u00edntios e barrocos, que estariam adossados a paredes e servem de ornamento para a eleva\u00e7\u00e3o onde se encontra o bobo e outros espalhados. Quatro esculturas toscas que pertenciam \u00e0 fachada da demolida igreja dos Rem\u00e9dios que representam as imagens de S\u00c3O FRANCISCO, a RAINHA SANTA ISABEL DE PORTUGAL, a RAINHA SANTA ISABEL DA HUNGRIA e uma outra escultura que parece ser SANTA MARTA ou SANTA MARIA MADALENA. Um cruzeiro mandado erguer pela C\u00e2mara, em mem\u00f3ria do hospital para empestados que D. Frei Bartolomeu dos M\u00e1rtires, na Devesa da Ponte mandou edificar, conforme se l\u00ea na inscri\u00e7\u00e3o: \u201cSENDO ARCEPO DE BRAGA DO. E. BERTOI,A MEV DOS M\u00c1RTIRES OVVE PESTE NESTA CIDADE O ANO DE 1570 E OS EMPESTADOS FORAM TRAZIDOS A ESTA DEVEZA\u201d. Uma piscina romana, feita nos primeiros anos da rep\u00fablica. O port\u00e3o gradeado, que pertenceu ao antigo Jardim P\u00fablico. O arco em pedra, que pertencia ao antigo Mercado do Peixe de Braga.", "location": {"bbox": null, "type": "Point", "coordinates": [41.54194444444444, -8.418999999999999]}}'> 
+<script type="module" src="webcomponents/statue-info.js">
+</script>
+</statue-info>
+</article>
+<article class="service" >
+<iframe id="dynamic-iframe" height="800" width="700"></iframe>
+<script>
+    // Definir uma função para construir e definir dinamicamente o src do iframe
+    function getPageUrl() {
+        // Obter a URL da página atual
+        var currentUrl = window.location.href;
+        console.log('Parent page URL:', currentUrl);
+        // Construir a URL do iframe dinamicamente
+        var iframeUrl = 'https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c/' + encodeURIComponent(currentUrl);
+        // Definir o atributo src do iframe
+        var iframe = document.getElementById('dynamic-iframe');
+        iframe.src = iframeUrl;
+        }
+        // Chamar a função getPageUrl() quando a página inteira, incluindo o iframe, for carregada
+         window.onload = function () {
+                getPageUrl();
+        };
+</script>
+</article>
+</body>
+</html>

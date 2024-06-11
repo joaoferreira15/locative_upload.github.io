@@ -1,0 +1,81 @@
+{
+   "resource_id": "cmb:17",
+   "header": {
+      "resource_id": "17",
+      "resource_type": "schema.org/statue",
+      "resource_title": "MEMORIAL AOS IRM\u00c3OS ROBY",
+      "resource_description": "Elememto Escult\u00f3rico em Braga: Inaugurado em 03 de julho de 1955, o Memorial aos Irm\u00e3os Roby foi mandado erguer como forma de homenagear os dois irm\u00e3os Jo\u00e3o e Sebasti\u00e3o Roby, her\u00f3is da cidade de Braga que morreram ao servi\u00e7o do seu pa\u00eds nos anos de 1904 e 1915 e implantado no jardim da Avenida Central. Concebido pelo escultor Zeferino Couto, o monumento \u00e9 constitu\u00eddo por um bloco de granito disposto na vertical, onde est\u00e3o retratados, em bronze, Jo\u00e3o Roby e Sebasti\u00e3o Roby, acompanhados por uma inscri\u00e7\u00e3o alusivo a cada um deles. Ao centro exibe uma outra inscri\u00e7\u00e3o onde se l\u00ea \u201c\u00c1 MEM\u00d3RIA DOS IRM\u00c3OS ROBY HEROICOS FILHOS DESTA CIDADE, MORTOS AO SERVI\u00c7O DA P\u00c1TRIA\u201d. O monumento inclui uma base retangular de granito, exibindo um escudo saliente.",
+      "locative_site_id": "estatuaria_cmb",
+      "locative_site_about": "Informa\u00e7\u00e3o sobre estatuaria em Braga",
+      "data_provider": "C\u00e2mara Municipal de Braga"
+   },
+   "context": {
+      "resource_location": {
+         "bbox": null,
+         "type": "Point",
+         "coordinates": [
+            41.55137777777777,
+            -8.420766666666665
+         ]
+      }
+   },
+   "content": [
+      {
+         "article_title": "statue info",
+         "article_type": "StatueInfo",
+         "statue_id": "17",
+         "author_id": "ZEFERINO COUTO  ",
+         "name": "MEMORIAL AOS IRM\u00c3OS ROBY",
+         "description": "Inaugurado em 03 de julho de 1955, o Memorial aos Irm\u00e3os Roby foi mandado erguer como forma de homenagear os dois irm\u00e3os Jo\u00e3o e Sebasti\u00e3o Roby, her\u00f3is da cidade de Braga que morreram ao servi\u00e7o do seu pa\u00eds nos anos de 1904 e 1915 e implantado no jardim da Avenida Central. Concebido pelo escultor Zeferino Couto, o monumento \u00e9 constitu\u00eddo por um bloco de granito disposto na vertical, onde est\u00e3o retratados, em bronze, Jo\u00e3o Roby e Sebasti\u00e3o Roby, acompanhados por uma inscri\u00e7\u00e3o alusivo a cada um deles. Ao centro exibe uma outra inscri\u00e7\u00e3o onde se l\u00ea \u201c\u00c1 MEM\u00d3RIA DOS IRM\u00c3OS ROBY HEROICOS FILHOS DESTA CIDADE, MORTOS AO SERVI\u00c7O DA P\u00c1TRIA\u201d. O monumento inclui uma base retangular de granito, exibindo um escudo saliente.",
+         "location": {
+            "bbox": null,
+            "type": "Point",
+            "coordinates": [
+               41.55137777777777,
+               -8.420766666666665
+            ]
+         }
+      },
+      {
+         "article_title": "Registo de biodiversidade",
+         "article_type": "service",
+         "service_id": "registo_biodiversidade",
+         "service_url": "https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c",
+         "service_component": "iframe_embedded"
+      }
+   ],
+   "links": {
+      "site_section_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ],
+      "site_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ]
+   }
+}

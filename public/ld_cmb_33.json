@@ -1,0 +1,81 @@
+{
+   "resource_id": "cmb:33",
+   "header": {
+      "resource_id": "33",
+      "resource_type": "schema.org/statue",
+      "resource_title": "BUSTO \u2013 MESTRE JOS\u00c9 VEIGA",
+      "resource_description": "Elememto Escult\u00f3rico em Braga: Inaugurado em 24 de junho de 2009, o busto foi erigido para prestar homenagem ao artista bracarense Jos\u00e9 Veiga e implantado no jardim da Pra\u00e7a da Rep\u00fablica, junto ao posto de Turismo. Jos\u00e9 Ferraz Gomes Veiga, conhecido por mestre Veiga, foi uma personalidade que dedicou toda uma vida \u00e0 arte, consagrando a sua obra \u00e0 cidade de Braga, onde nasceu em 18 11-1925 e faleceu em 18-04-2002. O seu talento para o desenho e a sua sensibilidade art\u00edstica levou-o a frequentar a antiga Escola Industrial e Comercial Dom Frei Bartolomeu dos M\u00e1rtires, no Curso de Tecel\u00e3o Debuxador, notabilizando-se no desenho, na caricatura e na cenografia. Durante meio s\u00e9culo, foi o respons\u00e1vel pela decora\u00e7\u00e3o dos arruados das Festas Joaninas e das Solenidades da Semana Santa, tendo os cartazes e os an\u00fancios ficado a dever-se \u00e0 sua m\u00e3o. O seu esp\u00f3lio, pessoal e art\u00edstico, composto por mais de 900 pe\u00e7as foi doado \u00e0 C\u00e2mara de Braga e hoje enriquece o Arquivo Municipal de Braga. Concebido pelo escultor Jorge Ulisses, o busto, de bronze, representa o Mestre Jos\u00e9 Veiga, de frente para um pedestal retangular de granito, disposto na vertical, com uma inscri\u00e7\u00e3o onde se l\u00ea \u201cAO MESTRE JOS\u00c9 VEIGA (1925-2002).",
+      "locative_site_id": "estatuaria_cmb",
+      "locative_site_about": "Informa\u00e7\u00e3o sobre estatuaria em Braga",
+      "data_provider": "C\u00e2mara Municipal de Braga"
+   },
+   "context": {
+      "resource_location": {
+         "bbox": null,
+         "type": "Point",
+         "coordinates": [
+            41.551138888888886,
+            -8.422555555555554
+         ]
+      }
+   },
+   "content": [
+      {
+         "article_title": "statue info",
+         "article_type": "StatueInfo",
+         "statue_id": "33",
+         "author_id": "JORGE ULISSES  ",
+         "name": "BUSTO \u2013 MESTRE JOS\u00c9 VEIGA",
+         "description": "Inaugurado em 24 de junho de 2009, o busto foi erigido para prestar homenagem ao artista bracarense Jos\u00e9 Veiga e implantado no jardim da Pra\u00e7a da Rep\u00fablica, junto ao posto de Turismo. Jos\u00e9 Ferraz Gomes Veiga, conhecido por mestre Veiga, foi uma personalidade que dedicou toda uma vida \u00e0 arte, consagrando a sua obra \u00e0 cidade de Braga, onde nasceu em 18 11-1925 e faleceu em 18-04-2002. O seu talento para o desenho e a sua sensibilidade art\u00edstica levou-o a frequentar a antiga Escola Industrial e Comercial Dom Frei Bartolomeu dos M\u00e1rtires, no Curso de Tecel\u00e3o Debuxador, notabilizando-se no desenho, na caricatura e na cenografia. Durante meio s\u00e9culo, foi o respons\u00e1vel pela decora\u00e7\u00e3o dos arruados das Festas Joaninas e das Solenidades da Semana Santa, tendo os cartazes e os an\u00fancios ficado a dever-se \u00e0 sua m\u00e3o. O seu esp\u00f3lio, pessoal e art\u00edstico, composto por mais de 900 pe\u00e7as foi doado \u00e0 C\u00e2mara de Braga e hoje enriquece o Arquivo Municipal de Braga. Concebido pelo escultor Jorge Ulisses, o busto, de bronze, representa o Mestre Jos\u00e9 Veiga, de frente para um pedestal retangular de granito, disposto na vertical, com uma inscri\u00e7\u00e3o onde se l\u00ea \u201cAO MESTRE JOS\u00c9 VEIGA (1925-2002).",
+         "location": {
+            "bbox": null,
+            "type": "Point",
+            "coordinates": [
+               41.551138888888886,
+               -8.422555555555554
+            ]
+         }
+      },
+      {
+         "article_title": "Registo de biodiversidade",
+         "article_type": "service",
+         "service_id": "registo_biodiversidade",
+         "service_url": "https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c",
+         "service_component": "iframe_embedded"
+      }
+   ],
+   "links": {
+      "site_section_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ],
+      "site_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ]
+   }
+}

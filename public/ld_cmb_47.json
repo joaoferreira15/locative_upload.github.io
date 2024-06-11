@@ -1,0 +1,81 @@
+{
+   "resource_id": "cmb:47",
+   "header": {
+      "resource_id": "47",
+      "resource_type": "schema.org/statue",
+      "resource_title": "MONUMENTO DA FOR\u00c7A A\u00c9REA",
+      "resource_description": "Elememto Escult\u00f3rico em Braga: Inaugurado em 25 de junho de 2006, o monumento \u00e0 For\u00e7a A\u00e9rea foi oferecido pela For\u00e7a A\u00e9rea Portuguesa \u00e0 cidade de Braga, durante as comemora\u00e7\u00f5es dos 54 anos da institui\u00e7\u00e3o, cerim\u00f3nias que se realizaram em Braga, entre os dias 24 de junho e 2 de julho com a presen\u00e7a do ministro da Administra\u00e7\u00e3o Interna e do chefe do Estado-Maior e implantado na rotunda da Avenida General Carrilho da Silva Pinto, em Ten\u00f5es. O monumento representa uma esp\u00e9cie de pir\u00e2mide, sendo a parte interior, em granito e a superior com pain\u00e9is quadrados de vidro, suportados por calhas de metal, dispostos de forma a criar uma segunda pir\u00e2mide. Ao centro, tem uma inscri\u00e7\u00e3o onde se l\u00ea \u201cA FOR\u00c7A A\u00c9REA PORTUGUESA SA\u00daDA A CIDADE DE BRAGA\u201d, seguida mais abaixo da inscri\u00e7\u00e3o \u201cDIA DA FOR\u00c7A A\u00c9REA 1 DE JULHO DE 2006, de lado sobre os pain\u00e9is de vidro apresenta uma imagem de um ser bic\u00e9falo, uma \u00e1guia com duas cabe\u00e7as e de asas abertas. O monumento \u00e9 de dupla face, tendo as mesmas caracter\u00edsticas e inscri\u00e7\u00f5es em ambos os lados",
+      "locative_site_id": "estatuaria_cmb",
+      "locative_site_about": "Informa\u00e7\u00e3o sobre estatuaria em Braga",
+      "data_provider": "C\u00e2mara Municipal de Braga"
+   },
+   "context": {
+      "resource_location": {
+         "bbox": null,
+         "type": "Point",
+         "coordinates": [
+            41.56286111111111,
+            -8.383944444444444
+         ]
+      }
+   },
+   "content": [
+      {
+         "article_title": "statue info",
+         "article_type": "StatueInfo",
+         "statue_id": "47",
+         "author_id": "-",
+         "name": "MONUMENTO DA FOR\u00c7A A\u00c9REA",
+         "description": "Inaugurado em 25 de junho de 2006, o monumento \u00e0 For\u00e7a A\u00e9rea foi oferecido pela For\u00e7a A\u00e9rea Portuguesa \u00e0 cidade de Braga, durante as comemora\u00e7\u00f5es dos 54 anos da institui\u00e7\u00e3o, cerim\u00f3nias que se realizaram em Braga, entre os dias 24 de junho e 2 de julho com a presen\u00e7a do ministro da Administra\u00e7\u00e3o Interna e do chefe do Estado-Maior e implantado na rotunda da Avenida General Carrilho da Silva Pinto, em Ten\u00f5es. O monumento representa uma esp\u00e9cie de pir\u00e2mide, sendo a parte interior, em granito e a superior com pain\u00e9is quadrados de vidro, suportados por calhas de metal, dispostos de forma a criar uma segunda pir\u00e2mide. Ao centro, tem uma inscri\u00e7\u00e3o onde se l\u00ea \u201cA FOR\u00c7A A\u00c9REA PORTUGUESA SA\u00daDA A CIDADE DE BRAGA\u201d, seguida mais abaixo da inscri\u00e7\u00e3o \u201cDIA DA FOR\u00c7A A\u00c9REA 1 DE JULHO DE 2006, de lado sobre os pain\u00e9is de vidro apresenta uma imagem de um ser bic\u00e9falo, uma \u00e1guia com duas cabe\u00e7as e de asas abertas. O monumento \u00e9 de dupla face, tendo as mesmas caracter\u00edsticas e inscri\u00e7\u00f5es em ambos os lados",
+         "location": {
+            "bbox": null,
+            "type": "Point",
+            "coordinates": [
+               41.56286111111111,
+               -8.383944444444444
+            ]
+         }
+      },
+      {
+         "article_title": "Registo de biodiversidade",
+         "article_type": "service",
+         "service_id": "registo_biodiversidade",
+         "service_url": "https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c",
+         "service_component": "iframe_embedded"
+      }
+   ],
+   "links": {
+      "site_section_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ],
+      "site_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ]
+   }
+}

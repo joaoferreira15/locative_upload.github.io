@@ -1,0 +1,81 @@
+{
+   "resource_id": "cmb:23",
+   "header": {
+      "resource_id": "23",
+      "resource_type": "schema.org/statue",
+      "resource_title": "EST\u00c1TUA PIO XII",
+      "resource_description": "Elememto Escult\u00f3rico em Braga: Inaugurada a 15 de maio de 1957, a est\u00e1tua foi mandada erguer pela Arquidiocese e CMBraga para prestar homenagem ao Papa Pio XII e implantada no Largo da Senhoraa-Branca. Pio XII de nome Eug\u00e9nio Giuseppe Maria Giovanni Pacelli nasceu em Roma, em 1876 e elegido Papa no dia 2 de mar\u00e7o de 1939, cargo que ocuparia at\u00e9 \u00e0 sua morte EM 9 de outubro de 1958. Foi o \u00fanico Papa do s\u00e9c. XX a exercer o Magist\u00e9rio Extraordin\u00e1rio da infalibilidade papal, invocado por Pio IX, quando definiu o dogma da Assun\u00e7\u00e3o em 1950 na sua enc\u00edclica Munificentissimus Deus, sendo a sua a\u00e7\u00e3o na Segunda Guerra Mundial alvo de debate e pol\u00e9mica. Foi proclamado vener\u00e1vel pelo Papa Jo\u00e3o Paulo II na d\u00e9cada de 1990. Concebida pelo escultor Ra\u00fal Maria Xavier, a est\u00e1tua, em bronze, representa o Papa Pio XII, envergando vestes eclesi\u00e1sticas e com os bra\u00e7os abertos em sinal de acolhimento, assenta num pedestal de granito, com uma inscri\u00e7\u00e3o, em bronze, na parte central onde se l\u00ea \u201cA PIO XII QUE DEFINIU A ASSUN\u00c7\u00c3O DE MARIA ARQUITECTO DA PAZ E DE UM MUNDO MELHOR A ARQUIDIOCESE E O MUNICIPIO BRACARENSES 15-V1957\u201d, dos lados apresenta dois bras\u00f5es esculpidos, de um lado o Bras\u00e3o da Cidade, no outro presumivelmente Bras\u00e3o Pontif\u00edcio do Papa Pio XII",
+      "locative_site_id": "estatuaria_cmb",
+      "locative_site_about": "Informa\u00e7\u00e3o sobre estatuaria em Braga",
+      "data_provider": "C\u00e2mara Municipal de Braga"
+   },
+   "context": {
+      "resource_location": {
+         "bbox": null,
+         "type": "Point",
+         "coordinates": [
+            41.552,
+            -8.416888888888888
+         ]
+      }
+   },
+   "content": [
+      {
+         "article_title": "statue info",
+         "article_type": "StatueInfo",
+         "statue_id": "23",
+         "author_id": "RA\u00daL MARIA XAVIER",
+         "name": "EST\u00c1TUA PIO XII",
+         "description": "Inaugurada a 15 de maio de 1957, a est\u00e1tua foi mandada erguer pela Arquidiocese e CMBraga para prestar homenagem ao Papa Pio XII e implantada no Largo da Senhoraa-Branca. Pio XII de nome Eug\u00e9nio Giuseppe Maria Giovanni Pacelli nasceu em Roma, em 1876 e elegido Papa no dia 2 de mar\u00e7o de 1939, cargo que ocuparia at\u00e9 \u00e0 sua morte EM 9 de outubro de 1958. Foi o \u00fanico Papa do s\u00e9c. XX a exercer o Magist\u00e9rio Extraordin\u00e1rio da infalibilidade papal, invocado por Pio IX, quando definiu o dogma da Assun\u00e7\u00e3o em 1950 na sua enc\u00edclica Munificentissimus Deus, sendo a sua a\u00e7\u00e3o na Segunda Guerra Mundial alvo de debate e pol\u00e9mica. Foi proclamado vener\u00e1vel pelo Papa Jo\u00e3o Paulo II na d\u00e9cada de 1990. Concebida pelo escultor Ra\u00fal Maria Xavier, a est\u00e1tua, em bronze, representa o Papa Pio XII, envergando vestes eclesi\u00e1sticas e com os bra\u00e7os abertos em sinal de acolhimento, assenta num pedestal de granito, com uma inscri\u00e7\u00e3o, em bronze, na parte central onde se l\u00ea \u201cA PIO XII QUE DEFINIU A ASSUN\u00c7\u00c3O DE MARIA ARQUITECTO DA PAZ E DE UM MUNDO MELHOR A ARQUIDIOCESE E O MUNICIPIO BRACARENSES 15-V1957\u201d, dos lados apresenta dois bras\u00f5es esculpidos, de um lado o Bras\u00e3o da Cidade, no outro presumivelmente Bras\u00e3o Pontif\u00edcio do Papa Pio XII",
+         "location": {
+            "bbox": null,
+            "type": "Point",
+            "coordinates": [
+               41.552,
+               -8.416888888888888
+            ]
+         }
+      },
+      {
+         "article_title": "Registo de biodiversidade",
+         "article_type": "service",
+         "service_id": "registo_biodiversidade",
+         "service_url": "https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c",
+         "service_component": "iframe_embedded"
+      }
+   ],
+   "links": {
+      "site_section_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ],
+      "site_links": [
+         {
+            "link_id": "home",
+            "link_name": "Site Home",
+            "link_urn": "about",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         },
+         {
+            "link_id": "home",
+            "link_name": "Est\u00e1tuas",
+            "link_urn": "estatuas",
+            "link_relative_url": "estatuas",
+            "link_type": 1
+         }
+      ]
+   }
+}

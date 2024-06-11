@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
+<title>  </title >
+<meta name="description" content="">
+<meta name="author" content="Câmara Municipal de Braga">
+<meta name="resource_type" content="schema.org/statue">
+<meta name="locative_site_id" content="estatuaria_cmb">
+<meta name="about" content="Informação sobre estatuaria em Braga">
+<link rel="icon" href="" type="image/x-icon">
+<link rel="stylesheet" href="locative.css">
+
+    
+<script type = "application/ld+json">
+{"resource_location": {"bbox": null, "type": "Point", "coordinates": [41.55233333333333, -8.428277777777778]}}
+</script>
+</head>
+<body>
+    
+<article class="statue-info"   >
+<statue-info  json='{"article_title": "statue info", "article_type": "statue-info", "statue_id": "19", "author_id": "SALVADOR BARATA FEYO", "name": "EST\u00c1TUA MARECHAL GOMES DA COSTA", "description": "Inaugurada em 28 de maio de 1966, a est\u00e1tua foi mandada erguer para prestar homenagem ao Marechal Gomes da Costa e implantada no meio da Pra\u00e7a Conde de Agrolongo, junto \u00e0 igreja e Convento do P\u00f3pulo. Manuel Gomes da Costa foi um militar e pol\u00edtico portugu\u00eas, d\u00e9cimo Presidente da Rep\u00fablica e o segundo da Ditadura, nasceu em Lisboa em 14 de janeiro de 1863 e faleceu, na mesma cidade, em 17 de dezembro de 1929. Ficou popularmente conhecido por ter liderado a revolta de 28 de maio de 1926 que partiu de Braga ao comando do seu ex\u00e9rcito e marchou sobre Lisboa com o intuito de levar a cabo o golpe militar que colocaria um ponto final na I Rep\u00fablica, dando inicio a um per\u00edodo de Ditadura Militar e permitiu, mais tarde, o regime do Estado Novo. Concebida pelo escultor Salvador Barata Feyo, a est\u00e1tua representa o Marechal Gomes da Costa, envergando o uniforme militar e segurando nas m\u00e3os um bast\u00e3o, assente numa base de granito, com uma inscri\u00e7\u00e3o onde se l\u00ea \u201cAO MARECHAL GOMES DA COSTA\u201d.", "location": {"bbox": null, "type": "Point", "coordinates": [41.55233333333333, -8.428277777777778]}}'> 
+<script type="module" src="webcomponents/statue-info.js">
+</script>
+</statue-info>
+</article>
+<article class="service" >
+<iframe id="dynamic-iframe" height="800" width="700"></iframe>
+<script>
+    // Definir uma função para construir e definir dinamicamente o src do iframe
+    function getPageUrl() {
+        // Obter a URL da página atual
+        var currentUrl = window.location.href;
+        console.log('Parent page URL:', currentUrl);
+        // Construir a URL do iframe dinamicamente
+        var iframeUrl = 'https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c/' + encodeURIComponent(currentUrl);
+        // Definir o atributo src do iframe
+        var iframe = document.getElementById('dynamic-iframe');
+        iframe.src = iframeUrl;
+        }
+        // Chamar a função getPageUrl() quando a página inteira, incluindo o iframe, for carregada
+         window.onload = function () {
+                getPageUrl();
+        };
+</script>
+</article>
+</body>
+</html>

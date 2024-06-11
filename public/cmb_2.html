@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
+<title>  </title >
+<meta name="description" content="">
+<meta name="author" content="Câmara Municipal de Braga">
+<meta name="resource_type" content="schema.org/statue">
+<meta name="locative_site_id" content="estatuaria_cmb">
+<meta name="about" content="Informação sobre estatuaria em Braga">
+<link rel="icon" href="" type="image/x-icon">
+<link rel="stylesheet" href="locative.css">
+
+    
+<script type = "application/ld+json">
+{"resource_location": {"bbox": null, "type": "Point", "coordinates": [41.54277777777778, -8.418222222222221]}}
+</script>
+</head>
+<body>
+    
+<article class="statue-info"   >
+<statue-info  json='{"article_title": "statue info", "article_type": "statue-info", "statue_id": "2", "author_id": "JO\u00c3O RAPAG\u00c3O | C\u00c9SAR FERNANDES | JOS\u00c9 RODRIGUES  ", "name": "MONUMENTO EVOCATIVO AO 25 DE ABRIL", "description": "Inaugurado a 25 de abril de 1993, o Monumento Evocativo ao 25 de Abril foi mandado erguer pela CMBraga para celebrar a Liberdade e a Democracia e instalado ao fundo da Avenida da Liberdade, junto ao parque de S\u00e3o Jo\u00e3o da Ponte. Concebido pelos arquitetos Jo\u00e3o Rapag\u00e3o e C\u00e9sar Fernandes e pelo escultor Jos\u00e9 Rodrigues, o monumento representa uma enorme faixa, de bronze, que lembra uma bandeira hasteada ao vento, apresentando numa das extremidades uma mulher nua esculpida. A faixa encontra-se \u00e0 frente de uma parede de granito, apresentando duas inscri\u00e7\u00f5es esculpidas, uma na parte inferior da frente onde se l\u00ea \u201c25 DE ABRIL\u201d e na parte oposta, \u201cLIBERDADE E DEMOCRACIA\u201d, e assenta num mastro de m\u00e1rmore. O monumento integra igualmente o muro de pedra que se dilui no pavimento do passeio.", "location": {"bbox": null, "type": "Point", "coordinates": [41.54277777777778, -8.418222222222221]}}'> 
+<script type="module" src="webcomponents/statue-info.js">
+</script>
+</statue-info>
+</article>
+<article class="service" >
+<iframe id="dynamic-iframe" height="800" width="700"></iframe>
+<script>
+    // Definir uma função para construir e definir dinamicamente o src do iframe
+    function getPageUrl() {
+        // Obter a URL da página atual
+        var currentUrl = window.location.href;
+        console.log('Parent page URL:', currentUrl);
+        // Construir a URL do iframe dinamicamente
+        var iframeUrl = 'https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c/' + encodeURIComponent(currentUrl);
+        // Definir o atributo src do iframe
+        var iframe = document.getElementById('dynamic-iframe');
+        iframe.src = iframeUrl;
+        }
+        // Chamar a função getPageUrl() quando a página inteira, incluindo o iframe, for carregada
+         window.onload = function () {
+                getPageUrl();
+        };
+</script>
+</article>
+</body>
+</html>

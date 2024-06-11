@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
+<title>  </title >
+<meta name="description" content="">
+<meta name="author" content="Câmara Municipal de Braga">
+<meta name="resource_type" content="schema.org/statue">
+<meta name="locative_site_id" content="estatuaria_cmb">
+<meta name="about" content="Informação sobre estatuaria em Braga">
+<link rel="icon" href="" type="image/x-icon">
+<link rel="stylesheet" href="locative.css">
+
+    
+<script type = "application/ld+json">
+{"resource_location": {"bbox": null, "type": "Point", "coordinates": [41.55755555555555, -8.418166666666666]}}
+</script>
+</head>
+<body>
+    
+<article class="statue-info"   >
+<statue-info  json='{"article_title": "statue info", "article_type": "statue-info", "statue_id": "24", "author_id": "ANT\u00d3NIO DE AZEVEDO  ", "name": "BUSTO - DOMINGOS LEITE PEREIRA ", "description": "Inaugurado em 1962, o busto foi erigido para prestar homenagem \u00e0 grande figura bracarense da 1\u00aa Rep\u00fablica, Domingos Leite Pereira e implantado no jardim da rua Conselheiro S\u00e3o Janu\u00e1rio. Domingos Leite Pereira foi um cidad\u00e3o prestigiado e muito respeitado, nasceu em Braga a 19 de setembro de 1880 e faleceu no Porto a 27 de outubro de 1956. Um homem de elevada craveira moral e intelectual que reconhecia a democracia com austeridade, ordem hierarquizada, liberdade de credos e opini\u00f5es, respeito pela lei e direitos de cada um. Concebido por Ant\u00f3nio de Azevedo, o busto de bronze, representa Domingos Leite Pereira, assente num pedestal de granito, com uma inscri\u00e7\u00e3o onde se l\u00ea \u201cDOMINGOS LEITE PEREIRA 1882-1956 1\u00ba PRESIDENTE DA C\u00c2MARA DE BRAGA AP\u00d3S O ADVENTO DA REP\u00daBLICA DEPUTADO DA NA\u00c7\u00c3O MINISTRO DA INSTRU\u00c7\u00c3O P\u00daBLICA DO ULTRAMAR E NEG\u00d3CIOS ESTRANGEIROS PRESIDENTE DO MINIST\u00c9RIO PRESIDENTE DA C\u00c2MARA DOS DEPUTADOS HOMENAGEM AO CIDAD\u00c3O E AO BRACARENSE DE NOBRES VISTUDES\u201d.", "location": {"bbox": null, "type": "Point", "coordinates": [41.55755555555555, -8.418166666666666]}}'> 
+<script type="module" src="webcomponents/statue-info.js">
+</script>
+</statue-info>
+</article>
+<article class="service" >
+<iframe id="dynamic-iframe" height="800" width="700"></iframe>
+<script>
+    // Definir uma função para construir e definir dinamicamente o src do iframe
+    function getPageUrl() {
+        // Obter a URL da página atual
+        var currentUrl = window.location.href;
+        console.log('Parent page URL:', currentUrl);
+        // Construir a URL do iframe dinamicamente
+        var iframeUrl = 'https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c/' + encodeURIComponent(currentUrl);
+        // Definir o atributo src do iframe
+        var iframe = document.getElementById('dynamic-iframe');
+        iframe.src = iframeUrl;
+        }
+        // Chamar a função getPageUrl() quando a página inteira, incluindo o iframe, for carregada
+         window.onload = function () {
+                getPageUrl();
+        };
+</script>
+</article>
+</body>
+</html>

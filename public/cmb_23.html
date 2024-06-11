@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
+<title>  </title >
+<meta name="description" content="">
+<meta name="author" content="Câmara Municipal de Braga">
+<meta name="resource_type" content="schema.org/statue">
+<meta name="locative_site_id" content="estatuaria_cmb">
+<meta name="about" content="Informação sobre estatuaria em Braga">
+<link rel="icon" href="" type="image/x-icon">
+<link rel="stylesheet" href="locative.css">
+
+    
+<script type = "application/ld+json">
+{"resource_location": {"bbox": null, "type": "Point", "coordinates": [41.552, -8.416888888888888]}}
+</script>
+</head>
+<body>
+    
+<article class="statue-info"   >
+<statue-info  json='{"article_title": "statue info", "article_type": "statue-info", "statue_id": "23", "author_id": "RA\u00daL MARIA XAVIER", "name": "EST\u00c1TUA PIO XII", "description": "Inaugurada a 15 de maio de 1957, a est\u00e1tua foi mandada erguer pela Arquidiocese e CMBraga para prestar homenagem ao Papa Pio XII e implantada no Largo da Senhoraa-Branca. Pio XII de nome Eug\u00e9nio Giuseppe Maria Giovanni Pacelli nasceu em Roma, em 1876 e elegido Papa no dia 2 de mar\u00e7o de 1939, cargo que ocuparia at\u00e9 \u00e0 sua morte EM 9 de outubro de 1958. Foi o \u00fanico Papa do s\u00e9c. XX a exercer o Magist\u00e9rio Extraordin\u00e1rio da infalibilidade papal, invocado por Pio IX, quando definiu o dogma da Assun\u00e7\u00e3o em 1950 na sua enc\u00edclica Munificentissimus Deus, sendo a sua a\u00e7\u00e3o na Segunda Guerra Mundial alvo de debate e pol\u00e9mica. Foi proclamado vener\u00e1vel pelo Papa Jo\u00e3o Paulo II na d\u00e9cada de 1990. Concebida pelo escultor Ra\u00fal Maria Xavier, a est\u00e1tua, em bronze, representa o Papa Pio XII, envergando vestes eclesi\u00e1sticas e com os bra\u00e7os abertos em sinal de acolhimento, assenta num pedestal de granito, com uma inscri\u00e7\u00e3o, em bronze, na parte central onde se l\u00ea \u201cA PIO XII QUE DEFINIU A ASSUN\u00c7\u00c3O DE MARIA ARQUITECTO DA PAZ E DE UM MUNDO MELHOR A ARQUIDIOCESE E O MUNICIPIO BRACARENSES 15-V1957\u201d, dos lados apresenta dois bras\u00f5es esculpidos, de um lado o Bras\u00e3o da Cidade, no outro presumivelmente Bras\u00e3o Pontif\u00edcio do Papa Pio XII", "location": {"bbox": null, "type": "Point", "coordinates": [41.552, -8.416888888888888]}}'> 
+<script type="module" src="webcomponents/statue-info.js">
+</script>
+</statue-info>
+</article>
+<article class="service" >
+<iframe id="dynamic-iframe" height="800" width="700"></iframe>
+<script>
+    // Definir uma função para construir e definir dinamicamente o src do iframe
+    function getPageUrl() {
+        // Obter a URL da página atual
+        var currentUrl = window.location.href;
+        console.log('Parent page URL:', currentUrl);
+        // Construir a URL do iframe dinamicamente
+        var iframeUrl = 'https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c/' + encodeURIComponent(currentUrl);
+        // Definir o atributo src do iframe
+        var iframe = document.getElementById('dynamic-iframe');
+        iframe.src = iframeUrl;
+        }
+        // Chamar a função getPageUrl() quando a página inteira, incluindo o iframe, for carregada
+         window.onload = function () {
+                getPageUrl();
+        };
+</script>
+</article>
+</body>
+</html>
