@@ -84,20 +84,17 @@ function searchKeysInJson(data, keysToSearch) {
 
 
 export function updateValue(instance, name, newValue) {
-    let json = instance.getAttribute('json')
+    let artilce_data = instance.getAttribute('artilce_data')
     let css = instance.getAttribute('css')
     let pattern = instance.getAttribute('pattern')
     let componentID = instance.getAttribute('id')
 
     switch (name) {
-        case "json":
-            json = newValue;
+        case "artilce_data":
+            artilce_data = newValue;
             break;
         case "css":
             css = newValue;
-            break;
-        case "pointers":
-            pointers = JSON.parse(newValue.replace(/'/g, '"'));
             break;
         case "pattern":
             pattern = newValue;
@@ -107,15 +104,15 @@ export function updateValue(instance, name, newValue) {
             break;
     }
 
-    if (isValidJsonString(json)) {
+    if (isValidJsonString(artilce_data)) {
         try {
-            const data = JSON.parse(json);
+            const data = JSON.parse(artilce_data);
             instance.populateElements(data, css, pattern, componentID);
         } catch (error) {
             instance.handleError(error);
         }
     } else {
-        fetchData(json)
+        fetchData(artilce_data)
             .then(data => instance.populateElements(data, css, pattern, componentID))
             .catch(error => instance.handleError(error));
     }

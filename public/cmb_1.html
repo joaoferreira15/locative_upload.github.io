@@ -1,50 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    
-<meta charset="UTF-8">
-<meta name="viewport" content ="width=device-width, initial-scale=1.0">
-<title>  </title >
-<meta name="description" content="">
-<meta name="author" content="Câmara Municipal de Braga">
-<meta name="resource_type" content="schema.org/statue">
-<meta name="locative_site_id" content="estatuaria_cmb">
-<meta name="about" content="Informação sobre estatuaria em Braga">
-<link rel="icon" href="" type="image/x-icon">
-<link rel="stylesheet" href="locative.css">
 
-    
-<script type = "application/ld+json">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+    <meta name="description" content="">
+    <meta name="author" content="Câmara Municipal de Braga">
+    <meta name="resource_type" content="schema.org/statue">
+    <meta name="locative_site_id" content="estatuaria_cmb">
+    <meta name="about" content="Informação sobre estatuaria em Braga">
+    <link rel="icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="locative.css">
+
+
+    <script type="application/ld+json">
 {"resource_location": {"bbox": null, "type": "Point", "coordinates": [41.54475, -8.428305555555555]}}
 </script>
 </head>
+
 <body>
-    
-<article class="statue-info"   >
-<statue-info  json='{"article_title": "statue info", "article_type": "statue-info", "statue_id": "1", "author_id": "PEDRO CABRITA REIS ", "name": "MOVIMENTO PERP\u00c9TUO ", "description": "Inaugurado a 24 de junho de 2000, o Monumento Comemorativo do Bimilen\u00e1rio da Cidade de Braga designado por \u201cMovimento Perp\u00e9tuo\u201d foi erigido pela CMBraga para assinalar os dois mil anos da funda\u00e7\u00e3o de Bracara Augusta e implantado na Colina da Cividade, por ser um dos locais mais significativos e onde se encontram mais vest\u00edgios da \u00e9poca romana. Concebido pelo artista pl\u00e1stico e escultor Pedro Cabrita Reis, o monumento executado em bet\u00e3o, representa uma r\u00e9plica de um aqueduto romano composto por tr\u00eas arcos de volta perfeita, suportados por tr\u00eas pilares. Cada pilar apresenta duas colunas circulares e retangulares, dispostas de forma irregular de Bracara Augusta e implantado na Colina da Cividade, por ser um dos locais mais significativos e onde se encontram mais vest\u00edgios da \u00e9poca romana. Concebido pelo artista pl\u00e1stico  e escultor Pedro Cabrita Reis, o monumento executado em bet\u00e3o, representa uma r\u00e9plica de um aqueduto romano composto por tr\u00eas arcos de volta perfeita, suportados por tr\u00eas pilares. Cada pilar apresenta duas colunas circulares e  retangulares, dispostas de forma irregular.", "location": {"bbox": null, "type": "Point", "coordinates": [41.54475, -8.428305555555555]}}'> 
-<script type="module" src="webcomponents/statue-info.js">
-</script>
-</statue-info>
-</article>
-<article class="service" >
-<iframe id="dynamic-iframe" height="800" width="700"></iframe>
-<script>
-    // Definir uma função para construir e definir dinamicamente o src do iframe
-    function getPageUrl() {
-        // Obter a URL da página atual
-        var currentUrl = window.location.href;
-        console.log('Parent page URL:', currentUrl);
-        // Construir a URL do iframe dinamicamente
-        var iframeUrl = 'https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c/' + encodeURIComponent(currentUrl);
-        // Definir o atributo src do iframe
-        var iframe = document.getElementById('dynamic-iframe');
-        iframe.src = iframeUrl;
-        }
-        // Chamar a função getPageUrl() quando a página inteira, incluindo o iframe, for carregada
-         window.onload = function () {
+
+    <article class="statue-info">
+        <statue-info
+            article_data='{"article_title": "statue info", 
+            "article_type": "statue-info", 
+            "statue_id": "1", 
+            "author_id": "PEDRO CABRITA REIS ", 
+            "name": "MOVIMENTO PERP\u00c9TUO ", 
+            "description": "Inaugurado a 24 de junho de 2000, o Monumento Comemorativo do Bimilen\u00e1rio da Cidade de Braga designado por \u201cMovimento Perp\u00e9tuo\u201d foi erigido pela CMBraga para assinalar os dois mil anos da funda\u00e7\u00e3o de Bracara Augusta e implantado na Colina da Cividade, por ser um dos locais mais significativos e onde se encontram mais vest\u00edgios da \u00e9poca romana. Concebido pelo artista pl\u00e1stico e escultor Pedro Cabrita Reis, o monumento executado em bet\u00e3o, representa uma r\u00e9plica de um aqueduto romano composto por tr\u00eas arcos de volta perfeita, suportados por tr\u00eas pilares. Cada pilar apresenta duas colunas circulares e retangulares, dispostas de forma irregular de Bracara Augusta e implantado na Colina da Cividade, por ser um dos locais mais significativos e onde se encontram mais vest\u00edgios da \u00e9poca romana. Concebido pelo artista pl\u00e1stico  e escultor Pedro Cabrita Reis, o monumento executado em bet\u00e3o, representa uma r\u00e9plica de um aqueduto romano composto por tr\u00eas arcos de volta perfeita, suportados por tr\u00eas pilares. Cada pilar apresenta duas colunas circulares e  retangulares, dispostas de forma irregular.", "location": {"bbox": null, "type": "Point", "coordinates": [41.54475, -8.428305555555555]}}'>
+            <script type="module" src="webcomponents/statue-info.js"></script>
+        </statue-info>
+    </article>
+
+    <article class="coordinates-component">
+        <coordinates-component article_data='{"resource_location": {
+                "bbox": null, 
+                "type": "Point", 
+                "coordinates": [41.54475, -8.428305555555555]}}'>
+            <script type="module" src="webcomponents/coordinates-component.js"></script>
+        </coordinates-component>
+    </article>
+
+    <article class="images-component">
+        <images-component article_data='{"article_title": "Fotos",
+        "images": [
+          {
+            "url": "images/Est\u00e1tua D. Frei Bartolomeu dos M\u00e1rtiresA.jpg",
+            "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
+          },
+          {
+            "url": "images/Est\u00e1tua D. Frei Bartolomeu dos M\u00e1rtiresB.jpg",
+            "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
+          },
+          {
+            "url": "images/IMG_0558.JPG",
+            "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
+          },
+          {
+            "url": "images/IMG_0559.JPG",
+            "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
+          },
+          {
+            "url": "images/IMG_0712.JPG",
+            "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
+          },
+          {
+            "url": "images/IMG_0713.JPG",
+            "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
+          },
+          {
+            "url": "images/IMG_0714.JPG",
+            "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
+          },
+          {
+            "url": "images/IMG_0715.JPG",
+            "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
+          },
+          {
+            "url": "images/IMG_0716.JPG",
+            "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
+          }
+        ]
+      }'>
+            <script type="module" src="webcomponents/images-component.js"></script>
+        </images-component>
+    </article>
+
+    <article class="resource-info">
+        <resource-info article_data='{
+        "resource_id": "1",
+        "resource_type": "schema.org/statue",
+        "resource_title": "MOVIMENTO PERP\u00c9TUO ",
+        "resource_description": "Elememto Escult\u00f3rico em Braga: Inaugurado a 24 de junho de 2000, o Monumento Comemorativo do Bimilen\u00e1rio da Cidade de Braga designado por \u201cMovimento Perp\u00e9tuo\u201d foi erigido pela CMBraga para assinalar os dois mil anos da funda\u00e7\u00e3o de Bracara Augusta e implantado na Colina da Cividade, por ser um dos locais mais significativos e onde se encontram mais vest\u00edgios da \u00e9poca romana. Concebido pelo artista pl\u00e1stico e escultor Pedro Cabrita Reis, o monumento executado em bet\u00e3o, representa uma r\u00e9plica de um aqueduto romano composto por tr\u00eas arcos de volta perfeita, suportados por tr\u00eas pilares. Cada pilar apresenta duas colunas circulares e retangulares, dispostas de forma irregular de Bracara Augusta e implantado na Colina da Cividade, por ser um dos locais mais significativos e onde se encontram mais vest\u00edgios da \u00e9poca romana. Concebido pelo artista pl\u00e1stico  e escultor Pedro Cabrita Reis, o monumento executado em bet\u00e3o, representa uma r\u00e9plica de um aqueduto romano composto por tr\u00eas arcos de volta perfeita, suportados por tr\u00eas pilares. Cada pilar apresenta duas colunas circulares e  retangulares, dispostas de forma irregular.",
+        "locative_site_id": "estatuaria_cmb",
+        "locative_site_about": "Informa\u00e7\u00e3o sobre estatuaria em Braga",
+        "data_provider": "C\u00e2mara Municipal de Braga"
+     }'>
+            <script type="module" src="webcomponents/resource-info.js"></script>
+        </resource-info>
+    </article>
+
+    <article class="service">
+        <iframe id="dynamic-iframe" height="800" width="700"></iframe>
+        <script>
+            // Definir uma função para construir e definir dinamicamente o src do iframe
+            function getPageUrl() {
+                // Obter a URL da página atual
+                var currentUrl = window.location.href;
+                console.log('Parent page URL:', currentUrl);
+                // Construir a URL do iframe dinamicamente
+                var iframeUrl = 'https://plataformaservicos.netlify.app/6655d20dc1c70c342cc7020c/' + encodeURIComponent(currentUrl);
+                // Definir o atributo src do iframe
+                var iframe = document.getElementById('dynamic-iframe');
+                iframe.src = iframeUrl;
+            }
+            // Chamar a função getPageUrl() quando a página inteira, incluindo o iframe, for carregada
+            window.onload = function () {
                 getPageUrl();
-        };
-</script>
-</article>
+            };
+        </script>
+    </article>
 </body>
+
 </html>

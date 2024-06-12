@@ -2,7 +2,7 @@ import Titulo from "./lib/titulo.js";
 import Imagem from './lib/imagem.js';
 import Registo from "./lib/registo.js";
 import Description from "./lib/description.js";
-import { updateValue, isValidJsonString } from "./lib/functions.js"
+import { updateValue, isValidJsonString, fetchData, getPathFromPointers } from "./lib/functions.js"
 
 class StatueInfo extends HTMLElement {
   constructor() {
@@ -14,9 +14,7 @@ class StatueInfo extends HTMLElement {
     shadowRoot.appendChild(this.getTemplate().content.cloneNode(true));
 
     //variavel que aponta para os ficheiros css e json
-    var css = this.getAttribute("css");
-    if (!css) {
-      css = `p {
+    const generalCss = `p {
     font-family: "DM Sans", Verdana, sans-serif;
 }
 
@@ -29,6 +27,35 @@ a {
     font-family: "Syne", Lato, sans-serif;
     color: inherit;
 }
+
+.resource, .locative-site, .data-provider {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .resource {
+            background-color: #f9f9f9;
+        }
+
+        .resource-header {
+            margin-bottom: 10px;
+        }
+        .resource-header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .resource-description {
+            margin: 20px 0;
+        }
+        .locative-site {
+            background-color: #f9f9f9;
+        }
+        .data-provider {
+            background-color: #f9f9f9;
+            font-style: italic;
+        }
 
 .fixed {
     position: fixed;
@@ -217,8 +244,7 @@ ion-icon {
 
 .small-map {
   height: 300px;
-  /*margin-top: 10px;
-  margin-bottom: 30px;*/
+  margin: 15px;
 }
 
 .gallery {
@@ -435,15 +461,19 @@ button:hover {
   justify-content: center;
   gap: 10px;
 }`
-    }
-    const json = this.getAttribute("json");
+    this.css = this.getAttribute("css") ? this.getAttribute("css") : generalCss
+    this.json = this.getAttribute("article_data") ? this.getAttribute("article_data") : this.getAttribute("json");
+    this.pointers = this.getAttribute("pointers") ? JSON.parse(this.getAttribute("pointers").replace(/'/g, '"')) : null
+    this.pattern = this.getAttribute("pattern") || "2";
+  }
 
-    if (isValidJsonString(json)) {
+  connectedCallback() {
+    if (isValidJsonString(this.json)) {
       try {
-        const data = JSON.parse(json);
+        const data = JSON.parse(this.json);
         this.loadLibraries()
           .then(() => {
-            this.populateElements(data, css);
+            this.populateElements(data, this.css, null, this.pattern);
           })
           .catch(error => {
             console.error("Failed to load libraries:", error);
@@ -451,10 +481,19 @@ button:hover {
       } catch (error) {
         this.handleError(error);
       }
+    } else {
+      fetchData(this.json)
+        .then(data => {
+          return this.loadLibraries().then(() => data);
+        })
+        .then(data => {
+          this.populateElements(data, this.css, this.pointers, this.pattern);
+        })
+        .catch(error => {
+          this.handleError(error);
+        });
     }
   }
-
-
 
   async loadLibraries() {
     // Load Ionicons CSS
@@ -465,7 +504,6 @@ button:hover {
 
     // Load Ionicons JS modules
     await this.loadScript("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js", true);
-    await this.loadScript("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js", false);
   }
 
   loadScript(src, typeModule = false) {
@@ -482,7 +520,7 @@ button:hover {
 
   static get observedAttributes() {
     // Lista de atributos que você deseja observar as mudanças
-    return ['css', "json"];
+    return ['css', "article_data", "json", "pointers"];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -497,17 +535,12 @@ button:hover {
     }
   }
 
-
-
   getTemplate() {
     const template = document.createElement("template");
     template.innerHTML = `
         <div id="container" class="container custom-container">
           <style id="styleDiv"></style>
           <link rel="stylesheet" type="text/css" id="css" href="">
-          <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-          <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-          <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
           <div id="apresentacao" class="text-left border-black">      
             <div id="articleId" class="border-black-bottom"></div>
             <div id="imagem"></div>
@@ -518,33 +551,97 @@ button:hover {
     return template;
   }
 
-
-
-  populateElements(data, css) {
-    const shadowRoot = this.shadowRoot;
-
+  populateElements(data, css, pointers, pattern) {
     if (css.startsWith("static") || css.startsWith("https")) {
-      shadowRoot.getElementById("styleDiv").innerHTML = "";
-      shadowRoot.getElementById("css").setAttribute("href", css);
+      this.shadowRoot.getElementById("styleDiv").innerHTML = "";
+      this.shadowRoot.getElementById("css").setAttribute("href", css);
     } else {
-      shadowRoot.getElementById("css").setAttribute("href", "");
-      shadowRoot.getElementById("styleDiv").innerHTML = css;
+      this.shadowRoot.getElementById("css").setAttribute("href", "");
+      this.shadowRoot.getElementById("styleDiv").innerHTML = css;
     }
 
-    const caracterization_data = shadowRoot.getElementById("caracterization_data")
-    const imagem = shadowRoot.getElementById("imagem");
-    const articleId = shadowRoot.getElementById("articleId")
-    // data number of key:values inside
+    if(pointers) {
+      var keysToSearchList = ["title", "name", "id", "type", "description", "author", "photo.url"]
+      // data number of key:values inside
+      let resultList = getPathFromPointers(data, pointers, keysToSearchList);
+      for (const { path, lastKey } of resultList) {
+        const filteredKeys = this.fillElements(path, true, lastKey, keysToSearchList, pattern)
+        keysToSearchList = filteredKeys
+      }
+    } else {
+      this.fillElements(data, false, null, null, pattern)
+    }
+  }
+
+  fillElements(data, pointers, lastKey, keysToSearchList, pattern) {
+    const caracterization_data = this.shadowRoot.getElementById("caracterization_data")
+    const imagem = this.shadowRoot.getElementById("imagem");
+    const articleId = this.shadowRoot.getElementById("articleId")
     const n_rows = Object.keys(data).length
 
-    if (data.article_title) {
-      const registoInstance = new Titulo("StatueInfo", "", data.article_title, "");
-      registoInstance.classList.add("centerd-text")
-      articleId.appendChild(registoInstance);
-    }
 
-    if (data.name) {
-      if (n_rows <= 2 && !data.image) {
+    if (pattern == "1") {
+      if (data.article_title && (!keysToSearchList || keysToSearchList.includes("title"))) {
+        const registoInstance = new Titulo("StatueInfo", "", data.article_title, "");
+        registoInstance.classList.add("centerd-text")
+        articleId.appendChild(registoInstance);
+
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "title");
+      }
+
+      if (data.name && (!keysToSearchList || (keysToSearchList.includes("name")))) {
+        if (n_rows <= 2 && !data.image) {
+          const div = document.createElement("div")
+          div.classList.add("custom-id")
+
+          const icon = document.createElement("ion-icon");
+          icon.setAttribute("name", "person-outline");
+          icon.classList.add("icon");
+
+          const registoInstance = new Registo("StatueInfo", "", data.name, "");
+
+          div.appendChild(icon);
+          div.appendChild(registoInstance);
+
+          caracterization_data.appendChild(div)
+        } else {
+          if (data.type && (!keysToSearchList || (keysToSearchList.includes("type")))) {
+            const registoInstance2 = new Registo("StatueInfo", "", data.type, ["custom-type", "no-mt"]);
+
+            const registoInstance = new Titulo("StatueInfo", "", data.name, ["custom-title", "no-mb"]);
+
+            caracterization_data.appendChild(registoInstance)
+            caracterization_data.appendChild(registoInstance2)
+
+            if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "type");
+          } else {
+            const registoInstance = new Titulo("StatueInfo", "", data.name, "custom-title");
+
+            caracterization_data.appendChild(registoInstance)
+          }
+        }
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "name");
+      }
+
+      if (data.statue_id && (!keysToSearchList || keysToSearchList.includes("id"))) {
+        const div = document.createElement("div")
+        div.classList.add("custom-id")
+
+        const icon = document.createElement("ion-icon");
+        icon.setAttribute("name", "clipboard-outline");
+        icon.classList.add("icon");
+
+        const registoInstance = new Registo("StatueInfo", "Identifier", data.statue_id, "number");
+
+        div.appendChild(icon);
+        div.appendChild(registoInstance);
+
+        caracterization_data.appendChild(div)
+
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "id");
+      }
+
+      if (data.author_id && (!keysToSearchList || keysToSearchList.includes("author"))) {
         const div = document.createElement("div")
         div.classList.add("custom-id")
 
@@ -552,61 +649,94 @@ button:hover {
         icon.setAttribute("name", "person-outline");
         icon.classList.add("icon");
 
-        const registoInstance = new Registo("StatueInfo", "", data.name, "");
+        const registoInstance = new Registo("StatueInfo", "Author", data.author_id, "");
 
         div.appendChild(icon);
         div.appendChild(registoInstance);
 
         caracterization_data.appendChild(div)
-      } else {
-        if (data.article_type) {
-          const registoInstance2 = new Registo("StatueInfo", "", data.article_type, ["custom-type", "no-mt"]);
 
-          const registoInstance = new Titulo("StatueInfo", "", data.name, ["custom-title", "no-mb"]);
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "author");
+      }
 
-          caracterization_data.appendChild(registoInstance)
-          caracterization_data.appendChild(registoInstance2)
-        } else {
-          const registoInstance = new Titulo("StatueInfo", "", data.name, "custom-title");
+      if (data.description && (!keysToSearchList || keysToSearchList.includes("description"))) {
+        const div = document.createElement("div")
+        div.classList.add("custom-description")
 
-          caracterization_data.appendChild(registoInstance)
-        }
+        const registoInstance = new Description("StatueInfo", "", data.description, "custom-description");
+        div.appendChild(registoInstance);
+
+        caracterization_data.appendChild(registoInstance)
+
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "description");
+      }
+
+      if (data.url && (!keysToSearchList || keysToSearchList.includes("photo.url"))) {
+        const registoInstance = new Imagem("StatueInfo", "custom-image", data.url);
+        imagem.appendChild(registoInstance)
+
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "photo.url");
       }
     }
 
-    //if (path.identifier){
-    if (data.statue_id) {
-      const div = document.createElement("div")
-      div.classList.add("custom-id")
+    else if (pattern == "2") {
+      if (data.article_title && (!keysToSearchList || keysToSearchList.includes("title"))) {
+        const registoInstance = new Titulo("StatueInfo", "", data.article_title, "");
+        registoInstance.classList.add("centerd-text")
+        articleId.appendChild(registoInstance);
 
-      const icon = document.createElement("ion-icon");
-      icon.setAttribute("name", "clipboard-outline");
-      icon.classList.add("icon");
+        const div = document.createElement("div")
+        div.classList.add("resource")
+        const header = document.createElement("header")
+        header.classList.add("resource-header")
+        div.appendChild(header)
+        caracterization_data.appendChild(div)
 
-      const registoInstance = new Registo("StatueInfo", "Identifier", data.statue_id, "number");
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "title");
+      }
 
-      div.appendChild(icon);
-      div.appendChild(registoInstance);
+      if (data.name && (!keysToSearchList || (keysToSearchList.includes("name")))) {
+          const registoInstance = new Titulo("StatueInfo", "", data.name, "");
+          this.shadowRoot.querySelector(".resource-header").appendChild(registoInstance)
+    
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "name");
+      }
 
-      caracterization_data.appendChild(div)
+      if (data.statue_id && (!keysToSearchList || (keysToSearchList.includes("id")))) {
+        const registoInstance = new Registo("StatueInfo", "Statue Identifier", data.statue_id, "");
+        this.shadowRoot.querySelector(".resource-header").appendChild(registoInstance)
+
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "id");
+      }
+
+      if (data.statue_type && (!keysToSearchList || (keysToSearchList.includes("type")))) {
+        const registoInstance = new Registo("StatueInfo", "Statue Type", data.statue_type, "");
+        this.shadowRoot.querySelector(".resource-header").appendChild(registoInstance)
+
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "type");
+      }
+
+      if (data.description && (!keysToSearchList || (keysToSearchList.includes("description")))) {
+        const registoInstance = new Registo("StatueInfo", "", data.description, "");
+        this.shadowRoot.querySelector(".resource-header").appendChild(registoInstance)
+
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "description");
+      }
+
+      if (data.author_id && (!keysToSearchList || keysToSearchList.includes("author"))) {
+        const footer = document.createElement("footer")
+        footer.classList.add("data-provider")
+
+        const registoInstance = new Registo("Specific", "Authored by", data.author_id, "");
+        footer.appendChild(registoInstance)
+
+        caracterization_data.appendChild(footer)
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "author");
+      }
     }
 
-    if (data.description) {
-      const div = document.createElement("div")
-      div.classList.add("custom-description")
-
-      const registoInstance = new Description("StatueInfo", "", data.description, "custom-description");
-      div.appendChild(registoInstance);
-
-      caracterization_data.appendChild(registoInstance)
-    }
-
-    if (data.url) {
-      const registoInstance = new Imagem("StatueInfo", "custom-image", data.url);
-      imagem.appendChild(registoInstance)
-    }
+    return keysToSearchList
   }
-
 
 
   handleError(error) {

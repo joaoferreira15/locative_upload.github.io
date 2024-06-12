@@ -3,7 +3,7 @@ import createTableRegisto from "./lib/table_registo.js";
 import Registo from "./lib/registo.js";
 import Titulo from "./lib/titulo.js";
 import Description from "./lib/description.js";
-import { updateValue, isValidJsonString } from "./lib/functions.js"
+import { updateValue, isValidJsonString, fetchData, getPathFromPointers } from "./lib/functions.js"
 
 class CreativeWork extends HTMLElement {
   constructor() {
@@ -15,9 +15,7 @@ class CreativeWork extends HTMLElement {
     shadowRoot.appendChild(this.getTemplate().content.cloneNode(true));
 
     //variavel que aponta para os ficheiros css e json
-    var css = this.getAttribute("css");
-    if (!css) {
-      css = `p {
+    const generalCss = `p {
     font-family: "DM Sans", Verdana, sans-serif;
 }
 
@@ -25,22 +23,40 @@ h2 {
     font-family: "Syne", Lato, sans-serif;
 }
 
-.centerd-text{
-    text-align: center;
-}
-
-.border-black {
-  border: 1px solid black;
-  }
-
-.border-black-bottom {
-  border-bottom: 1px solid black;
-}
 a {
     text-decoration: none;
     font-family: "Syne", Lato, sans-serif;
     color: inherit;
 }
+
+.resource, .locative-site, .data-provider {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .resource {
+            background-color: #f9f9f9;
+        }
+
+        .resource-header {
+            margin-bottom: 10px;
+        }
+        .resource-header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .resource-description {
+            margin: 20px 0;
+        }
+        .locative-site {
+            background-color: #f9f9f9;
+        }
+        .data-provider {
+            background-color: #f9f9f9;
+            font-style: italic;
+        }
 
 .fixed {
     position: fixed;
@@ -161,10 +177,6 @@ a:hover {
     margin-bottom: 3px;
 }
 
-.ML-20 {
-      margin: 20px;
-}
-
 .custom-description {
     border: 1px solid #ddd;
     padding: 10px;
@@ -233,8 +245,7 @@ ion-icon {
 
 .small-map {
   height: 300px;
-  /*margin-top: 10px;
-  margin-bottom: 30px;*/
+  margin: 15px;
 }
 
 .gallery {
@@ -412,6 +423,14 @@ button:hover {
   border-color: transparent;
 }
 
+.border-black {
+  border: 1px solid black;
+  }
+
+.border-black-bottom {
+  border-bottom: 1px solid black;
+}
+
 .btn {
   border-radius: 0px;
 }
@@ -430,23 +449,32 @@ button:hover {
   display: block;
 }
 
+.centerd-text{
+    text-align: center;
+}
+
+.ML-20 {
+      margin: 20px;
+}
+
 #navigation-button {
   display: flex;
   justify-content: center;
   gap: 10px;
 }`
-    }
-    const json = this.getAttribute("json");
-    //const pattern = this.getAttribute("pattern")
-    const pattern = "2"
+    this.css = this.getAttribute("css") ? this.getAttribute("css") : generalCss
+    this.json = this.getAttribute("article_data") ? this.getAttribute("article_data") : this.getAttribute("json");
+    this.pointers = this.getAttribute("pointers") ? JSON.parse(this.getAttribute("pointers").replace(/'/g, '"')) : null
+    this.pattern = this.getAttribute("pattern") || "3";
+  }
 
-    // Fetch data from JSON and populate the elements
-    if (isValidJsonString(json)) {
+  connectedCallback() {
+    if (isValidJsonString(this.json)) {
       try {
-        const data = JSON.parse(json);
+        const data = JSON.parse(this.json);
         this.loadLibraries()
           .then(() => {
-            this.populateElements(data, css, pattern);
+            this.populateElements(data, this.css, null, this.pattern);
           })
           .catch(error => {
             console.error("Failed to load libraries:", error);
@@ -454,9 +482,19 @@ button:hover {
       } catch (error) {
         this.handleError(error);
       }
+    } else {
+      fetchData(this.json)
+        .then(data => {
+          return this.loadLibraries().then(() => data);
+        })
+        .then(data => {
+          this.populateElements(data, this.css, this.pointers, this.pattern);
+        })
+        .catch(error => {
+          this.handleError(error);
+        });
     }
   }
-
 
   async loadLibraries() {
     // Load Ionicons CSS
@@ -467,7 +505,6 @@ button:hover {
 
     // Load Ionicons JS modules
     await this.loadScript("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js", true);
-    await this.loadScript("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js", false);
   }
 
   loadScript(src, typeModule = false) {
@@ -482,11 +519,9 @@ button:hover {
     });
   }
 
-
-
   static get observedAttributes() {
     // Lista de atributos que você deseja observar as mudanças
-    return ['css', "json", "pattern"];
+    return ['css', "article_data", "json", "pointers", "pattern"];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -498,8 +533,6 @@ button:hover {
       updateValue(this, name, newValue);
     }
   }
-
-
 
   getTemplate() {
     const template = document.createElement("template");
@@ -514,147 +547,260 @@ button:hover {
     return template;
   }
 
-
-
-  populateElements(data, css, pattern) {
-    const shadowRoot = this.shadowRoot;
+  populateElements(data, css, pointers, pattern) {
 
     if (css.startsWith("static") || css.startsWith("https")) {
-      shadowRoot.getElementById("styleDiv").innerHTML = "";
-      shadowRoot.getElementById("css").setAttribute("href", css);
+      this.shadowRoot.getElementById("styleDiv").innerHTML = "";
+      this.shadowRoot.getElementById("css").setAttribute("href", css);
     } else {
-      shadowRoot.getElementById("css").setAttribute("href", "");
-      shadowRoot.getElementById("styleDiv").innerHTML = css;
+      this.shadowRoot.getElementById("css").setAttribute("href", "");
+      this.shadowRoot.getElementById("styleDiv").innerHTML = css;
     }
 
-    const header_data = shadowRoot.getElementById("header_data");
-    const container = shadowRoot.getElementById("container");
-    const articleId = shadowRoot.getElementById("articleId")
+    if (pointers) {
+      var keysToSearchList = ["id", "type", "title", "provider", "site id", "site about"]
+      // data number of key:values inside
+      let resultList = getPathFromPointers(data, pointers, keysToSearchList);
+      for (const { path, lastKey } of resultList) {
+        const filteredKeys = this.fillElements(path, true, lastKey, keysToSearchList, pattern)
+        keysToSearchList = filteredKeys
+      }
+    } else {
+      this.fillElements(data, false, null, null, pattern)
+    }
+  }
+
+  fillElements(data, pointers, lastKey, keysToSearchList, pattern) {
+    const header_data = this.shadowRoot.getElementById("header_data");
+    const articleId = this.shadowRoot.getElementById("articleId");
 
     if (pattern == "1") {
       // Create a table element
-      const table = document.createElement("table");
-      table.id = "headerTable"
-      table.classList.add("custom-table");
+      var table = this.shadowRoot.getElementById("headerTable");
 
-      // Create a table row for the menu section
-      const registoInstance = createTableTitulo("RoteiroTemático", "Header", 2);
-      table.appendChild(registoInstance);
+      if (!table) {
+        const newTable = document.createElement("table");
+        newTable.id = "headerTable";
+        newTable.classList.add("custom-table");
+
+        // Create a table row for the menu section
+        const registoInstance = createTableTitulo("RoteiroTemático", "Header", 2);
+        newTable.appendChild(registoInstance);
+
+        // Append the new table to header_data
+        header_data.appendChild(newTable);
+
+        table = this.shadowRoot.getElementById("headerTable");
+      }
+
+      if (data.resource_id && (!keysToSearchList || keysToSearchList.includes("id"))) {
+        const registoInstance = createTableRegisto("Header", ["identifier", data.resource_id], "td");
+        table.appendChild(registoInstance)
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "id");
+      }
+
+      if (data.resource_type && (!keysToSearchList || keysToSearchList.includes("type"))) {
+        const registoInstance = createTableRegisto("Header", ["type", data.resource_type], "td");
+        table.appendChild(registoInstance)
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "type");
+      }
+
+      if (data.resource_title && (!keysToSearchList || keysToSearchList.includes("title"))) {
+        const registoInstance = createTableRegisto("Header", ["title", data.resource_title], "td");
+        table.appendChild(registoInstance)
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "title");
+      }
+
+      if (data.resource_description && (!keysToSearchList || keysToSearchList.includes("description"))) {
+        const registoInstance = createTableRegisto("Header", ["description", data.resource_description], "td");
+        table.appendChild(registoInstance)
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "description");
+      }
+
+      if (path.data_provider && (!keysToSearchList || keysToSearchList.includes("provider"))) {
+        const registoInstance = createTableRegisto("Header", ["data provider", path.data_provider], "td");
+        table.appendChild(registoInstance)
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "provider");
+      }
       header_data.appendChild(table);
     }
 
-    // Access the nested structure using the parts
-      if (pattern === "1") {
-        const table = this.shadowRoot.getElementById("headerTable")
+    else if (pattern == "2") {
 
-        if (data.resource_id) {
-          const registoInstance = createTableRegisto("Header", ["identifier", data.resource_id], "td");
-          table.appendChild(registoInstance)
-        }
-
-        if (data.resource_type) {
-          const registoInstance = createTableRegisto("Header", ["type", data.resource_type], "td");
-          table.appendChild(registoInstance)          
-        }
-
-        if (data.resource_title) {
-          const registoInstance = createTableRegisto("Header", ["title", data.resource_title], "td");
-          table.appendChild(registoInstance)
-        }
-
-        if (data.resource_description) {
-          const registoInstance = createTableRegisto("Header", ["description", data.resource_description], "td");
-          table.appendChild(registoInstance)
-        }
-
-        if (path.data_provider) {
-          const registoInstance = createTableRegisto("Header", ["data provider", path.data_provider], "td");
-          table.appendChild(registoInstance)
-        }
-        header_data.appendChild(table);
+      if (data.resource_id) {
+        const registoInstance = new Titulo("StatueInfo", "", `Resource ${data.resource_id}`, "");
+        registoInstance.classList.add("centerd-text")
+        articleId.appendChild(registoInstance);
       }
 
-      else if (pattern == "2") {
+      if (data.resource_title && (!keysToSearchList || keysToSearchList.includes("title"))) {
 
-        if(data.resource_id) {
-          const registoInstance = new Titulo("StatueInfo", "", `Resource ${data.resource_id}`, "");
-          registoInstance.classList.add("centerd-text")
-          articleId.appendChild(registoInstance);
-        }
+        const div = document.createElement("div")
+        div.classList.add("custom-id")
 
-        if (data.resource_title) {
+        const icon = document.createElement("ion-icon");
+        icon.setAttribute("name", "information-circle-outline");
+        icon.classList.add("icon");
 
-          const div = document.createElement("div")
-          div.classList.add("custom-id")
+        const registoInstance = new Registo("Header", "", `Resource Title: ${data.resource_title}`, "m-4-tb");
 
-          const icon = document.createElement("ion-icon");
-          icon.setAttribute("name", "text-outline");
-          icon.classList.add("icon");
+        div.appendChild(icon);
+        div.appendChild(registoInstance);
 
-          const registoInstance = new Registo("Header", "", `Resource Title: ${data.resource_title}`, "m-5-tb");
-
-          div.appendChild(icon);
-          div.appendChild(registoInstance);
-
-          header_data.appendChild(div)
-        }
-
-        if (data.resource_id) {
-
-          const div = document.createElement("div")
-          div.classList.add("custom-id")
-
-          const icon = document.createElement("ion-icon");
-          icon.setAttribute("name", "clipboard-outline");
-          icon.classList.add("icon");
-
-          const registoInstance = new Registo("Header", "", `Resource Identifier: ${data.resource_id}`, "m-4-tb");
-
-          div.appendChild(icon);
-          div.appendChild(registoInstance);
-
-          header_data.appendChild(div)
-        }
-
-        if (data.resource_description) {
-          const registoInstance = new Description("Caracterization", "", data.resource_description, "custom-description");
-
-          header_data.appendChild(registoInstance)        
-        }
-
-        if (data.resource_type) {
-
-          const div = document.createElement("div")
-          div.classList.add("custom-id")
-
-          const icon = document.createElement("ion-icon");
-          icon.setAttribute("name", "information-circle-outline");
-          icon.classList.add("icon");
-
-          const registoInstance = new Registo("Header", "", `Resource Type: ${data.resource_type}`, "m-4-tb");
-
-          div.appendChild(icon);
-          div.appendChild(registoInstance);
-
-          header_data.appendChild(div)
-        }
-
-        if (data.data_provider) {
-          const div = document.createElement("div")
-          div.classList.add("custom-id")
-
-          const icon = document.createElement("ion-icon");
-          icon.setAttribute("name", "calendar-outline");
-          icon.classList.add("icon");
-
-          const registoInstance = new Registo("Specific", "", `Data Provider: ${data.data_provider}`, "m-4-tb");
-
-          div.appendChild(icon);
-          div.appendChild(registoInstance);
-
-          header_data.appendChild(div)
-        }
+        header_data.appendChild(div)
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "title");
       }
+
+      if (data.resource_id && (!keysToSearchList || keysToSearchList.includes("id"))) {
+
+        const div = document.createElement("div")
+        div.classList.add("custom-id")
+
+        const icon = document.createElement("ion-icon");
+        icon.setAttribute("name", "information-circle-outline");
+        icon.classList.add("icon");
+
+        const registoInstance = new Registo("Header", "", `Resource Identifier: ${data.resource_id}`, "m-4-tb");
+
+        div.appendChild(icon);
+        div.appendChild(registoInstance);
+
+        header_data.appendChild(div)
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "id");
+      }
+
+      if (data.resource_type && (!keysToSearchList || keysToSearchList.includes("type"))) {
+
+        const div = document.createElement("div")
+        div.classList.add("custom-id")
+
+        const icon = document.createElement("ion-icon");
+        icon.setAttribute("name", "information-circle-outline");
+        icon.classList.add("icon");
+
+        const registoInstance = new Registo("Header", "", `Resource Type: ${data.resource_type}`, "m-4-tb");
+
+        div.appendChild(icon);
+        div.appendChild(registoInstance);
+
+        header_data.appendChild(div)
+
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "type");
+      }
+
+      if (data.data_provider && (!keysToSearchList || keysToSearchList.includes("provider"))) {
+        const div = document.createElement("div")
+        div.classList.add("custom-id")
+
+        const icon = document.createElement("ion-icon");
+        icon.setAttribute("name", "information-circle-outline");
+        icon.classList.add("icon");
+
+        const registoInstance = new Registo("Specific", "", `Data Provider: ${data.data_provider}`, "m-4-tb");
+
+        div.appendChild(icon);
+        div.appendChild(registoInstance);
+
+        header_data.appendChild(div)
+
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "provider");
+      }
+
+      if (data.resource_description && (!keysToSearchList || keysToSearchList.includes("description"))) {
+        const registoInstance = new Description("Caracterization", "", data.resource_description, "custom-description");
+
+        header_data.appendChild(registoInstance)
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "description");
+      }
+    }
+
+    else if (pattern == "3") {
+
+      if (data.resource_id) {
+        const registoInstance = new Titulo("StatueInfo", "", `Resource ${data.resource_id}`, "");
+        registoInstance.classList.add("centerd-text")
+        articleId.appendChild(registoInstance);
+
+        const div = document.createElement("div")
+        div.classList.add("resource")
+        const header = document.createElement("header")
+        header.classList.add("resource-header")
+        div.appendChild(header)
+        header_data.appendChild(div)
+
+      }
+
+      if(data.locative_site_id) {
+        const div = document.createElement("div")
+        div.classList.add("locative-site")
+        const header = document.createElement("header")
+        header.classList.add("locative-site-header")
+        div.appendChild(header)
+        header_data.appendChild(div)
+      }
+
+      if (data.resource_title && (!keysToSearchList || keysToSearchList.includes("title"))) {
+        const registoInstance = new Registo("Header", "Recurso", data.resource_title, "custom-title");
+        this.shadowRoot.querySelector(".resource-header").appendChild(registoInstance)
+
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "title");
+      }
+
+      if (data.resource_id && (!keysToSearchList || keysToSearchList.includes("id"))) {
+        const registoInstance = new Registo("Header", "", `Resource Identifier: ${data.resource_id}`, "");
+        this.shadowRoot.querySelector(".resource-header").appendChild(registoInstance)
+
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "id");
+      }
+
+      if (data.resource_type && (!keysToSearchList || keysToSearchList.includes("type"))) {
+        const registoInstance = new Registo("Header", "", `Resource Type: ${data.resource_type}`, "");
+        this.shadowRoot.querySelector(".resource-header").appendChild(registoInstance)
+
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "type");
+      }
+
+      if (data.resource_description && (!keysToSearchList || keysToSearchList.includes("description"))) {
+        const div = document.createElement("div")
+        div.classList.add("resource-description")
+
+        const registoInstance = new Registo("Caracterization", "", data.resource_description, "");
+        div.appendChild(registoInstance)
+
+        this.shadowRoot.querySelector(".resource").appendChild(div)
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "description");
+      }
+
+      if (data.locative_site_id && (!keysToSearchList || keysToSearchList.includes("site id"))) {
+        const registoInstance = new Titulo("Caracterization", "", "Site Locativo", "custom-titulo");
+        this.shadowRoot.querySelector(".locative-site-header").appendChild(registoInstance)
+
+        const registoInstance2 = new Registo("Caracterization", "", `Site Identifier: ${data.locative_site_id}`, "");
+        this.shadowRoot.querySelector(".locative-site").appendChild(registoInstance2)
+
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "site id");
+      }
+
+      if (data.locative_site_about && (!keysToSearchList || keysToSearchList.includes("site about"))) {
+        const registoInstance2 = new Registo("Caracterization", "", data.locative_site_about, "");
+
+        this.shadowRoot.querySelector(".locative-site").appendChild(registoInstance2)
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "site about");
+      }
+
+      if (data.data_provider && (!keysToSearchList || keysToSearchList.includes("provider"))) {
+        const footer = document.createElement("footer")
+        footer.classList.add("data-provider")
+
+        const registoInstance = new Registo("Specific", "Data Provide by", data.data_provider, "");
+        footer.appendChild(registoInstance)
+
+        header_data.appendChild(footer)
+        if (pointers) keysToSearchList = keysToSearchList.filter(item => item !== "provider");
+      }
+    }
+
+    return keysToSearchList
   }
 
 

@@ -3,7 +3,7 @@ import { updateValue, isValidJsonString } from "./lib/functions.js"
 
 class GeoCoordinates extends HTMLElement {
   static mapGeo;
-
+  
   constructor() {
     super();
 
@@ -12,27 +12,13 @@ class GeoCoordinates extends HTMLElement {
     // Append the template content to the Shadow DOM
     shadowRoot.appendChild(this.getTemplate().content.cloneNode(true));
 
-    this.innerHTML += '<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"> <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>'
-
-    // Variavel que aponta para os ficheiros css e json
-    var css = this.getAttribute("css");
-    if (!css) {
-      css = `p {
+    //variavel que aponta para os ficheiros css e json
+    const generalCss = `p {
     font-family: "DM Sans", Verdana, sans-serif;
 }
 
 h2 {
     font-family: "Syne", Lato, sans-serif;
-}
-    .centerd-text{
-    text-align: center;
-}
-    .border-black {
-  border: 1px solid black;
-  }
-
-.border-black-bottom {
-  border-bottom: 1px solid black;
 }
 
 a {
@@ -228,8 +214,7 @@ ion-icon {
 
 .small-map {
   height: 300px;
-  /*margin-top: 10px;
-  margin-bottom: 30px;*/
+  margin: 15px;
 }
 
 .gallery {
@@ -407,6 +392,14 @@ button:hover {
   border-color: transparent;
 }
 
+.border-black {
+  border: 1px solid black;
+  }
+
+.border-black-bottom {
+  border-bottom: 1px solid black;
+}
+
 .btn {
   border-radius: 0px;
 }
@@ -425,98 +418,107 @@ button:hover {
   display: block;
 }
 
+.centerd-text{
+    text-align: center;
+}
+
+.ML-20 {
+      margin: 20px;
+}
+
 #navigation-button {
   display: flex;
   justify-content: center;
   gap: 10px;
 }`
-    }
-    var json = this.getAttribute("json");
-    let pattern = this.getAttribute("pattern") || "1";
+    this.css = this.getAttribute("css") ? this.getAttribute("css") : generalCss
+    this.json = this.getAttribute("article_data") ? this.getAttribute("article_data") : this.getAttribute("json");
+    this.pointers = this.getAttribute("pointers") ? JSON.parse(this.getAttribute("pointers").replace(/'/g, '"')) : null
+    this.pattern = this.getAttribute("pattern") || "1";
 
-    if (isValidJsonString(json)) {
+  }
+
+  connectedCallback() {
+    if (isValidJsonString(this.json)) {
       try {
-        const data = JSON.parse(json);
-        this.data = data
-        this.populateElements(data, css, pattern);
+        const data = JSON.parse(this.json);
+        this.loadLibraries()
+          .then(() => {
+            this.populateElements(data, this.css, null, this.pattern);
+          })
+          .catch(error => {
+            console.error("Failed to load libraries:", error);
+          });
       } catch (error) {
         this.handleError(error);
       }
+    } else {
+      fetchData(this.json)
+        .then(data => {
+          return this.loadLibraries().then(() => data);
+        })
+        .then(data => {
+          this.populateElements(data, this.css, this.pointers, this.pattern);
+        })
+        .catch(error => {
+          this.handleError(error);
+        });
     }
   }
 
-
-  connectedCallback() {
-    this.loadLibraries()
-      .then(() => {
-        this.createMap();
-      })
-      .catch(error => {
-        console.error("Failed to load libraries:", error);
-      });
-  }
-
-
-  createMap() {
-    const pattern = this.getAttribute("pattern") || "1";
-    const data = this.data
-    const shadowRoot = this.shadowRoot
-
-    const container = shadowRoot.getElementById("map-geo-coordinates");
-
-    if (pattern && data.coordinates) {
-      console.log("map", pattern, data.coordinates)
-      const latitudeCoords = data.coordinates[0]
-      const longitudeCoords = data.coordinates[1]
-
-      if (pattern == "1") {
-
-        const div_map_geo = document.createElement("div")
-        div_map_geo.setAttribute("id", "div_map_geo")
-        div_map_geo.classList.add("small-map", "border-map")
-
-        container.appendChild(div_map_geo)
-
-        GeoCoordinates.mapGeo = L.map(div_map_geo, {
-          center: [latitudeCoords, longitudeCoords],
-          zoom: 14,
-          zoomControl: false
-        });
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        }).addTo(GeoCoordinates.mapGeo);
-
-        L.marker([latitudeCoords, longitudeCoords]).addTo(GeoCoordinates.mapGeo)
-
-        L.control.zoom({ position: 'bottomright' }).addTo(GeoCoordinates.mapGeo);
+  findKeyInJSON(data, targetKey) {
+    if (typeof data === 'object') {
+      if (targetKey in data) {
+        return data[targetKey];
+      }
+      for (const key in data) {
+        if (typeof data[key] === 'object') {
+          const result = this.findKeyInJSON(data[key], targetKey);
+          if (result !== undefined) {
+            return result;
+          }
+        }
       }
     }
+    return data;
   }
 
+  createMap(data, pattern) {
+    const container = this.shadowRoot.getElementById("map-geo-coordinates");
+    const latitudeCoords = data[0]
+    const longitudeCoords = data[1]
 
-  clearMapElements() {
-    GeoCoordinates.map = null;
-    const div_map_geo = this.shadowRoot.getElementById("div_map_geo");
-    const geo_coordinates = this.shadowRoot.getElementById("geo_coordinates");
-    if (div_map_geo) { div_map_geo.remove(); }
-    geo_coordinates.innerHTML = "";
+    if (pattern == "1") {
+      const div_map_geo = document.createElement("div")
+      div_map_geo.setAttribute("id", "div_map_geo")
+      div_map_geo.classList.add("small-map", "border-map")
+
+      container.appendChild(div_map_geo)
+
+      GeoCoordinates.mapGeo = L.map(div_map_geo, {
+        center: [latitudeCoords, longitudeCoords],
+        zoom: 14,
+        zoomControl: false
+      });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(GeoCoordinates.mapGeo);
+
+      L.marker([latitudeCoords, longitudeCoords]).addTo(GeoCoordinates.mapGeo)
+
+      L.control.zoom({ position: 'bottomright' }).addTo(GeoCoordinates.mapGeo);
+    }
   }
-
-
 
   static get observedAttributes() {
     // Lista de atributos que você deseja observar as mudanças
-    return ['css', "json", "pattern"];
+    return ['css', "article_data", "json", "pointers", "pattern"];
   }
-
-
 
   attributeChangedCallback(name, oldValue, newValue) {
     //console.log(`Attribute '${name}' changed from '${oldValue}' to '${newValue}'`);
     if (oldValue !== newValue && oldValue !== null) { updateValue(this, name, newValue); }
   }
-
-
 
   getTemplate() {
     const template = document.createElement("template");
@@ -535,7 +537,6 @@ button:hover {
     return template;
   }
 
-
   async loadLibraries() {
     // Load CSS
     const leafletCssLink = document.createElement("link");
@@ -544,56 +545,64 @@ button:hover {
     this.shadowRoot.appendChild(leafletCssLink);
 
     // Load JavaScript
-    await this.loadScript("https://unpkg.com/leaflet/dist/leaflet.js");
+    await this.loadScript("https://unpkg.com/leaflet/dist/leaflet.js", true);
+    await this.loadScript("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js", true);
   }
 
-  loadScript(src) {
+  loadScript(src, typeModule = false) {
     return new Promise((resolve, reject) => {
       const script = document.createElement("script");
       script.src = src;
+      script.type = typeModule ? "module" : "text/javascript";
+      script.nomodule = !typeModule;
       script.onload = resolve;
       script.onerror = reject;
       this.shadowRoot.appendChild(script);
     });
   }
 
-  populateElements(data, css, pattern) {
-    const shadowRoot = this.shadowRoot;
+  populateElements(data, css, pointers, pattern) {
 
     if (css.startsWith("static") || css.startsWith("https")) {
-      shadowRoot.getElementById("styleDiv").innerHTML = "";
-      shadowRoot.getElementById("css").setAttribute("href", css);
+      this.shadowRoot.getElementById("styleDiv").innerHTML = "";
+      this.shadowRoot.getElementById("css").setAttribute("href", css);
     } else {
-      shadowRoot.getElementById("css").setAttribute("href", "");
-      shadowRoot.getElementById("styleDiv").innerHTML = css;
+      this.shadowRoot.getElementById("css").setAttribute("href", "");
+      this.shadowRoot.getElementById("styleDiv").innerHTML = css;
     }
-
-    const container = shadowRoot.getElementById("map-geo-coordinates");
-    const geo_coordinates = shadowRoot.getElementById("geo_coordinates");
 
     // Access the nested structure using the parts
-
-    if (data.coordinates) {
-      console.log(pattern, data.coordinates)
-      const latitudeCoords = data.coordinates[0]
-      const longitudeCoords = data.coordinates[1]
-
-      const div = document.createElement("div")
-      div.classList.add("custom-id")
-
-      const icon = document.createElement("ion-icon");
-      icon.setAttribute("name", "location-outline");
-      icon.classList.add("icon");
-
-      const registoInstance = new Registo("geoCoordinates", "", `Localização Absoluta: ${latitudeCoords}, ${longitudeCoords}`, "custom-type");
-
-      div.appendChild(icon);
-      div.appendChild(registoInstance);
-
-      geo_coordinates.appendChild(div)
-
-
+    if (pointers) {
+      // data number of key:values inside
+      const { path, lastKey } = getPathFromPointers(data);
+      data = this.findKeyInJSON(path, "coordinates")
+      this.fillElements(data)
+      this.createMap(data, pattern)
+    } else {
+      data = this.findKeyInJSON(data, "coordinates")
+      this.fillElements(data)
+      this.createMap(data, pattern)
     }
+  }
+
+  fillElements(data) {
+    const geo_coordinates = this.shadowRoot.getElementById("geo_coordinates");
+
+    const latitudeCoords = data[0]
+    const longitudeCoords = data[1]
+
+    const div = document.createElement("div")
+    div.classList.add("custom-id")
+    const icon = document.createElement("ion-icon");
+    icon.setAttribute("name", "location-outline");
+    icon.classList.add("icon");
+
+    const registoInstance = new Registo("geoCoordinates", "", `Localização Absoluta: ${latitudeCoords}, ${longitudeCoords}`, "custom-type");
+
+    div.appendChild(icon);
+    div.appendChild(registoInstance);
+
+    geo_coordinates.appendChild(div)
   }
 
 
