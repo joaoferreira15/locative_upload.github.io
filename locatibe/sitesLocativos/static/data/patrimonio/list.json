@@ -1,0 +1,91 @@
+{
+  "items": [
+    {
+      "url": "struct30307",
+      "id": "30307",
+      "title": "Patrimonio: ESTÁTUA - D. FREI BARTOLOMEU DOS MÁRTIRES",
+      "description": "Listing of all the information related to 'ESTÁTUA - D. FREI BARTOLOMEU DOS MÁRTIRES' in the possession of the CMB institution",
+      "thumbnail": "../../../../../../../static/images/20200805_174914.jpg",
+      "geo": {
+        "latitude": 41.54833333333333,
+        "longitude": -8.42686111111111
+      }
+    },
+    {
+      "url": "struct30319",
+      "id": "30319",
+      "title": "ELEMENTO ESCULTÓRICO – JANELAS ABERTAS",
+      "description": "Listing of all the information related to 'ELEMENTO ESCULTÓRICO – JANELAS ABERTAS' in the possession of the CMB institution",
+      "thumbnail": "../../../../../../../static/images/20200805_174914.jpg",
+      "geo": {
+        "latitude": 41.54002777777777,
+        "longitude": -8.398583333333333
+      }
+    },
+    {
+      "url": "struct30327",
+      "id": "30327",
+      "title": "MONUMENTO AO EIXO ATLÂNTICO",
+      "description": "Listing of all the information related to 'MONUMENTO AO EIXO ATLÂNTICO' in the possession of the CMB institution",
+      "thumbnail": "../../../../../../../static/images/20200805_174914.jpg",
+      "geo": {
+        "latitude": 41.549305555555556,
+        "longitude": -8.433861111111112
+      }
+    },
+    {
+      "url": "struct30349",
+      "id": "30349",
+      "title": "ELEMENTO ESCULTÓRICO – DRAGÃO",
+      "description": "Listing of all the information related to 'ELEMENTO ESCULTÓRICO – DRAGÃO' in the possession of the CMB institution",
+      "thumbnail": "../../../../../../../static/images/20200805_174914.jpg",
+      "geo": {
+        "latitude": 41.55130555555555,
+        "longitude": -8.425333333333333
+      }
+    },
+    {
+      "url": "struct30350",
+      "id": "30350",
+      "title": "ELEMENTO ESCULTÓRICO TERESA WALKING ",
+      "description": "Listing of all the information related to 'ELEMENTO ESCULTÓRICO TERESA WALKING' in the possession of the CMB institution",
+      "thumbnail": "../../../../../../../static/images/20200805_174914.jpg",
+      "geo": {
+        "latitude": 41.552274999999995,
+        "longitude": -8.428991666666667
+      }
+    },
+    {
+      "url": "struct30351",
+      "id": "30351",
+      "title": "ESTÁTUA  – CÓNEGO DE MELO",
+      "description": "Listing of all the information related to 'ESTÁTUA  – CÓNEGO DE MELO' in the possession of the CMB institution",
+      "thumbnail": "../../../../../../../static/images/20200805_174914.jpg",
+      "geo": {
+        "latitude": 41.55808333333333,
+        "longitude": -8.415222222222223
+      }
+    },
+    {
+      "url": "struct30352",
+      "id": "30352",
+      "title": "BUSTO - ALBERTO CRUZ",
+      "description": "Listing of all the information related to 'BUSTO - ALBERTO CRUZ' in the possession of the CMB institution",
+      "thumbnail": "../../../../../../../static/images/20200805_174914.jpg",
+      "geo": {
+        "latitude": 41.55172222222222,
+        "longitude": -8.416944444444443
+      }
+    },
+    {
+      "title": "Site Oficial da insituição CMB",
+      "description": "Clita erat ipsum et lorem et sit, sed stet lorem sit clita duojusto magna dolore erat amet",
+      "url": "https://www.cm-braga.pt/pt"
+    },
+    {
+      "title": "Página na Wikipédia referente à insituição CMB",
+      "description": "Clita erat ipsum et lorem et sit, sed stet lorem sit clita duojusto magna dolore erat amet",
+      "url": "https://pt.wikipedia.org/wiki/Braga"
+    }
+  ]
+}
