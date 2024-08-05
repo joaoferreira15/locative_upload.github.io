@@ -4,7 +4,7 @@
   "name": "EST\u00c1TUA  \u2013 C\u00d3NEGO DE MELO",
   "description": "Escultura de FERNANDO JORGE  , localizada em LARGO MONTE DE ARCOS  ",
   "photo": {
-    "url": "../../../../../../static/images/Est\u00e1tua C\u00f3nego de Melo.jpg",
+    "url": "../../../../../../../../../static/images/Est\u00e1tua C\u00f3nego de Melo.jpg",
     "caption": "EST\u00c1TUA  \u2013 C\u00d3NEGO DE MELO"
   },
   "locative_context": {
@@ -31,25 +31,25 @@
     },
     {
       "article_title": "Fotos",
-      "../../static/images": [
+      "../../../static/images": [
         {
-          "url": "../../../../../../static/images/Est\u00e1tua C\u00f3nego de Melo.jpg",
+          "url": "../../../../../../../../../static/images/Est\u00e1tua C\u00f3nego de Melo.jpg",
           "caption": "EST\u00c1TUA  \u2013 C\u00d3NEGO DE MELO"
         },
         {
-          "url": "../../../../static/images/IMG_0676.JPG",
+          "url": "../../../../../../static/images/IMG_0676.JPG",
           "caption": "EST\u00c1TUA  \u2013 C\u00d3NEGO DE MELO"
         },
         {
-          "url": "../../../../static/images/IMG_0677.JPG",
+          "url": "../../../../../../static/images/IMG_0677.JPG",
           "caption": "EST\u00c1TUA  \u2013 C\u00d3NEGO DE MELO"
         },
         {
-          "url": "../../../../static/images/IMG_0678.JPG",
+          "url": "../../../../../../static/images/IMG_0678.JPG",
           "caption": "EST\u00c1TUA  \u2013 C\u00d3NEGO DE MELO"
         },
         {
-          "url": "../../../../static/images/IMG_0679.JPG",
+          "url": "../../../../../../static/images/IMG_0679.JPG",
           "caption": "EST\u00c1TUA  \u2013 C\u00d3NEGO DE MELO"
         }
       ]
