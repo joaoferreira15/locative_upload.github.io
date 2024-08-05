@@ -4,7 +4,7 @@
   "name": "BUSTO - ALBERTO CRUZ",
   "description": "Escultura de ANT\u00d3NIO CARLOS VILA CH\u00c3 ESTEVES  , localizada em LARGO SRA. A. BRANCA  ",
   "photo": {
-    "url": "../../../../../../../../../../../../static/images/121802630_4569096449830014_554366477453223077_n.jpg",
+    "url": "../../../../../../../../../../../../../../../static/images/121802630_4569096449830014_554366477453223077_n.jpg",
     "caption": "BUSTO - ALBERTO CRUZ"
   },
   "locative_context": {
@@ -31,33 +31,33 @@
     },
     {
       "article_title": "Fotos",
-      "../../../../static/images": [
+      "../../../../../static/images": [
         {
-          "url": "../../../../../../../../../../../../static/images/121802630_4569096449830014_554366477453223077_n.jpg",
+          "url": "../../../../../../../../../../../../../../../static/images/121802630_4569096449830014_554366477453223077_n.jpg",
           "caption": "BUSTO - ALBERTO CRUZ"
         },
         {
-          "url": "../../../../../../../../static/images/275563431_5034299663282426_8206661891610047405_n.jpg",
+          "url": "../../../../../../../../../../static/images/275563431_5034299663282426_8206661891610047405_n.jpg",
           "caption": "BUSTO - ALBERTO CRUZ"
         },
         {
-          "url": "../../../../../../../../static/images/Busto Alberto Cruz.jpg",
+          "url": "../../../../../../../../../../static/images/Busto Alberto Cruz.jpg",
           "caption": "BUSTO - ALBERTO CRUZ"
         },
         {
-          "url": "../../../../../../../../static/images/IMG_0598.JPG",
+          "url": "../../../../../../../../../../static/images/IMG_0598.JPG",
           "caption": "BUSTO - ALBERTO CRUZ"
         },
         {
-          "url": "../../../../../../../../static/images/IMG_0599.JPG",
+          "url": "../../../../../../../../../../static/images/IMG_0599.JPG",
           "caption": "BUSTO - ALBERTO CRUZ"
         },
         {
-          "url": "../../../../../../../../static/images/IMG_0600.JPG",
+          "url": "../../../../../../../../../../static/images/IMG_0600.JPG",
           "caption": "BUSTO - ALBERTO CRUZ"
         },
         {
-          "url": "../../../../../../../../static/images/IMG_0601.jpg",
+          "url": "../../../../../../../../../../static/images/IMG_0601.jpg",
           "caption": "BUSTO - ALBERTO CRUZ"
         }
       ]
