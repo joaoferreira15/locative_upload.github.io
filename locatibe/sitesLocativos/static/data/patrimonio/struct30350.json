@@ -4,7 +4,7 @@
   "name": "ELEMENTO  ESCULT\u00d3RICO TERESA WALKING ",
   "description": "Escultura de JULIAN OPIE , localizada em AV. DR. FRANCISCO PIRES GON\u00c7ALVES  ",
   "photo": {
-    "url": "static/images/53 - Elemento Escult\u00f3rico Teresa.jpg",
+    "url": "../../static/images/53 - Elemento Escult\u00f3rico Teresa.jpg",
     "caption": "ELEMENTO  ESCULT\u00d3RICO TERESA WALKING "
   },
   "locative_context": {
@@ -33,47 +33,47 @@
       "article_title": "Fotos",
       "images": [
         {
-          "url": "static/images/53 - Elemento Escult\u00f3rico Teresa.jpg",
+          "url": "../../static/images/53 - Elemento Escult\u00f3rico Teresa.jpg",
           "caption": "ELEMENTO  ESCULT\u00d3RICO TERESA WALKING "
         },
         {
-          "url": "static/images/image.tiff",
+          "url": "../static/images/image.tiff",
           "caption": "ELEMENTO  ESCULT\u00d3RICO TERESA WALKING "
         },
         {
-          "url": "static/images/IMG_1338.tiff",
+          "url": "../static/images/IMG_1338.tiff",
           "caption": "ELEMENTO  ESCULT\u00d3RICO TERESA WALKING "
         },
         {
-          "url": "static/images/IMG_1339.tiff",
+          "url": "../static/images/IMG_1339.tiff",
           "caption": "ELEMENTO  ESCULT\u00d3RICO TERESA WALKING "
         },
         {
-          "url": "static/images/IMG_1340.tiff",
+          "url": "../static/images/IMG_1340.tiff",
           "caption": "ELEMENTO  ESCULT\u00d3RICO TERESA WALKING "
         },
         {
-          "url": "static/images/IMG_1341.tiff",
+          "url": "../static/images/IMG_1341.tiff",
           "caption": "ELEMENTO  ESCULT\u00d3RICO TERESA WALKING "
         },
         {
-          "url": "static/images/IMG_1342.tiff",
+          "url": "../static/images/IMG_1342.tiff",
           "caption": "ELEMENTO  ESCULT\u00d3RICO TERESA WALKING "
         },
         {
-          "url": "static/images/IMG_1343.tiff",
+          "url": "../static/images/IMG_1343.tiff",
           "caption": "ELEMENTO  ESCULT\u00d3RICO TERESA WALKING "
         },
         {
-          "url": "static/images/IMG_1344.tiff",
+          "url": "../static/images/IMG_1344.tiff",
           "caption": "ELEMENTO  ESCULT\u00d3RICO TERESA WALKING "
         },
         {
-          "url": "static/images/IMG_1345.tiff",
+          "url": "../static/images/IMG_1345.tiff",
           "caption": "ELEMENTO  ESCULT\u00d3RICO TERESA WALKING "
         },
         {
-          "url": "static/images/IMG_1346.tiff",
+          "url": "../static/images/IMG_1346.tiff",
           "caption": "ELEMENTO  ESCULT\u00d3RICO TERESA WALKING "
         }
       ]
