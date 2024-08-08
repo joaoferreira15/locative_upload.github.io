@@ -1,0 +1,11 @@
+{
+    "identifier": "001",
+    "genre": "Type 1",
+    "name": "Patrimónios de Braga",
+    "description": "Roteiro Temático sobre os patrimónios na posse da ciadade de Braga ",
+    "publisher": {
+        "name": "João Ferreira"
+    },
+    "datePublished": "2023-12-20",
+    "fileFormat": "Csv"
+}
