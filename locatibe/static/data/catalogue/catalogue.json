@@ -1,0 +1,79 @@
+{
+    "caracterization":{
+        "id": "30307",
+        "type": "locative.locative_resource",
+        "name": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  ",
+        "description": "Escultura de H\u00c9LDER CARVALHO | GERARDO ESTEVES  , localizada em LARGO DE S. PAULO  ",
+        "photo": {
+        "url": "images/Est\u00e1tua D. Frei Bartolomeu dos M\u00e1rtiresA.jpg",
+        "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
+        }
+    },
+    "creativeWork":{
+        "identifier": "001",
+        "genre": "Type 1",
+        "name": "My Favorite Restaurant: Review",
+        "description": "Locative Resource about a Restaurant review",
+        "publisher": {
+            "name": "João Ferreira"
+        },
+        "datePublished": "2023-12-20",
+        "fileFormat": "Json"
+    },
+    "person":{
+        "name": "Leonardo da Vinci",
+        "birthDate": "1452-04-15",
+        "deathDate": "1519-05-02",
+        "affiliation": "Italian Renaissance",
+        "description": "Polymath, painter, sculptor, architect, scientist, writer, and inventor.",
+        "email": "john.doe@example.com",
+        "telephone": "912345678",
+        "url": "http://www.example-publishing.com"
+    },
+    "postalAddress":{
+        "streetAddress": "123 Main Street",
+        "addressLocality": "Cityville",
+        "addressRegion": "Stateville",
+        "postalCode": "12345",
+        "addressCountry": "Countryland"
+    },
+    "geoCoordinates":{
+        "latitude": 37.7749,
+        "longitude": -122.4194
+    },
+    "organization":{
+        "name": "Example Organization",
+        "description": "A brief description of the organization.",
+        "logo": "https://www.cm-braga.pt/assets/images/fcb-share.jpg",
+        "identifier": "CMB",
+        "email": "cmb.org@example.com",
+        "telephone": "253190874"
+    },
+    "images": [
+        {
+        "url": "images/Est\u00e1tua D. Frei Bartolomeu dos M\u00e1rtiresA.jpg",
+        "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
+        },
+        {
+        "url": "images/Est\u00e1tua D. Frei Bartolomeu dos M\u00e1rtiresB.jpg",
+        "caption": "EST\u00c1TUA - D. FREI BARTOLOMEU DOS M\u00c1RTIRES  "
+        }
+    ],
+    "inventory": {
+        "inventoryNumber": "Numero inventario",
+        "dateInInventory": "Data de inventario"
+    },
+    "specific": {
+        "monumentType": "Tipo de monumento",
+        "constructionMaterial": "Material de construcao",
+        "dateCreated": "Data de construcao",
+        "condition": "Estado de conservacao"
+    },
+    "pages": {
+        "filename": "struct30307",
+        "id": "30307",
+        "title": "ESTÁTUA - D. FREI BARTOLOMEU DOS MÁRTIRES  ",
+        "description": "Escultura de HÉLDER CARVALHO | GERARDO ESTEVES  , localizada em LARGO DE S. PAULO  ",
+        "thumbnail": "images/Estátua D. Frei Bartolomeu dos MártiresA.jpg"
+    }
+}
